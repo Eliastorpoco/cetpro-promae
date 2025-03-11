@@ -3,18 +3,22 @@ import { Button } from "@/components/ui/button";
 import { ChevronRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
-// Updated images array with specialties
+// Updated images array with additional specialties
 const images = [
   "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&q=80", // Welding image
   "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&q=80", // Automotive mechanics image
-  "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80"  // Architectural plans/blueprint image
+  "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80",  // Architectural plans/blueprint image
+  "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&q=80", // Computer technical support image
+  "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80"  // Woodworking/carpentry image
 ];
 
 // Keep image titles for aria-labels, but we won't display them anymore
 const imageTitles = [
   "Soldadura",
   "Mecánica Automotriz",
-  "Planos Arquitectónicos"
+  "Planos Arquitectónicos",
+  "Soporte Técnico de Computadoras",
+  "Carpintería de Madera"
 ];
 
 const Hero = () => {
