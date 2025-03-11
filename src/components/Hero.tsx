@@ -38,7 +38,7 @@ const Hero = () => {
         <div className="max-w-4xl text-center space-y-6 animate-fade-in">
           
           <div className="mb-8">
-            <div className="inline-block p-4 bg-white rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.3)] border-[12px] border-white/80">
+            <div className="inline-block p-6 rounded-2xl bg-gradient-to-b from-white to-gray-100 shadow-[0_8px_30px_rgba(0,0,0,0.4)] border-[10px] border-white/90">
               <img 
                 src="/lovable-uploads/d96dc6d2-525f-4909-8760-edb0383d6fa5.png" 
                 alt="CETPRO PROMAE MAGDALENA" 
