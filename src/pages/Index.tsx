@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Hero from '@/components/Hero';
 import CourseCard from '@/components/CourseCard';
@@ -47,19 +46,22 @@ const Index = () => {
       name: "María Sánchez",
       role: "Egresada",
       course: "Desarrollo Web Frontend",
+      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80",
       variant: 'featured'
     },
     {
       quote: "Los profesores son expertos en sus áreas y las instalaciones tienen equipos modernos. Recomiendo totalmente estudiar aquí si quieres formación técnica de calidad.",
       name: "Juan Carlos Medina",
       role: "Estudiante",
-      course: "Administración de Redes"
+      course: "Administración de Redes",
+      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80"
     },
     {
       quote: "Gracias a la formación práctica que recibí, pude empezar mi propio emprendimiento de diseño gráfico. La inversión en mi educación valió completamente la pena.",
       name: "Claudia Benites",
       role: "Emprendedora",
-      course: "Diseño Gráfico Digital"
+      course: "Diseño Gráfico Digital",
+      image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80"
     }
   ];
 
@@ -252,6 +254,7 @@ const Index = () => {
                 name={testimonial.name}
                 role={testimonial.role}
                 course={testimonial.course}
+                image={testimonial.image}
                 variant={testimonial.variant as any}
               />
             ))}

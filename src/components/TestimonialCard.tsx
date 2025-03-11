@@ -50,7 +50,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
               <img 
                 src={image} 
                 alt={name} 
-                className="h-12 w-12 rounded-full object-cover"
+                className="h-12 w-12 rounded-full object-cover border-2 border-white shadow-md"
               />
             </div>
           )}
