@@ -4,7 +4,19 @@ import { Button } from "@/components/ui/button";
 import { ChevronRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
-const images = ["https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80", "https://images.unsplash.com/photo-1563986768711-b3bde3dc821e?auto=format&fit=crop&q=80", "https://images.unsplash.com/photo-1588702547923-7093a6c3ba33?auto=format&fit=crop&q=80"];
+// Updated images array with specialties
+const images = [
+  "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&q=80", // Welding image
+  "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&q=80", // Automotive mechanics image
+  "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80"  // Architectural plans/blueprint image
+];
+
+// Image titles that describe each specialty
+const imageTitles = [
+  "Soldadura",
+  "Mecánica Automotriz",
+  "Planos Arquitectónicos"
+];
 
 const Hero = () => {
   const [currentImage, setCurrentImage] = useState(0);
@@ -26,16 +38,30 @@ const Hero = () => {
 
   return <div className="relative h-screen w-full overflow-hidden">
       {/* Background Images */}
-      {images.map((image, index) => <div key={index} className={cn("absolute inset-0 bg-cover bg-center transition-opacity duration-1000", currentImage === index ? "opacity-100" : "opacity-0")} style={{
-      backgroundImage: `url(${image})`
-    }} />)}
+      {images.map((image, index) => (
+        <div 
+          key={index} 
+          className={cn(
+            "absolute inset-0 bg-cover bg-center transition-opacity duration-1000", 
+            currentImage === index ? "opacity-100" : "opacity-0"
+          )} 
+          style={{ backgroundImage: `url(${image})` }} 
+        />
+      ))}
 
       {/* Overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-cetpro-darkblue/80 to-cetpro-blue/60" />
 
       {/* Content */}
-      <div className={cn("absolute inset-0 flex flex-col justify-center items-center text-white p-6 transition-opacity duration-1000", loading ? "opacity-0" : "opacity-100")}>
+      <div className={cn(
+        "absolute inset-0 flex flex-col justify-center items-center text-white p-6 transition-opacity duration-1000", 
+        loading ? "opacity-0" : "opacity-100"
+      )}>
         <div className="max-w-4xl text-center space-y-6 animate-fade-in">
+          {/* Current specialty badge */}
+          <div className="inline-block bg-cetpro-red/90 px-4 py-1 rounded-full text-white text-sm font-medium mb-4">
+            {imageTitles[currentImage]}
+          </div>
           
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
             Formación Tecnológica de Calidad
@@ -56,6 +82,21 @@ const Hero = () => {
             </Button>
           </div>
         </div>
+      </div>
+
+      {/* Image indicators */}
+      <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 flex space-x-2">
+        {images.map((_, index) => (
+          <button
+            key={index}
+            className={cn(
+              "w-2 h-2 rounded-full transition-all duration-300", 
+              currentImage === index ? "bg-white w-6" : "bg-white/50"
+            )}
+            onClick={() => setCurrentImage(index)}
+            aria-label={`Ver imagen de ${imageTitles[index]}`}
+          />
+        ))}
       </div>
 
       {/* Scroll indicator */}
