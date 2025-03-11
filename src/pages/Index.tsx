@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Hero from '@/components/Hero';
 import CourseCard from '@/components/CourseCard';
@@ -94,7 +95,7 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen pt-16"> {/* Added pt-16 for fixed navbar spacing */}
       {/* Hero Section */}
       <Hero />
 

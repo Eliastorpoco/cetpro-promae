@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, GraduationCap, Info, BookOpen, Monitor, Bell, Phone } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { cn } from '@/lib/utils';
 
@@ -30,12 +30,12 @@ const Navbar = () => {
   }, []);
 
   const navItems = [
-    { name: 'Inicio', path: '/' },
-    { name: 'Nosotros', path: '/nosotros' },
-    { name: 'Oferta Formativa', path: '/cursos' },
-    { name: 'Aula Virtual', path: '/aula-virtual' },
-    { name: 'Noticias', path: '/noticias' },
-    { name: 'Contacto', path: '/contacto' }
+    { name: 'Inicio', path: '/', icon: <GraduationCap className="h-4 w-4" /> },
+    { name: 'Nosotros', path: '/nosotros', icon: <Info className="h-4 w-4" /> },
+    { name: 'Oferta Formativa', path: '/cursos', icon: <BookOpen className="h-4 w-4" /> },
+    { name: 'Aula Virtual', path: '/aula-virtual', icon: <Monitor className="h-4 w-4" /> },
+    { name: 'Noticias', path: '/noticias', icon: <Bell className="h-4 w-4" /> },
+    { name: 'Contacto', path: '/contacto', icon: <Phone className="h-4 w-4" /> }
   ];
 
   return (
@@ -65,12 +65,13 @@ const Navbar = () => {
                 key={item.name}
                 to={item.path}
                 className={cn(
-                  'px-3 py-2 text-sm font-medium rounded-md transition-colors relative group',
+                  'px-3 py-2 text-sm font-medium rounded-md transition-colors relative group flex items-center gap-1.5',
                   location.pathname === item.path
                     ? 'text-cetpro-blue font-semibold'
                     : 'text-gray-700 hover:text-cetpro-blue'
                 )}
               >
+                {item.icon}
                 {item.name}
                 <span 
                   className={cn(
@@ -83,7 +84,7 @@ const Navbar = () => {
           </div>
 
           <div className="hidden md:block">
-            <Button className="bg-cetpro-blue hover:bg-cetpro-darkblue text-white animate-pulse-slow">
+            <Button className="bg-cetpro-blue hover:bg-cetpro-darkblue text-white">
               Inscríbete Ahora
             </Button>
           </div>
@@ -118,13 +119,14 @@ const Navbar = () => {
               key={item.name}
               to={item.path}
               className={cn(
-                'block px-3 py-2 rounded-md text-base font-medium',
+                'flex items-center gap-2 px-3 py-2 rounded-md text-base font-medium',
                 location.pathname === item.path
                   ? 'bg-cetpro-blue/10 text-cetpro-blue'
                   : 'text-gray-700 hover:bg-gray-50 hover:text-cetpro-blue'
               )}
               onClick={() => setIsOpen(false)}
             >
+              {item.icon}
               {item.name}
             </Link>
           ))}
