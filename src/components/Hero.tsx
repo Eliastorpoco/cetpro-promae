@@ -34,7 +34,7 @@ const Hero = () => {
             Formación Tecnológica de Calidad
           </h1>
           
-          <p className="text-lg md:text-xl opacity-90 max-w-2xl mx-auto text-[#ff9b04]">
+          <p className="text-lg md:text-xl opacity-90 max-w-2xl mx-auto text-[#ff9b04] font-bold">
             En CETPRO PROMAE MAGDALENA formamos profesionales técnicos con las competencias 
             necesarias para destacar en el mundo laboral actual.
           </p>
