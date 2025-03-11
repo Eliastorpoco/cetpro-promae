@@ -1,29 +1,23 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { ChevronRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
-
 const images = ["https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80", "https://images.unsplash.com/photo-1563986768711-b3bde3dc821e?auto=format&fit=crop&q=80", "https://images.unsplash.com/photo-1588702547923-7093a6c3ba33?auto=format&fit=crop&q=80"];
-
 const Hero = () => {
   const [currentImage, setCurrentImage] = useState(0);
   const [loading, setLoading] = useState(true);
-
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage(prev => (prev + 1) % images.length);
     }, 5000);
     return () => clearInterval(interval);
   }, []);
-
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
     }, 500);
     return () => clearTimeout(timer);
   }, []);
-
   return <div className="relative h-screen w-full overflow-hidden">
       {/* Background Images */}
       {images.map((image, index) => <div key={index} className={cn("absolute inset-0 bg-cover bg-center transition-opacity duration-1000", currentImage === index ? "opacity-100" : "opacity-0")} style={{
@@ -37,21 +31,13 @@ const Hero = () => {
       <div className={cn("absolute inset-0 flex flex-col justify-center items-center text-white p-6 transition-opacity duration-1000", loading ? "opacity-0" : "opacity-100")}>
         <div className="max-w-4xl text-center space-y-6 animate-fade-in">
           
-          <div className="mb-8">
-            <div className="inline-block p-3 rounded-full shadow-[0_0_30px_rgba(255,255,255,0.3)]">
-              <img 
-                src="/lovable-uploads/d96dc6d2-525f-4909-8760-edb0383d6fa5.png" 
-                alt="CETPRO PROMAE MAGDALENA" 
-                className="h-28 md:h-36 lg:h-40 w-auto drop-shadow-lg"
-              />
-            </div>
-          </div>
+          
           
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
             Formación Tecnológica de Calidad
           </h1>
           
-          <p className="text-lg md:text-xl opacity-90 max-w-2xl mx-auto text-[#ff9b04] font-bold">
+          <p className="text-lg md:text-xl opacity-90 max-w-2xl mx-auto font-bold text-[#ffddaa]">
             En CETPRO PROMAE MAGDALENA formamos profesionales técnicos con las competencias 
             necesarias para destacar en el mundo laboral actual.
           </p>
@@ -76,5 +62,4 @@ const Hero = () => {
       </div>
     </div>;
 };
-
 export default Hero;
