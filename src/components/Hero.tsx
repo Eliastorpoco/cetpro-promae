@@ -1,63 +1,40 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { ChevronRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
-
-const images = [
-  "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1563986768711-b3bde3dc821e?auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1588702547923-7093a6c3ba33?auto=format&fit=crop&q=80"
-];
-
+const images = ["https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80", "https://images.unsplash.com/photo-1563986768711-b3bde3dc821e?auto=format&fit=crop&q=80", "https://images.unsplash.com/photo-1588702547923-7093a6c3ba33?auto=format&fit=crop&q=80"];
 const Hero = () => {
   const [currentImage, setCurrentImage] = useState(0);
   const [loading, setLoading] = useState(true);
-
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % images.length);
+      setCurrentImage(prev => (prev + 1) % images.length);
     }, 5000);
-
     return () => clearInterval(interval);
   }, []);
-
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
     }, 500);
-
     return () => clearTimeout(timer);
   }, []);
-
-  return (
-    <div className="relative h-screen w-full overflow-hidden">
+  return <div className="relative h-screen w-full overflow-hidden">
       {/* Background Images */}
-      {images.map((image, index) => (
-        <div
-          key={index}
-          className={cn(
-            "absolute inset-0 bg-cover bg-center transition-opacity duration-1000",
-            currentImage === index ? "opacity-100" : "opacity-0"
-          )}
-          style={{ backgroundImage: `url(${image})` }}
-        />
-      ))}
+      {images.map((image, index) => <div key={index} className={cn("absolute inset-0 bg-cover bg-center transition-opacity duration-1000", currentImage === index ? "opacity-100" : "opacity-0")} style={{
+      backgroundImage: `url(${image})`
+    }} />)}
 
       {/* Overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-cetpro-darkblue/80 to-cetpro-blue/60" />
 
       {/* Content */}
-      <div className={cn(
-        "absolute inset-0 flex flex-col justify-center items-center text-white p-6 transition-opacity duration-1000",
-        loading ? "opacity-0" : "opacity-100"
-      )}>
+      <div className={cn("absolute inset-0 flex flex-col justify-center items-center text-white p-6 transition-opacity duration-1000", loading ? "opacity-0" : "opacity-100")}>
         <div className="max-w-4xl text-center space-y-6 animate-fade-in">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
             Formación Tecnológica de Calidad
           </h1>
           
-          <p className="text-lg md:text-xl opacity-90 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl opacity-90 max-w-2xl mx-auto text-[#ff9b04]">
             En CETPRO PROMAE MAGDALENA formamos profesionales técnicos con las competencias 
             necesarias para destacar en el mundo laboral actual.
           </p>
@@ -80,8 +57,6 @@ const Hero = () => {
           <div className="w-1.5 h-3 bg-white/80 rounded-full animate-bounce" />
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default Hero;
