@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown, GraduationCap, Info, BookOpen, Monitor, Bell, Phone } from 'lucide-react';
@@ -71,12 +70,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-3">
-              <img 
-                src="/lovable-uploads/62036d9f-1c88-4747-b0f5-9137465eee5e.png" 
-                alt="CETPRO PROMAE MAGDALENA" 
-                className="h-14 w-auto"
-              />
-              <span className="hidden lg:inline-block text-2xl font-bold tracking-tight text-cetpro-blue">
+              <span className="text-2xl font-bold tracking-tight text-cetpro-blue">
                 CETPRO <span className="text-cetpro-red">PROMAE MAGDALENA</span>
               </span>
             </Link>
