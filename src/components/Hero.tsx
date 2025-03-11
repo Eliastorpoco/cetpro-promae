@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { ChevronRight } from 'lucide-react';
@@ -11,7 +10,7 @@ const images = [
   "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80"  // Architectural plans/blueprint image
 ];
 
-// Image titles that describe each specialty
+// Keep image titles for aria-labels, but we won't display them anymore
 const imageTitles = [
   "Soldadura",
   "Mecánica Automotriz",
@@ -58,10 +57,6 @@ const Hero = () => {
         loading ? "opacity-0" : "opacity-100"
       )}>
         <div className="max-w-4xl text-center space-y-6 animate-fade-in">
-          {/* Current specialty badge */}
-          <div className="inline-block bg-cetpro-red/90 px-4 py-1 rounded-full text-white text-sm font-medium mb-4">
-            {imageTitles[currentImage]}
-          </div>
           
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
             Formación Tecnológica de Calidad
