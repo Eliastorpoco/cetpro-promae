@@ -3,13 +3,16 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown, GraduationCap, Info, BookOpen, Monitor, Bell, Phone } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { cn } from '@/lib/utils';
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+  
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 10) {
@@ -23,31 +26,40 @@ const Navbar = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-  const navItems = [{
-    name: 'Inicio',
-    path: '/',
-    icon: <GraduationCap className="h-4 w-4" />
-  }, {
-    name: 'Nosotros',
-    path: '/nosotros',
-    icon: <Info className="h-4 w-4" />
-  }, {
-    name: 'Oferta Formativa',
-    path: '/cursos',
-    icon: <BookOpen className="h-4 w-4" />
-  }, {
-    name: 'Aula Virtual',
-    path: '/aula-virtual',
-    icon: <Monitor className="h-4 w-4" />
-  }, {
-    name: 'Noticias',
-    path: '/noticias',
-    icon: <Bell className="h-4 w-4" />
-  }, {
-    name: 'Contacto',
-    path: '/contacto',
-    icon: <Phone className="h-4 w-4" />
-  }];
+  
+  const navItems = [
+    {
+      name: 'Inicio',
+      path: '/',
+      icon: <GraduationCap className="h-4 w-4" />
+    },
+    {
+      name: 'Nosotros',
+      path: '/nosotros',
+      icon: <Info className="h-4 w-4" />
+    },
+    {
+      name: 'Oferta Formativa',
+      path: '/cursos',
+      icon: <BookOpen className="h-4 w-4" />
+    },
+    {
+      name: 'Aula Virtual',
+      path: '/aula-virtual',
+      icon: <Monitor className="h-4 w-4" />
+    },
+    {
+      name: 'Noticias',
+      path: '/noticias',
+      icon: <Bell className="h-4 w-4" />
+    },
+    {
+      name: 'Contacto',
+      path: '/contacto',
+      icon: <Phone className="h-4 w-4" />
+    }
+  ];
+  
   return <nav className={cn('fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out py-4', {
     'bg-white/90 backdrop-blur-md shadow-md py-2': scrolled,
     'bg-transparent': !scrolled
@@ -57,7 +69,7 @@ const Navbar = () => {
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-3">
               <span className="text-2xl font-bold tracking-tight text-cetpro-blue">
-                CETPRO <span className="text-cetpro-red">MAGDALENA</span>
+                PROMAE <span className="text-cetpro-red">MAGDALENA</span>
               </span>
             </Link>
           </div>
@@ -102,4 +114,5 @@ const Navbar = () => {
       </div>
     </nav>;
 };
+
 export default Navbar;
