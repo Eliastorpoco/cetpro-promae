@@ -8,6 +8,8 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Navbar from "./components/Navbar";
 import AboutUs from "./pages/AboutUs";
+import Courses from "./pages/Courses";
+import TrainingOfferings from "./pages/TrainingOfferings";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +23,8 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/nosotros" element={<AboutUs />} />
+          <Route path="/cursos" element={<Courses />} />
+          <Route path="/oferta-formativa" element={<TrainingOfferings />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
