@@ -65,7 +65,7 @@ const AboutUs = () => {
               </div>
             </div>
             
-            {/* Right Image */}
+            {/* Right Image - Updated with technical nature-related image */}
             <div className="lg:w-1/2 animate-fade-in-right">
               <div className="relative">
                 <div className="absolute -top-6 -left-6 w-24 h-24 bg-cetpro-blue/10 rounded-full"></div>
@@ -73,8 +73,8 @@ const AboutUs = () => {
                 
                 <div className="relative overflow-hidden rounded-xl shadow-xl">
                   <img 
-                    src="https://images.unsplash.com/photo-1594312915251-48db9280c8f1?auto=format&fit=crop&q=80" 
-                    alt="Estudiantes en taller" 
+                    src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&q=80" 
+                    alt="Tecnología y naturaleza" 
                     className="w-full h-[500px] object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-cetpro-darkblue/40 to-transparent"></div>
