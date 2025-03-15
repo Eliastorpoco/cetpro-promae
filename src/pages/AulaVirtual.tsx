@@ -17,6 +17,7 @@ const AulaVirtual = () => {
   const [showAuthDialog, setShowAuthDialog] = useState(false);
   const [isError, setIsError] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+  const [isAuthenticating, setIsAuthenticating] = useState(false);
   const { toast } = useToast();
   
   // Definir el esquema de validación para el formulario
@@ -28,14 +29,8 @@ const AulaVirtual = () => {
     password: z.string().min(6, "La contraseña debe tener al menos 6 caracteres"),
   });
   
-  // Credenciales de ejemplo (en una aplicación real, esto estaría en el servidor)
-  const validCredentials = [
-    { email: "estudiante@cetpropromaemagdalena.edu.pe", password: "Cetpro2024" },
-    { email: "director@cetpropromaemagdalena.edu.pe", password: "Cetpro2024" }
-  ];
-  
   // URL institucional del Google Classroom
-  const institutionalClassroomUrl = "https://classroom.google.com/u/4/c";
+  const institutionalClassroomUrl = "https://classroom.google.com/u/0/h";
   // URL para acceder al correo Gmail institucional
   const institutionalGmailUrl = "https://mail.google.com/mail/u/0/#inbox";
   
@@ -75,7 +70,7 @@ const AulaVirtual = () => {
     }
   };
 
-  const onSubmit = (values) => {
+  const onSubmit = async (values) => {
     console.log("Intentando iniciar sesión con:", values);
     
     // Verificar que el correo sea institucional
@@ -85,32 +80,40 @@ const AulaVirtual = () => {
       return;
     }
     
-    // Simular autenticación con el correo institucional
-    // En una implementación real, esto se conectaría a un servicio de autenticación
-    const isValid = validCredentials.some(
-      (cred) => cred.email === values.email && cred.password === values.password
-    );
+    setIsAuthenticating(true);
+    setIsError(false);
     
-    if (isValid) {
+    try {
+      // En este punto, intentaríamos autenticar al usuario con Google
+      // Nota: Esta es una simulación, ya que no podemos implementar OAuth completo desde el frontend
+      
+      // Simulamos un pequeño retraso para dar la sensación de autenticación
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      
+      // Aquí normalmente verificaríamos las credenciales con un servicio de autenticación
+      // Como esto es una simulación, mostramos un mensaje explicativo
+      
       toast({
-        title: "Inicio de sesión exitoso",
+        title: "Iniciando sesión en Google",
         description: "Redirigiendo a su correo institucional y Google Classroom...",
         duration: 3000,
       });
       
-      // Abrir primero el correo institucional
+      // Abrimos directamente las URLs de Google (el usuario tendrá que iniciar sesión en Google)
       window.open(institutionalGmailUrl, "_blank");
       
-      // Esperar un breve momento y luego abrir también Google Classroom
       setTimeout(() => {
         window.open(institutionalClassroomUrl, "_blank");
       }, 1000);
       
       setShowAuthDialog(false);
       form.reset();
-    } else {
+    } catch (error) {
+      console.error("Error de autenticación:", error);
       setIsError(true);
-      setErrorMessage("Credenciales incorrectas. Verifique su correo y contraseña.");
+      setErrorMessage("Error al conectar con el servicio de autenticación. Por favor, intente más tarde.");
+    } finally {
+      setIsAuthenticating(false);
     }
   };
 
@@ -250,10 +253,18 @@ const AulaVirtual = () => {
                   <Button
                     type="submit"
                     className="w-full bg-cetpro-blue hover:bg-cetpro-darkblue rounded-md h-11 text-md"
+                    disabled={isAuthenticating}
                   >
-                    Iniciar Sesión
+                    {isAuthenticating ? "Iniciando sesión..." : "Iniciar Sesión"}
                   </Button>
                 </DialogFooter>
+
+                <div className="text-center text-sm text-gray-500 mt-4">
+                  <p>
+                    Esta pantalla redirigirá a su navegador para iniciar sesión con su cuenta institucional 
+                    de Google (@cetpropromaemagdalena.edu.pe)
+                  </p>
+                </div>
               </form>
             </Form>
           </DialogContent>
