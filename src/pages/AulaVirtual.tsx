@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -72,6 +73,14 @@ const AulaVirtual = () => {
 
   const onSubmit = (values) => {
     console.log("Intentando iniciar sesión con:", values);
+    
+    // Verificar que el correo sea institucional
+    if (!values.email.endsWith('@cetpropromaemagdalena.edu.pe')) {
+      setIsError(true);
+      setErrorMessage("Debe usar su correo institucional (@cetpropromaemagdalena.edu.pe)");
+      return;
+    }
+    
     const isValid = validCredentials.some(
       (cred) => cred.email === values.email && cred.password === values.password
     );
