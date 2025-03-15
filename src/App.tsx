@@ -11,6 +11,8 @@ import AboutUs from "./pages/AboutUs";
 import Courses from "./pages/Courses";
 import TrainingOfferings from "./pages/TrainingOfferings";
 import AulaVirtual from "./pages/AulaVirtual";
+import News from "./pages/News";
+import Contact from "./pages/Contact";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +29,8 @@ const App = () => (
           <Route path="/cursos" element={<Courses />} />
           <Route path="/oferta-formativa" element={<TrainingOfferings />} />
           <Route path="/aula-virtual" element={<AulaVirtual />} />
+          <Route path="/noticias" element={<News />} />
+          <Route path="/contacto" element={<Contact />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
