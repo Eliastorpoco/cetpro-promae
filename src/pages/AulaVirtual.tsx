@@ -11,13 +11,15 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useToast } from "@/hooks/use-toast";
 
 const AulaVirtual = () => {
   const [showAuthDialog, setShowAuthDialog] = useState(false);
   const [isError, setIsError] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+  const { toast } = useToast();
   
-  // Definir el esquema de validación para el formulario - UPDATED EMAIL DOMAIN
+  // Definir el esquema de validación para el formulario
   const formSchema = z.object({
     email: z.string().email("Debe ser un correo electrónico válido").refine(
       (email) => email.endsWith("@cetpropromaemagdalena.edu.pe"), 
@@ -34,6 +36,8 @@ const AulaVirtual = () => {
   
   // URL institucional del Google Classroom
   const institutionalClassroomUrl = "https://classroom.google.com/u/4/c";
+  // URL para acceder al correo Gmail institucional
+  const institutionalGmailUrl = "https://mail.google.com/mail/u/0/#inbox";
   
   const platforms = [
     {
@@ -88,8 +92,20 @@ const AulaVirtual = () => {
     );
     
     if (isValid) {
-      // Redireccionar al Google Classroom institucional
-      window.open(institutionalClassroomUrl, "_blank");
+      toast({
+        title: "Inicio de sesión exitoso",
+        description: "Redirigiendo a su correo institucional y Google Classroom...",
+        duration: 3000,
+      });
+      
+      // Abrir primero el correo institucional
+      window.open(institutionalGmailUrl, "_blank");
+      
+      // Esperar un breve momento y luego abrir también Google Classroom
+      setTimeout(() => {
+        window.open(institutionalClassroomUrl, "_blank");
+      }, 1000);
+      
       setShowAuthDialog(false);
       form.reset();
     } else {
@@ -98,9 +114,11 @@ const AulaVirtual = () => {
     }
   };
 
-  // Función para abrir directamente el correo institucional en Gmail
-  const openInstitutionalEmail = () => {
-    window.open("https://mail.google.com/mail/u/0/#inbox", "_blank");
+  // Función para abrir directamente el diálogo de login institucional
+  const openInstitutionalLogin = () => {
+    setShowAuthDialog(true);
+    setIsError(false);
+    form.reset();
   };
 
   return (
@@ -113,10 +131,10 @@ const AulaVirtual = () => {
           </p>
         </div>
         
-        {/* Botón para acceder directamente al correo institucional */}
+        {/* Botón principal para acceder al correo institucional */}
         <div className="text-center mb-10">
           <Button 
-            onClick={openInstitutionalEmail}
+            onClick={openInstitutionalLogin}
             className="bg-cetpro-blue hover:bg-cetpro-darkblue group"
             size="lg"
           >
@@ -125,7 +143,7 @@ const AulaVirtual = () => {
             <ExternalLink className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Button>
           <p className="text-sm text-gray-500 mt-2">
-            Primero inicia sesión en tu correo institucional para facilitar el acceso a Google Classroom
+            Inicie sesión para acceder a su correo institucional y a Google Classroom
           </p>
         </div>
         
@@ -165,17 +183,14 @@ const AulaVirtual = () => {
           ))}
         </div>
 
+        {/* Diálogo de autenticación institucional estilizado según la imagen */}
         <Dialog open={showAuthDialog} onOpenChange={setShowAuthDialog}>
           <DialogContent className="sm:max-w-md">
             <DialogHeader>
-              <DialogTitle className="flex items-center gap-2">
-                <Lock className="h-5 w-5 text-cetpro-blue" /> 
-                Acceso Institucional
+              <DialogTitle className="text-xl font-bold flex items-center gap-2">
+                <Mail className="h-5 w-5 text-cetpro-blue" /> 
+                Correo Institucional
               </DialogTitle>
-              <DialogDescription>
-                El acceso a Google Classroom está limitado solo a estudiantes registrados.
-                Ingrese su correo institucional (@cetpropromaemagdalena.edu.pe) y contraseña.
-              </DialogDescription>
             </DialogHeader>
             
             {isError && (
@@ -194,12 +209,13 @@ const AulaVirtual = () => {
                   name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="flex items-center gap-2">
-                        <Mail className="h-4 w-4" /> Correo Institucional
-                      </FormLabel>
-                      <FormControl>
-                        <Input placeholder="estudiante@cetpropromaemagdalena.edu.pe" {...field} />
-                      </FormControl>
+                      <div className="border border-gray-300 rounded-full overflow-hidden bg-white">
+                        <Input 
+                          placeholder="estudiante@cetpropromaemagdalena.edu.pe" 
+                          className="border-0 rounded-full h-14 text-md px-6 focus-visible:ring-0 focus-visible:ring-offset-0" 
+                          {...field} 
+                        />
+                      </div>
                       <FormMessage />
                     </FormItem>
                   )}
@@ -210,38 +226,26 @@ const AulaVirtual = () => {
                   name="password"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="flex items-center gap-2">
+                      <FormLabel className="flex items-center gap-2 text-md font-semibold">
                         <KeyRound className="h-4 w-4" /> Contraseña
                       </FormLabel>
                       <FormControl>
-                        <Input type="password" placeholder="Ingrese su contraseña" {...field} />
+                        <Input 
+                          type="password" 
+                          placeholder="Ingrese su contraseña" 
+                          className="border rounded-lg h-12 px-4" 
+                          {...field} 
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
                   )}
                 />
-                
-                <div className="bg-amber-50 p-3 rounded-md border border-amber-200 mt-4">
-                  <div className="flex gap-2 text-amber-700">
-                    <AlertTriangle className="h-5 w-5 flex-shrink-0" />
-                    <p className="text-sm">
-                      Recuerde que necesitará iniciar sesión con su cuenta de Google
-                      asociada a su correo institucional después de ingresar a Classroom.
-                    </p>
-                  </div>
-                </div>
 
-                <DialogFooter className="pt-4">
+                <DialogFooter className="pt-6">
                   <Button
-                    type="button"
-                    variant="outline"
-                    onClick={() => setShowAuthDialog(false)}
-                  >
-                    Cancelar
-                  </Button>
-                  <Button 
                     type="submit"
-                    className="bg-cetpro-blue hover:bg-cetpro-darkblue"
+                    className="w-full bg-cetpro-blue hover:bg-cetpro-darkblue rounded-md h-11 text-md"
                   >
                     Iniciar Sesión
                   </Button>
