@@ -81,11 +81,14 @@ const AulaVirtual = () => {
       return;
     }
     
+    // Simular autenticación con el correo institucional
+    // En una implementación real, esto se conectaría a un servicio de autenticación
     const isValid = validCredentials.some(
       (cred) => cred.email === values.email && cred.password === values.password
     );
     
     if (isValid) {
+      // Redireccionar al Google Classroom institucional
       window.open(institutionalClassroomUrl, "_blank");
       setShowAuthDialog(false);
       form.reset();
@@ -95,6 +98,11 @@ const AulaVirtual = () => {
     }
   };
 
+  // Función para abrir directamente el correo institucional en Gmail
+  const openInstitutionalEmail = () => {
+    window.open("https://mail.google.com/mail/u/0/#inbox", "_blank");
+  };
+
   return (
     <div className="min-h-screen pt-20 pb-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -102,6 +110,22 @@ const AulaVirtual = () => {
           <h1 className="text-3xl md:text-4xl font-bold text-cetpro-blue mb-4">Aula Virtual</h1>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Accede a nuestras plataformas de aprendizaje virtual donde encontrarás recursos educativos, actividades y podrás interactuar con profesores y compañeros.
+          </p>
+        </div>
+        
+        {/* Botón para acceder directamente al correo institucional */}
+        <div className="text-center mb-10">
+          <Button 
+            onClick={openInstitutionalEmail}
+            className="bg-cetpro-blue hover:bg-cetpro-darkblue group"
+            size="lg"
+          >
+            <Mail className="mr-2 h-5 w-5" />
+            Acceder a mi correo institucional
+            <ExternalLink className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+          </Button>
+          <p className="text-sm text-gray-500 mt-2">
+            Primero inicia sesión en tu correo institucional para facilitar el acceso a Google Classroom
           </p>
         </div>
         
