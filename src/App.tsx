@@ -10,6 +10,7 @@ import Navbar from "./components/Navbar";
 import AboutUs from "./pages/AboutUs";
 import Courses from "./pages/Courses";
 import TrainingOfferings from "./pages/TrainingOfferings";
+import AulaVirtual from "./pages/AulaVirtual";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="/nosotros" element={<AboutUs />} />
           <Route path="/cursos" element={<Courses />} />
           <Route path="/oferta-formativa" element={<TrainingOfferings />} />
+          <Route path="/aula-virtual" element={<AulaVirtual />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
