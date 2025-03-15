@@ -17,18 +17,18 @@ const AulaVirtual = () => {
   const [isError, setIsError] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   
-  // Definir el esquema de validación para el formulario
+  // Definir el esquema de validación para el formulario - UPDATED EMAIL DOMAIN
   const formSchema = z.object({
     email: z.string().email("Debe ser un correo electrónico válido").refine(
-      (email) => email.endsWith("@cetpro.edu.pe"), 
-      { message: "Debe usar su correo institucional (@cetpro.edu.pe)" }
+      (email) => email.endsWith("@cetpropromaemagdalena.edu.pe"), 
+      { message: "Debe usar su correo institucional (@cetpropromaemagdalena.edu.pe)" }
     ),
     password: z.string().min(6, "La contraseña debe tener al menos 6 caracteres"),
   });
   
   // Credenciales de ejemplo (en una aplicación real, esto estaría en el servidor)
   const validCredentials = [
-    { email: "estudiante@cetpro.edu.pe", password: "Cetpro2024" }
+    { email: "estudiante@cetpropromaemagdalena.edu.pe", password: "Cetpro2024" }
   ];
   
   const platforms = [
@@ -137,7 +137,7 @@ const AulaVirtual = () => {
               </DialogTitle>
               <DialogDescription>
                 El acceso a Google Classroom está limitado solo a estudiantes registrados.
-                Ingrese su correo institucional (@cetpro.edu.pe) y contraseña.
+                Ingrese su correo institucional (@cetpropromaemagdalena.edu.pe) y contraseña.
               </DialogDescription>
             </DialogHeader>
             
@@ -161,7 +161,7 @@ const AulaVirtual = () => {
                         <Mail className="h-4 w-4" /> Correo Institucional
                       </FormLabel>
                       <FormControl>
-                        <Input placeholder="estudiante@cetpro.edu.pe" {...field} />
+                        <Input placeholder="estudiante@cetpropromaemagdalena.edu.pe" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
