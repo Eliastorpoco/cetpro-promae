@@ -29,6 +29,9 @@ const AulaVirtual = () => {
     password: z.string().min(6, "La contraseña debe tener al menos 6 caracteres"),
   });
   
+  // URL base de autenticación de Google
+  const googleAuthUrl = "https://accounts.google.com";
+  
   // URLs institucionales con el AccountChooser de Google para forzar la autenticación
   const institutionalClassroomUrl = "https://accounts.google.com/AccountChooser?continue=https://classroom.google.com";
   // URL para acceder al correo Gmail institucional con AccountChooser
@@ -87,20 +90,18 @@ const AulaVirtual = () => {
       // Mostramos mensaje informativo
       toast({
         title: "Redirigiendo a Google",
-        description: "Se abrirá la página de inicio de sesión institucional de Google...",
+        description: "Se abrirá la página de autenticación de Google...",
         duration: 3000,
       });
       
-      // Abrimos directamente las URLs de Google con AccountChooser
+      // Primero abrimos la página de autenticación de Google
+      window.open(googleAuthUrl, "_blank");
+      
+      // Luego abrimos directamente las URLs con AccountChooser
       setTimeout(() => {
-        // Abrir primero el correo institucional
-        window.open(institutionalGmailUrl, "_blank");
-        
-        // Luego abrir Google Classroom después de un breve retraso
-        setTimeout(() => {
-          window.open(institutionalClassroomUrl, "_blank");
-        }, 1000);
-      }, 500);
+        // Abrir Google Classroom después de un breve retraso
+        window.open(institutionalClassroomUrl, "_blank");
+      }, 1500);
       
       setShowAuthDialog(false);
       form.reset();
@@ -133,7 +134,7 @@ const AulaVirtual = () => {
         {/* Botón principal para acceder al correo institucional */}
         <div className="text-center mb-10">
           <Button 
-            onClick={openInstitutionalLogin}
+            onClick={() => window.open(googleAuthUrl, "_blank")}
             className="bg-cetpro-blue hover:bg-cetpro-darkblue group"
             size="lg"
           >
@@ -172,7 +173,7 @@ const AulaVirtual = () => {
               <CardFooter>
                 <Button 
                   className="w-full bg-cetpro-blue hover:bg-cetpro-darkblue group"
-                  onClick={() => handlePlatformAccess(platform)}
+                  onClick={() => platform.requiresAuth ? window.open(googleAuthUrl, "_blank") : window.open(platform.url, "_blank")}
                 >
                   Acceder
                   <ExternalLink className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
