@@ -29,10 +29,10 @@ const AulaVirtual = () => {
     password: z.string().min(6, "La contraseña debe tener al menos 6 caracteres"),
   });
   
-  // URL institucional del Google Classroom
-  const institutionalClassroomUrl = "https://classroom.google.com/u/0/h";
-  // URL para acceder al correo Gmail institucional
-  const institutionalGmailUrl = "https://mail.google.com/mail/u/0/#inbox";
+  // URLs institucionales con el AccountChooser de Google para forzar la autenticación
+  const institutionalClassroomUrl = "https://accounts.google.com/AccountChooser?continue=https://classroom.google.com";
+  // URL para acceder al correo Gmail institucional con AccountChooser
+  const institutionalGmailUrl = "https://accounts.google.com/AccountChooser?continue=https://mail.google.com";
   
   const platforms = [
     {
@@ -84,34 +84,30 @@ const AulaVirtual = () => {
     setIsError(false);
     
     try {
-      // En este punto, intentaríamos autenticar al usuario con Google
-      // Nota: Esta es una simulación, ya que no podemos implementar OAuth completo desde el frontend
-      
-      // Simulamos un pequeño retraso para dar la sensación de autenticación
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
-      // Aquí normalmente verificaríamos las credenciales con un servicio de autenticación
-      // Como esto es una simulación, mostramos un mensaje explicativo
-      
+      // Mostramos mensaje informativo
       toast({
-        title: "Iniciando sesión en Google",
-        description: "Redirigiendo a su correo institucional y Google Classroom...",
+        title: "Redirigiendo a Google",
+        description: "Se abrirá la página de inicio de sesión institucional de Google...",
         duration: 3000,
       });
       
-      // Abrimos directamente las URLs de Google (el usuario tendrá que iniciar sesión en Google)
-      window.open(institutionalGmailUrl, "_blank");
-      
+      // Abrimos directamente las URLs de Google con AccountChooser
       setTimeout(() => {
-        window.open(institutionalClassroomUrl, "_blank");
-      }, 1000);
+        // Abrir primero el correo institucional
+        window.open(institutionalGmailUrl, "_blank");
+        
+        // Luego abrir Google Classroom después de un breve retraso
+        setTimeout(() => {
+          window.open(institutionalClassroomUrl, "_blank");
+        }, 1000);
+      }, 500);
       
       setShowAuthDialog(false);
       form.reset();
     } catch (error) {
-      console.error("Error de autenticación:", error);
+      console.error("Error de redirección:", error);
       setIsError(true);
-      setErrorMessage("Error al conectar con el servicio de autenticación. Por favor, intente más tarde.");
+      setErrorMessage("Error al intentar redireccionar. Por favor, intente más tarde.");
     } finally {
       setIsAuthenticating(false);
     }
@@ -186,7 +182,7 @@ const AulaVirtual = () => {
           ))}
         </div>
 
-        {/* Diálogo de autenticación institucional estilizado según la imagen */}
+        {/* Diálogo de autenticación institucional */}
         <Dialog open={showAuthDialog} onOpenChange={setShowAuthDialog}>
           <DialogContent className="sm:max-w-md">
             <DialogHeader>
@@ -255,14 +251,14 @@ const AulaVirtual = () => {
                     className="w-full bg-cetpro-blue hover:bg-cetpro-darkblue rounded-md h-11 text-md"
                     disabled={isAuthenticating}
                   >
-                    {isAuthenticating ? "Iniciando sesión..." : "Iniciar Sesión"}
+                    {isAuthenticating ? "Redirigiendo..." : "Iniciar Sesión"}
                   </Button>
                 </DialogFooter>
 
                 <div className="text-center text-sm text-gray-500 mt-4">
                   <p>
-                    Esta pantalla redirigirá a su navegador para iniciar sesión con su cuenta institucional 
-                    de Google (@cetpropromaemagdalena.edu.pe)
+                    Se abrirá la página de autenticación de Google para iniciar sesión 
+                    con su cuenta institucional (@cetpropromaemagdalena.edu.pe)
                   </p>
                 </div>
               </form>
