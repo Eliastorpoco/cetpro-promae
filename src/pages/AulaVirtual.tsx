@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -33,7 +32,7 @@ const AulaVirtual = () => {
   ];
   
   // URL institucional del Google Classroom
-  const institutionalClassroomUrl = "https://classroom.google.com/u/1/";
+  const institutionalClassroomUrl = "https://classroom.google.com/u/4/c";
   
   const platforms = [
     {
