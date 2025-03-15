@@ -16,7 +16,7 @@ const AulaVirtual = () => {
     {
       id: 2,
       name: "Google Classroom",
-      description: "Enlace de invitación a la clase. Accede con tu correo institucional de dominio cetpropromaemagdalena.edu.pe.",
+      description: "Acceso exclusivo solo para estudiantes que recibieron invitación específica. Requiere iniciar sesión con correo institucional.",
       url: "https://classroom.google.com/c/NzU4NTAwODE4MDc5?cjc=ggs2cex",
       icon: <Monitor className="h-10 w-10" />
     }
