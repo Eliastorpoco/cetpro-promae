@@ -17,7 +17,7 @@ const AulaVirtual = () => {
       id: 2,
       name: "Google Classroom",
       description: "Plataforma complementaria para algunos cursos específicos.",
-      url: "https://classroom.google.com",
+      url: "https://classroom.google.com/c/NzU4NTAwODE4MDc5?cjc=ggs2cex",
       icon: <Monitor className="h-10 w-10" />
     }
   ];
