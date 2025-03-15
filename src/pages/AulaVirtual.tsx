@@ -195,10 +195,12 @@ const AulaVirtual = () => {
             
             {isError && (
               <Alert className="border-red-300 bg-red-50 text-red-800">
-                <AlertTriangle className="h-4 w-4" />
-                <AlertDescription>
-                  {errorMessage}
-                </AlertDescription>
+                <div className="flex items-center gap-2">
+                  <AlertTriangle className="h-4 w-4 text-red-600" />
+                  <AlertDescription className="text-red-600">
+                    {errorMessage}
+                  </AlertDescription>
+                </div>
               </Alert>
             )}
             
@@ -209,10 +211,10 @@ const AulaVirtual = () => {
                   name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <div className="border border-gray-300 rounded-full overflow-hidden bg-white">
+                      <div className="bg-blue-50 rounded-full overflow-hidden">
                         <Input 
                           placeholder="estudiante@cetpropromaemagdalena.edu.pe" 
-                          className="border-0 rounded-full h-14 text-md px-6 focus-visible:ring-0 focus-visible:ring-offset-0" 
+                          className="border-0 bg-blue-50 rounded-full h-14 text-md px-6 focus-visible:ring-0 focus-visible:ring-offset-0" 
                           {...field} 
                         />
                       </div>
@@ -230,12 +232,14 @@ const AulaVirtual = () => {
                         <KeyRound className="h-4 w-4" /> Contraseña
                       </FormLabel>
                       <FormControl>
-                        <Input 
-                          type="password" 
-                          placeholder="Ingrese su contraseña" 
-                          className="border rounded-lg h-12 px-4" 
-                          {...field} 
-                        />
+                        <div className="border border-gray-300 rounded-full overflow-hidden">
+                          <Input 
+                            type="password" 
+                            placeholder="Ingrese su contraseña" 
+                            className="border-0 rounded-full h-14 px-6 focus-visible:ring-0 focus-visible:ring-offset-0" 
+                            {...field} 
+                          />
+                        </div>
                       </FormControl>
                       <FormMessage />
                     </FormItem>
