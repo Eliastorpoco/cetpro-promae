@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -28,7 +27,8 @@ const AulaVirtual = () => {
   
   // Credenciales de ejemplo (en una aplicación real, esto estaría en el servidor)
   const validCredentials = [
-    { email: "estudiante@cetpropromaemagdalena.edu.pe", password: "Cetpro2024" }
+    { email: "estudiante@cetpropromaemagdalena.edu.pe", password: "Cetpro2024" },
+    { email: "director@cetpropromaemagdalena.edu.pe", password: "Cetpro2024" }
   ];
   
   const platforms = [
@@ -68,6 +68,7 @@ const AulaVirtual = () => {
   };
 
   const onSubmit = (values) => {
+    console.log("Intentando iniciar sesión con:", values);
     const isValid = validCredentials.some(
       (cred) => cred.email === values.email && cred.password === values.password
     );
