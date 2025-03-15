@@ -2,18 +2,34 @@
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { ExternalLink, BookOpen, Monitor, Lock, AlertTriangle } from 'lucide-react';
+import { ExternalLink, BookOpen, Monitor, Lock, AlertTriangle, Mail, KeyRound } from 'lucide-react';
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Label } from "@/components/ui/label";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { z } from "zod";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 const AulaVirtual = () => {
   const [showAuthDialog, setShowAuthDialog] = useState(false);
-  const [accessCode, setAccessCode] = useState('');
   const [isError, setIsError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
   
-  // Código de acceso correcto - en una aplicación real, esto estaría en el backend
-  const correctAccessCode = 'CETPRO2024';
+  // Definir el esquema de validación para el formulario
+  const formSchema = z.object({
+    email: z.string().email("Debe ser un correo electrónico válido").refine(
+      (email) => email.endsWith("@cetpro.edu.pe"), 
+      { message: "Debe usar su correo institucional (@cetpro.edu.pe)" }
+    ),
+    password: z.string().min(6, "La contraseña debe tener al menos 6 caracteres"),
+  });
+  
+  // Credenciales de ejemplo (en una aplicación real, esto estaría en el servidor)
+  const validCredentials = [
+    { email: "estudiante@cetpro.edu.pe", password: "Cetpro2024" }
+  ];
   
   const platforms = [
     {
@@ -26,29 +42,43 @@ const AulaVirtual = () => {
     {
       id: 2,
       name: "Google Classroom",
-      description: "Acceso restringido solo para estudiantes invitados. Se requiere código de acceso y correo institucional.",
-      url: "https://classroom.google.com/c/NzU4NTAwODE4MDc5?cjc=ggs2cex",
+      description: "Acceso restringido solo para estudiantes con correo institucional. Inicie sesión con sus credenciales institucionales.",
+      url: "https://classroom.google.com/",
       icon: <Monitor className="h-10 w-10" />,
       requiresAuth: true
     }
   ];
 
+  const form = useForm({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      email: "",
+      password: "",
+    },
+  });
+
   const handlePlatformAccess = (platform) => {
     if (platform.requiresAuth) {
       setShowAuthDialog(true);
       setIsError(false);
+      form.reset();
     } else {
       window.open(platform.url, "_blank");
     }
   };
 
-  const handleAuthSubmit = () => {
-    if (accessCode === correctAccessCode) {
+  const onSubmit = (values) => {
+    const isValid = validCredentials.some(
+      (cred) => cred.email === values.email && cred.password === values.password
+    );
+    
+    if (isValid) {
       window.open(platforms[1].url, "_blank");
       setShowAuthDialog(false);
-      setAccessCode('');
+      form.reset();
     } else {
       setIsError(true);
+      setErrorMessage("Credenciales incorrectas. Verifique su correo y contraseña.");
     }
   };
 
@@ -103,11 +133,11 @@ const AulaVirtual = () => {
             <DialogHeader>
               <DialogTitle className="flex items-center gap-2">
                 <Lock className="h-5 w-5 text-cetpro-blue" /> 
-                Acceso Restringido
+                Acceso Institucional
               </DialogTitle>
               <DialogDescription>
-                El acceso a Google Classroom está limitado solo a estudiantes invitados.
-                Ingrese el código de acceso proporcionado por su instructor.
+                El acceso a Google Classroom está limitado solo a estudiantes registrados.
+                Ingrese su correo institucional (@cetpro.edu.pe) y contraseña.
               </DialogDescription>
             </DialogHeader>
             
@@ -115,53 +145,72 @@ const AulaVirtual = () => {
               <Alert className="border-red-300 bg-red-50 text-red-800">
                 <AlertTriangle className="h-4 w-4" />
                 <AlertDescription>
-                  Código de acceso incorrecto. Por favor, verifique e intente nuevamente.
+                  {errorMessage}
                 </AlertDescription>
               </Alert>
             )}
             
-            <div className="space-y-4 py-4">
-              <div className="flex flex-col gap-2">
-                <label htmlFor="accessCode" className="text-sm font-medium">
-                  Código de Acceso
-                </label>
-                <Input 
-                  id="accessCode" 
-                  type="password" 
-                  placeholder="Ingrese su código de acceso"
-                  value={accessCode}
-                  onChange={(e) => setAccessCode(e.target.value)}
-                  onKeyDown={(e) => e.key === 'Enter' && handleAuthSubmit()}
+            <Form {...form}>
+              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 py-2">
+                <FormField
+                  control={form.control}
+                  name="email"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="flex items-center gap-2">
+                        <Mail className="h-4 w-4" /> Correo Institucional
+                      </FormLabel>
+                      <FormControl>
+                        <Input placeholder="estudiante@cetpro.edu.pe" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
                 />
-              </div>
-              
-              <div className="bg-amber-50 p-3 rounded-md border border-amber-200">
-                <div className="flex gap-2 text-amber-700">
-                  <AlertTriangle className="h-5 w-5 flex-shrink-0" />
-                  <p className="text-sm">
-                    Recuerde que además del código de acceso, necesitará iniciar sesión con su correo
-                    institucional para acceder al contenido del aula.
-                  </p>
+                
+                <FormField
+                  control={form.control}
+                  name="password"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="flex items-center gap-2">
+                        <KeyRound className="h-4 w-4" /> Contraseña
+                      </FormLabel>
+                      <FormControl>
+                        <Input type="password" placeholder="Ingrese su contraseña" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                
+                <div className="bg-amber-50 p-3 rounded-md border border-amber-200 mt-4">
+                  <div className="flex gap-2 text-amber-700">
+                    <AlertTriangle className="h-5 w-5 flex-shrink-0" />
+                    <p className="text-sm">
+                      Recuerde que necesitará iniciar sesión con su cuenta de Google
+                      asociada a su correo institucional después de ingresar a Classroom.
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </div>
 
-            <DialogFooter>
-              <Button
-                type="button"
-                variant="outline"
-                onClick={() => setShowAuthDialog(false)}
-              >
-                Cancelar
-              </Button>
-              <Button 
-                type="button"
-                onClick={handleAuthSubmit}
-                className="bg-cetpro-blue hover:bg-cetpro-darkblue"
-              >
-                Continuar
-              </Button>
-            </DialogFooter>
+                <DialogFooter className="pt-4">
+                  <Button
+                    type="button"
+                    variant="outline"
+                    onClick={() => setShowAuthDialog(false)}
+                  >
+                    Cancelar
+                  </Button>
+                  <Button 
+                    type="submit"
+                    className="bg-cetpro-blue hover:bg-cetpro-darkblue"
+                  >
+                    Iniciar Sesión
+                  </Button>
+                </DialogFooter>
+              </form>
+            </Form>
           </DialogContent>
         </Dialog>
 
