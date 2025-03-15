@@ -4,13 +4,11 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown, GraduationCap, Info, BookOpen, Monitor, Bell, Phone } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { cn } from '@/lib/utils';
-import { useIsMobile } from '@/hooks/use-mobile';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
-  const isMobile = useIsMobile();
   
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -29,11 +27,6 @@ const Navbar = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-
-  // Close mobile menu when route changes
-  useEffect(() => {
-    setIsOpen(false);
-  }, [location.pathname]);
   
   const navItems = [
     {
@@ -100,12 +93,7 @@ const Navbar = () => {
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center">
-            <button 
-              onClick={toggleMenu} 
-              className="text-gray-700 focus:outline-none p-2" 
-              aria-label="Toggle menu"
-              aria-expanded={isOpen}
-            >
+            <button onClick={toggleMenu} className="text-gray-700 focus:outline-none" aria-label="Toggle menu">
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
@@ -113,30 +101,12 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu */}
-      <div className={cn(
-        'md:hidden fixed top-[60px] left-0 right-0 bg-white shadow-lg transform transition-transform duration-300 ease-in-out',
-        {
-          'translate-y-0': isOpen,
-          '-translate-y-full': !isOpen
-        }
-      )}>
+      <div className={cn('md:hidden fixed top-[60px] left-0 right-0 bg-white shadow-lg transition-all duration-300 ease-in-out', isOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0')}>
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-          {navItems.map(item => (
-            <Link 
-              key={item.name} 
-              to={item.path} 
-              className={cn(
-                'flex items-center gap-2 px-3 py-2 rounded-md text-base font-medium', 
-                location.pathname === item.path 
-                  ? 'bg-cetpro-blue/10 text-cetpro-blue' 
-                  : 'text-gray-700 hover:bg-gray-50 hover:text-cetpro-blue'
-              )}
-              onClick={() => setIsOpen(false)}
-            >
+          {navItems.map(item => <Link key={item.name} to={item.path} className={cn('flex items-center gap-2 px-3 py-2 rounded-md text-base font-medium', location.pathname === item.path ? 'bg-cetpro-blue/10 text-cetpro-blue' : 'text-gray-700 hover:bg-gray-50 hover:text-cetpro-blue')} onClick={() => setIsOpen(false)}>
               {item.icon}
               {item.name}
-            </Link>
-          ))}
+            </Link>)}
           <div className="pt-2">
             <Button className="w-full bg-cetpro-blue hover:bg-cetpro-darkblue text-white">
               Inscríbete Ahora
