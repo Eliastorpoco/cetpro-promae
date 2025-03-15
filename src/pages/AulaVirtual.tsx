@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -31,6 +32,9 @@ const AulaVirtual = () => {
     { email: "director@cetpropromaemagdalena.edu.pe", password: "Cetpro2024" }
   ];
   
+  // URL institucional del Google Classroom
+  const institutionalClassroomUrl = "https://classroom.google.com/u/1/";
+  
   const platforms = [
     {
       id: 1,
@@ -43,7 +47,7 @@ const AulaVirtual = () => {
       id: 2,
       name: "Google Classroom",
       description: "Acceso restringido solo para estudiantes con correo institucional. Inicie sesión con sus credenciales institucionales.",
-      url: "https://classroom.google.com/",
+      url: institutionalClassroomUrl,
       icon: <Monitor className="h-10 w-10" />,
       requiresAuth: true
     }
@@ -74,7 +78,7 @@ const AulaVirtual = () => {
     );
     
     if (isValid) {
-      window.open(platforms[1].url, "_blank");
+      window.open(institutionalClassroomUrl, "_blank");
       setShowAuthDialog(false);
       form.reset();
     } else {
