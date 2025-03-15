@@ -4,15 +4,22 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown, GraduationCap, Info, BookOpen, Monitor, Bell, Phone } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { cn } from '@/lib/utils';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const isMobile = useIsMobile();
   
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
+  // Close mobile menu on location changes
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location]);
   
   useEffect(() => {
     const handleScroll = () => {
@@ -93,7 +100,12 @@ const Navbar = () => {
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center">
-            <button onClick={toggleMenu} className="text-gray-700 focus:outline-none" aria-label="Toggle menu">
+            <button 
+              onClick={toggleMenu} 
+              className="text-gray-700 focus:outline-none" 
+              aria-label="Toggle menu"
+              aria-expanded={isOpen}
+            >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
@@ -101,12 +113,31 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu */}
-      <div className={cn('md:hidden fixed top-[60px] left-0 right-0 bg-white shadow-lg transition-all duration-300 ease-in-out', isOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0')}>
+      <div 
+        className={cn(
+          'md:hidden fixed inset-x-0 top-[60px] bg-white shadow-lg transition-all duration-300 ease-in-out z-50',
+          {
+            'opacity-100 translate-y-0 pointer-events-auto': isOpen,
+            'opacity-0 -translate-y-full pointer-events-none': !isOpen
+          }
+        )}
+      >
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-          {navItems.map(item => <Link key={item.name} to={item.path} className={cn('flex items-center gap-2 px-3 py-2 rounded-md text-base font-medium', location.pathname === item.path ? 'bg-cetpro-blue/10 text-cetpro-blue' : 'text-gray-700 hover:bg-gray-50 hover:text-cetpro-blue')} onClick={() => setIsOpen(false)}>
+          {navItems.map(item => (
+            <Link 
+              key={item.name} 
+              to={item.path} 
+              className={cn(
+                'flex items-center gap-2 px-3 py-2 rounded-md text-base font-medium', 
+                location.pathname === item.path 
+                  ? 'bg-cetpro-blue/10 text-cetpro-blue' 
+                  : 'text-gray-700 hover:bg-gray-50 hover:text-cetpro-blue'
+              )}
+            >
               {item.icon}
               {item.name}
-            </Link>)}
+            </Link>
+          ))}
           <div className="pt-2">
             <Button className="w-full bg-cetpro-blue hover:bg-cetpro-darkblue text-white">
               Inscríbete Ahora
