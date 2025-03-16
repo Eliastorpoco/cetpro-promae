@@ -151,20 +151,11 @@ const Index = () => {
             </div>
             
             <div className="relative animate-fade-in-right">
-              <div className="relative h-96 rounded-xl overflow-hidden shadow-xl">
+              <div className="relative h-auto rounded-xl overflow-hidden shadow-xl">
                 <img 
-                  src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&q=80" 
-                  alt="Estudiantes en CETPRO" 
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-              </div>
-              
-              <div className="absolute -bottom-6 -left-6 w-48 h-48 rounded-xl overflow-hidden shadow-lg">
-                <img 
-                  src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80" 
-                  alt="Laboratorio de computación" 
-                  className="w-full h-full object-cover"
+                  src="/lovable-uploads/13e4bc39-039b-46e2-96a8-ae596828503b.png" 
+                  alt="Matrícula 2025-I CETPRO PROMAE MAGDALENA" 
+                  className="w-full h-auto object-contain"
                 />
               </div>
             </div>
