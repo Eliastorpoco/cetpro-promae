@@ -184,29 +184,6 @@ const AulaVirtual = () => {
           </p>
         </div>
         
-        <div className="text-center mb-8">
-          <Alert className="mb-6 max-w-3xl mx-auto bg-red-50 border-red-200">
-            <div className="flex items-start gap-2">
-              <AlertTriangle className="h-5 w-5 text-red-600 mt-0.5" />
-              <AlertDescription className="text-sm text-red-700 font-semibold">
-                Importante: Solo se permite el acceso con cuentas institucionales (@cetpropromaemagdalena.edu.pe).
-                No se podrá acceder con cuentas personales de Google.
-              </AlertDescription>
-            </div>
-          </Alert>
-        </div>
-        
-        <Alert className="mb-10 max-w-3xl mx-auto bg-blue-50 border-blue-200">
-          <div className="flex items-start gap-2">
-            <Info className="h-5 w-5 text-blue-600 mt-0.5" />
-            <AlertDescription className="text-sm text-blue-700">
-              <strong>Inicio de sesión único (SSO):</strong> El acceso a todas las herramientas de Google Workspace 
-              requiere autenticación con su cuenta institucional. Esta integración permite navegar entre 
-              aplicaciones sin necesidad de autenticarse nuevamente, utilizando exclusivamente credenciales institucionales.
-            </AlertDescription>
-          </div>
-        </Alert>
-        
         <div className="max-w-5xl mx-auto mb-16">
           <Tabs defaultValue="platforms" className="w-full">
             <TabsList className="w-full grid grid-cols-2 mb-8">
