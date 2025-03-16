@@ -50,6 +50,15 @@ const CourseCard: React.FC<CourseCardProps> = ({
     setImageError(true);
   };
   
+  // Get the fallback image based on the category
+  const getFallbackImage = () => {
+    if (category.toLowerCase().includes('diseño') || category.toLowerCase().includes('ilustración')) {
+      return "/lovable-uploads/12c3d1c7-bc35-4082-8da9-3c821d603190.png";
+    }
+    // Default fallback for other categories
+    return "/lovable-uploads/d119d8c8-3d0e-4410-86df-753c4284cde9.png";
+  };
+  
   return <div className={cn("cetpro-card group overflow-hidden", featured ? "border-cetpro-gold/50" : "", "animate-fade-in")}>
       <div className="relative h-48 -mx-6 -mt-6 mb-6 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
@@ -64,19 +73,20 @@ const CourseCard: React.FC<CourseCardProps> = ({
           </span>
         </div>
         
-        <img 
-          src={image} 
-          alt={title} 
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
-          onError={handleImageError}
-        />
-        {imageError && <div className="absolute inset-0 flex items-center justify-center bg-gray-200">
-            <img 
-              src="/lovable-uploads/d119d8c8-3d0e-4410-86df-753c4284cde9.png"
-              alt="Asistencia Técnica de Producción y Realización Audiovisual"
-              className="w-full h-full object-cover"
-            />
-          </div>}
+        {!imageError ? (
+          <img 
+            src={image} 
+            alt={title} 
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
+            onError={handleImageError}
+          />
+        ) : (
+          <img 
+            src={getFallbackImage()} 
+            alt={title}
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        )}
       </div>
       
       <h3 className="text-xl font-bold text-gray-900 mb-2">{title}</h3>
