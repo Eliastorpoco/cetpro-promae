@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Hero from '@/components/Hero';
 import CourseCard from '@/components/CourseCard';
@@ -95,11 +94,9 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-16"> {/* Added pt-16 for fixed navbar spacing */}
-      {/* Hero Section */}
+    <div className="min-h-screen pt-16">
       <Hero />
 
-      {/* Mission Section */}
       <section className="section-padding bg-gray-50">
         <div className="page-container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -159,7 +156,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Courses Section */}
       <section className="section-padding">
         <div className="page-container">
           <div className="text-center max-w-3xl mx-auto mb-12 animate-fade-in">
@@ -198,7 +194,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Virtual Classroom */}
       <section className="section-padding bg-gradient-to-r from-cetpro-blue to-cetpro-darkblue text-white">
         <div className="page-container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -234,7 +229,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
       <section className="section-padding bg-gray-50">
         <div className="page-container">
           <div className="text-center max-w-3xl mx-auto mb-12 animate-fade-in">
@@ -263,7 +257,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* News Section */}
       <section className="section-padding">
         <div className="page-container">
           <div className="text-center max-w-3xl mx-auto mb-12 animate-fade-in">
@@ -316,7 +309,44 @@ const Index = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
+      <section className="py-12 bg-white">
+        <div className="page-container">
+          <div className="text-center max-w-3xl mx-auto mb-8 animate-fade-in">
+            <div className="inline-block bg-cetpro-blue/10 px-3 py-1 rounded-full text-cetpro-blue text-sm font-medium mb-3">
+              Respaldo Institucional
+            </div>
+            <h2 className="text-2xl font-bold text-gray-900 mb-2">Trabajamos bajo la supervisión de</h2>
+            <p className="text-gray-600">
+              Somos una institución educativa reconocida por el Ministerio de Educación del Perú y operamos bajo la dirección de la UGEL 03.
+            </p>
+          </div>
+          
+          <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16 py-6">
+            <div className="flex flex-col items-center">
+              <div className="h-24 w-auto flex items-center justify-center mb-3">
+                <img 
+                  src="https://www.gob.pe/uploads/institution/logo/396/MINEDU-2022.jpg"
+                  alt="Logo del Ministerio de Educación del Perú" 
+                  className="h-full w-auto object-contain"
+                />
+              </div>
+              <p className="text-sm font-medium text-gray-700">Ministerio de Educación</p>
+            </div>
+            
+            <div className="flex flex-col items-center">
+              <div className="h-24 w-auto flex items-center justify-center mb-3">
+                <img 
+                  src="https://ugel03.gob.pe/wp-content/uploads/2021/02/LOGO-U3-1024x506.png" 
+                  alt="Logo de la UGEL 03" 
+                  className="h-full w-auto object-contain"
+                />
+              </div>
+              <p className="text-sm font-medium text-gray-700">Unidad de Gestión Educativa Local 03</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-16 bg-gradient-to-r from-cetpro-darkblue to-cetpro-blue text-white">
         <div className="page-container">
           <div className="text-center max-w-3xl mx-auto animate-fade-in">
