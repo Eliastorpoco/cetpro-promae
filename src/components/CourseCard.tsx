@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Clock, Users, Calendar, ArrowRight, MapPin, Phone, BookOpen } from 'lucide-react';
 import { Button } from "@/components/ui/button";
@@ -69,8 +70,12 @@ const CourseCard: React.FC<CourseCardProps> = ({
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
           onError={handleImageError}
         />
-        {imageError && <div className="absolute inset-0 flex items-center justify-center bg-gray-200 text-gray-500">
-            Imagen no disponible
+        {imageError && <div className="absolute inset-0 flex items-center justify-center bg-gray-200">
+            <img 
+              src="/lovable-uploads/d119d8c8-3d0e-4410-86df-753c4284cde9.png"
+              alt="Asistencia Técnica de Producción y Realización Audiovisual"
+              className="w-full h-full object-cover"
+            />
           </div>}
       </div>
       
