@@ -42,11 +42,11 @@ const News = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {newsItems.map(item => (
             <Card key={item.id} className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
-              <div className="aspect-video bg-gray-100">
+              <div className="aspect-video bg-gray-100 flex items-center justify-center">
                 <img 
                   src={item.image} 
                   alt={item.title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain max-h-[200px]"
                 />
               </div>
               <CardHeader>
