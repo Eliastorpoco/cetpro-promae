@@ -52,7 +52,7 @@ const AulaVirtual = () => {
       url: googleClassroomUrl,
       icon: <Monitor className="h-10 w-10" />,
       requiresAuth: true,
-      color: "bg-blue-600 hover:bg-blue-700" // Changed from red to blue
+      color: "bg-cetpro-blue hover:bg-cetpro-darkblue" // Changed to CETPRO blue color
     }
   ];
 
@@ -71,7 +71,7 @@ const AulaVirtual = () => {
       description: "Acceda a su correo electrónico institucional para comunicación oficial.",
       url: googleGmailUrl,
       icon: <Mail className="h-10 w-10" />,
-      color: "bg-blue-600 hover:bg-blue-700" // Changed from red to blue
+      color: "bg-cetpro-blue hover:bg-cetpro-darkblue" // Changed to CETPRO blue color
     },
     {
       id: 3,
@@ -79,7 +79,7 @@ const AulaVirtual = () => {
       description: "Almacenamiento en la nube para guardar y compartir archivos educativos.",
       url: googleDriveUrl,
       icon: <ExternalLink className="h-10 w-10" />,
-      color: "bg-blue-600 hover:bg-blue-700"
+      color: "bg-cetpro-blue hover:bg-cetpro-darkblue" // Changed to CETPRO blue color
     },
     {
       id: 4,
