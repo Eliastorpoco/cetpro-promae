@@ -1,8 +1,14 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Clock, Users, Calendar, ArrowRight, MapPin, Phone, BookOpen } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { cn } from '@/lib/utils';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 interface CourseCardProps {
   title: string;
@@ -35,9 +41,11 @@ const CourseCard: React.FC<CourseCardProps> = ({
   modality,
   facebookPostUrl
 }) => {
+  const [dialogOpen, setDialogOpen] = useState(false);
+
   const handleButtonClick = () => {
     if (facebookPostUrl) {
-      window.open(facebookPostUrl, '_blank', 'noopener,noreferrer');
+      setDialogOpen(true);
     }
   };
 
@@ -125,6 +133,28 @@ const CourseCard: React.FC<CourseCardProps> = ({
         <span>Ver Detalles</span>
         <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
       </Button>
+
+      {facebookPostUrl && (
+        <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
+          <DialogContent className="max-w-[550px] max-h-[90vh] overflow-y-auto">
+            <DialogHeader>
+              <DialogTitle className="text-xl">{title}</DialogTitle>
+            </DialogHeader>
+            <div className="w-full overflow-hidden">
+              <iframe 
+                src={`https://www.facebook.com/plugins/post.php?href=${encodeURIComponent(facebookPostUrl)}&show_text=true&width=500`} 
+                width="100%" 
+                height="600" 
+                style={{ border: 'none', overflow: 'hidden' }} 
+                scrolling="no" 
+                frameBorder="0" 
+                allowFullScreen={true} 
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+              ></iframe>
+            </div>
+          </DialogContent>
+        </Dialog>
+      )}
     </div>
   );
 };
