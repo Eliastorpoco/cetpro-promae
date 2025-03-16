@@ -1,6 +1,7 @@
+
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, Facebook } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 // Updated images array with additional specialties
@@ -52,10 +53,16 @@ const Hero = () => {
           <p className="text-lg md:text-xl opacity-90 max-w-2xl mx-auto font-bold text-[#ffddaa]">En el CETPRO PROMAE MAGDALENA formamos profesionales técnicos con las competencias necesarias para destacar en el mundo laboral actual.</p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-            <Button size="lg" className="bg-cetpro-red hover:bg-cetpro-red/90 text-white px-8 group">
-              Inscríbete Ahora
+            <a 
+              href="https://www.facebook.com/cetpro.promaemagdalena" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="inline-flex items-center gap-2 bg-cetpro-red hover:bg-cetpro-red/90 text-white px-8 h-11 rounded-md text-sm font-medium transition-colors group"
+            >
+              <Facebook className="h-4 w-4" />
+              <span>Inscríbete Ahora</span>
               <ChevronRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Button>
+            </a>
             <Button size="lg" variant="outline" className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white border-white/30">
               Conoce Nuestros Cursos
             </Button>

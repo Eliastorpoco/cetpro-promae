@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown, GraduationCap, Info, BookOpen, Monitor, Bell, Phone } from 'lucide-react';
+import { Menu, X, ChevronDown, GraduationCap, Info, BookOpen, Monitor, Bell, Phone, Facebook } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { cn } from '@/lib/utils';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -93,9 +93,15 @@ const Navbar = () => {
           </div>
 
           <div className="hidden md:block">
-            <Button className="bg-cetpro-blue hover:bg-cetpro-darkblue text-white">
+            <a 
+              href="https://www.facebook.com/cetpro.promaemagdalena" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="inline-flex items-center gap-2 bg-cetpro-blue hover:bg-cetpro-darkblue text-white px-4 py-2 rounded-md text-sm font-medium transition-colors"
+            >
+              <Facebook className="h-4 w-4" />
               Inscríbete Ahora
-            </Button>
+            </a>
           </div>
 
           {/* Mobile menu button */}
@@ -139,9 +145,15 @@ const Navbar = () => {
             </Link>
           ))}
           <div className="pt-2">
-            <Button className="w-full bg-cetpro-blue hover:bg-cetpro-darkblue text-white">
+            <a 
+              href="https://www.facebook.com/cetpro.promaemagdalena"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 w-full bg-cetpro-blue hover:bg-cetpro-darkblue text-white px-3 py-2 rounded-md text-base font-medium"
+            >
+              <Facebook className="h-4 w-4" />
               Inscríbete Ahora
-            </Button>
+            </a>
           </div>
         </div>
       </div>

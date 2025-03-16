@@ -4,7 +4,7 @@ import Hero from '@/components/Hero';
 import CourseCard from '@/components/CourseCard';
 import TestimonialCard from '@/components/TestimonialCard';
 import { Button } from "@/components/ui/button";
-import { ChevronRight, GraduationCap, Book, Users, Award, ArrowRight } from 'lucide-react';
+import { ChevronRight, GraduationCap, Book, Users, Award, ArrowRight, Facebook } from 'lucide-react';
 
 const Index = () => {
   const courses = [
@@ -326,10 +326,16 @@ const Index = () => {
             <p className="text-white/90 text-lg mb-8">
               Inscríbete ahora y forma parte de nuestra comunidad educativa. Tu futuro profesional comienza aquí.
             </p>
-            <Button size="lg" className="bg-white text-cetpro-blue hover:bg-gray-100 px-8 group">
+            <a 
+              href="https://www.facebook.com/cetpro.promaemagdalena" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="inline-flex items-center gap-2 bg-white text-cetpro-blue hover:bg-gray-100 px-8 h-11 rounded-md text-sm font-medium transition-colors group"
+            >
+              <Facebook className="h-5 w-5" />
               <span>Inscríbete Ahora</span>
               <ChevronRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-            </Button>
+            </a>
           </div>
         </div>
       </section>
