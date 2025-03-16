@@ -85,8 +85,8 @@ const Hero = () => {
             <div className="flex flex-col items-center">
               <div className="h-12 w-auto flex items-center justify-center">
                 <img 
-                  src="https://ugel03.gob.pe/wp-content/uploads/2021/02/LOGO-U3-1024x506.png" 
-                  alt="Logo de la UGEL 03" 
+                  src="/lovable-uploads/ea4fccd7-b2be-4978-9e14-390456f04dec.png" 
+                  alt="Logo de CETPRO PROMAE MAGDALENA" 
                   className="h-full w-auto object-contain"
                 />
               </div>
