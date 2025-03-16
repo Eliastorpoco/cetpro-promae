@@ -15,7 +15,7 @@ const Index = () => {
       duration: 'Marzo - 2025',
       schedule: 'Lunes a Viernes, 8:30am-1:00pm',
       instructor: 'Lic. Renée Castro Morán',
-      image: '/lovable-uploads/db0dbf85-95ba-4eca-be87-acb637f2f541.png',
+      image: '/lovable-uploads/74ef5958-d8ae-40fb-bfd2-5da90cbcf5e4.png',
       featured: true,
       location: 'Jr. Cuzco 620 Magdalena del Mar',
       contact: 'Tf. 2627395',
@@ -391,3 +391,4 @@ const Index = () => {
 };
 
 export default Index;
+
