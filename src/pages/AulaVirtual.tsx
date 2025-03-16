@@ -52,7 +52,7 @@ const AulaVirtual = () => {
       url: googleClassroomUrl,
       icon: <Monitor className="h-10 w-10" />,
       requiresAuth: true,
-      color: "bg-red-600 hover:bg-red-700"
+      color: "bg-blue-600 hover:bg-blue-700" // Changed from red to blue
     }
   ];
 
@@ -71,7 +71,7 @@ const AulaVirtual = () => {
       description: "Acceda a su correo electrónico institucional para comunicación oficial.",
       url: googleGmailUrl,
       icon: <Mail className="h-10 w-10" />,
-      color: "bg-red-600 hover:bg-red-700"
+      color: "bg-blue-600 hover:bg-blue-700" // Changed from red to blue
     },
     {
       id: 3,
