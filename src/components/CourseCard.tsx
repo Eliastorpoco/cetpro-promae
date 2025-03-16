@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Clock, Users, Calendar, ArrowRight } from 'lucide-react';
+import { Clock, Users, Calendar, ArrowRight, MapPin, Phone, BookOpen } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { cn } from '@/lib/utils';
 
@@ -13,6 +13,10 @@ interface CourseCardProps {
   instructor: string;
   image: string;
   featured?: boolean;
+  location?: string;
+  contact?: string;
+  startDate?: string;
+  modality?: string;
 }
 
 const CourseCard: React.FC<CourseCardProps> = ({
@@ -23,7 +27,11 @@ const CourseCard: React.FC<CourseCardProps> = ({
   schedule,
   instructor,
   image,
-  featured = false
+  featured = false,
+  location,
+  contact,
+  startDate,
+  modality
 }) => {
   return (
     <div className={cn(
@@ -72,6 +80,34 @@ const CourseCard: React.FC<CourseCardProps> = ({
           <Users className="h-4 w-4 mr-2 text-cetpro-blue" />
           <span>{instructor}</span>
         </div>
+
+        {startDate && (
+          <div className="flex items-center text-sm text-gray-500">
+            <BookOpen className="h-4 w-4 mr-2 text-cetpro-blue" />
+            <span>Inicio: {startDate}</span>
+          </div>
+        )}
+        
+        {modality && (
+          <div className="flex items-center text-sm text-gray-500">
+            <BookOpen className="h-4 w-4 mr-2 text-cetpro-blue" />
+            <span>Modalidad: {modality}</span>
+          </div>
+        )}
+        
+        {location && (
+          <div className="flex items-center text-sm text-gray-500">
+            <MapPin className="h-4 w-4 mr-2 text-cetpro-blue" />
+            <span>{location}</span>
+          </div>
+        )}
+        
+        {contact && (
+          <div className="flex items-center text-sm text-gray-500">
+            <Phone className="h-4 w-4 mr-2 text-cetpro-blue" />
+            <span>{contact}</span>
+          </div>
+        )}
       </div>
       
       <Button className="w-full bg-cetpro-blue hover:bg-cetpro-darkblue text-white group">

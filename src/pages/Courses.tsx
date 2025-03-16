@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import CourseCard from '@/components/CourseCard';
 import { Button } from "@/components/ui/button";
@@ -14,7 +13,8 @@ const Courses = () => {
     { id: 'tech', name: 'Tecnología' },
     { id: 'design', name: 'Diseño' },
     { id: 'business', name: 'Administración' },
-    { id: 'gastronomy', name: 'Gastronomía' }
+    { id: 'gastronomy', name: 'Gastronomía' },
+    { id: 'automotive', name: 'Mecánica Automotriz' }
   ];
 
   const courses = [
@@ -28,6 +28,21 @@ const Courses = () => {
       instructor: 'Prof. Carlos Mendoza',
       image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80',
       featured: true
+    },
+    {
+      id: 7,
+      title: 'Mantenimiento Preventivo y Correctivo de Motores de Combustión Interna',
+      description: 'Curso modular de formación continua en mecánica automotriz. Aprende técnicas profesionales de diagnóstico y reparación de motores.',
+      category: 'automotive',
+      duration: 'Marzo - 2025',
+      schedule: 'Lunes a Viernes, 5:30-10:00pm',
+      instructor: 'CETPRO PROMAE MAGDALENA',
+      image: 'https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&q=80',
+      featured: true,
+      location: 'Jr. Cuzco 620 Magdalena del Mar',
+      contact: 'Tf. 2627395',
+      startDate: '17 de Marzo 2025',
+      modality: 'Presencial'
     },
     {
       id: 2,
