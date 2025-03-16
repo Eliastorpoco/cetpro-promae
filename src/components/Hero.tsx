@@ -75,7 +75,7 @@ const Hero = () => {
             <div className="flex flex-col items-center">
               <div className="h-12 w-auto flex items-center justify-center">
                 <img 
-                  src="https://www.gob.pe/uploads/institution/logo/396/MINEDU-2022.jpg"
+                  src="/lovable-uploads/d7cfeb90-b197-4604-9517-7153602cf595.png"
                   alt="Logo del Ministerio de Educación del Perú" 
                   className="h-full w-auto object-contain"
                 />
