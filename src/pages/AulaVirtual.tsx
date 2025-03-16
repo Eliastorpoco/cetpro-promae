@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { ExternalLink, BookOpen, Monitor, Lock, AlertTriangle, Mail, KeyRound } from 'lucide-react';
+import { ExternalLink, BookOpen, Monitor, Lock, AlertTriangle, Mail, KeyRound, Info } from 'lucide-react';
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Alert, AlertDescription } from "@/components/ui/alert";
@@ -36,13 +36,9 @@ const AulaVirtual = () => {
     password: z.string().min(6, "La contraseña debe tener al menos 6 caracteres"),
   });
   
-  // URL base de autenticación de Google
-  const googleAuthUrl = "https://accounts.google.com";
-  
-  // URLs institucionales con el AccountChooser de Google para forzar la autenticación
-  const institutionalClassroomUrl = "https://accounts.google.com/AccountChooser?continue=https://classroom.google.com";
-  // URL para acceder al correo Gmail institucional con AccountChooser
-  const institutionalGmailUrl = "https://accounts.google.com/AccountChooser?continue=https://mail.google.com";
+  // URLs institucionales
+  const institutionalClassroomUrl = "https://classroom.google.com";
+  const institutionalGmailUrl = "https://mail.google.com";
   
   const platforms = [
     {
@@ -94,33 +90,32 @@ const AulaVirtual = () => {
     setIsError(false);
     
     try {
-      // Mostramos mensaje informativo
+      // Preparar la autenticación
       toast({
-        title: "Preparando autenticación",
-        description: "Se abrirá la página de autenticación de Google...",
+        title: "Conectando a Google Classroom Institucional",
+        description: "Redirigiendo al sistema de autenticación institucional...",
         duration: 3000,
       });
       
-      // Construir URL con el correo preseleccionado para Google
+      // Construir URL específica para autenticación institucional
       const encodedEmail = encodeURIComponent(values.email);
-      const authUrl = `${googleAuthUrl}?Email=${encodedEmail}`;
       
-      // Abrimos la página de autenticación de Google con el correo preseleccionado
+      // Usando el flujo correcto de Google para asegurar que se use la cuenta institucional
+      const authUrl = `https://accounts.google.com/AccountChooser/identifier?Email=${encodedEmail}&continue=${encodeURIComponent(institutionalClassroomUrl)}`;
+      
+      // Abrir en una nueva ventana para mantener la sesión
       window.open(authUrl, "_blank");
       
-      // Luego abrimos directamente las URLs con AccountChooser después de un breve retraso
+      // Cerramos el diálogo después de iniciar la autenticación
       setTimeout(() => {
-        // Construir URL con el correo preseleccionado
-        const classroomUrl = `https://accounts.google.com/AccountChooser?Email=${encodedEmail}&continue=https://classroom.google.com`;
-        window.open(classroomUrl, "_blank");
-      }, 1500);
+        setShowAuthDialog(false);
+        form.reset();
+      }, 1000);
       
-      setShowAuthDialog(false);
-      form.reset();
     } catch (error) {
-      console.error("Error de redirección:", error);
+      console.error("Error de autenticación:", error);
       setIsError(true);
-      setErrorMessage("Error al intentar redireccionar. Por favor, intente más tarde.");
+      setErrorMessage("Error al intentar conectar con Google Classroom institucional. Por favor, intente más tarde.");
     } finally {
       setIsAuthenticating(false);
     }
@@ -150,21 +145,32 @@ const AulaVirtual = () => {
           </p>
         </div>
         
-        {/* Botón principal para acceder al correo institucional */}
+        {/* Botón principal para acceder al Google Classroom institucional */}
         <div className="text-center mb-10">
           <Button 
             onClick={openInstitutionalLogin}
             className="bg-cetpro-blue hover:bg-cetpro-darkblue group"
             size="lg"
           >
-            <Mail className="mr-2 h-5 w-5" />
-            Acceder a mi correo institucional
+            <Monitor className="mr-2 h-5 w-5" />
+            Acceder a Google Classroom Institucional
             <ExternalLink className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Button>
           <p className="text-sm text-gray-500 mt-2">
-            Inicie sesión para acceder a su correo institucional y a Google Classroom
+            Inicie sesión con su correo institucional (@cetpropromaemagdalena.edu.pe)
           </p>
         </div>
+        
+        {/* Alerta informativa sobre cuentas institucionales */}
+        <Alert className="mb-10 max-w-3xl mx-auto bg-amber-50 border-amber-200">
+          <div className="flex items-start gap-2">
+            <Info className="h-5 w-5 text-amber-600 mt-0.5" />
+            <AlertDescription className="text-sm text-amber-700">
+              <strong>Importante:</strong> Para acceder a Google Classroom institucional, debes utilizar tu cuenta de correo electrónico oficial 
+              de CETPRO Promae Magdalena. Si tienes problemas para acceder, contacta al área de soporte técnico.
+            </AlertDescription>
+          </div>
+        </Alert>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {platforms.map((platform) => (
@@ -207,11 +213,11 @@ const AulaVirtual = () => {
           <DialogContent className="sm:max-w-md">
             <DialogHeader>
               <DialogTitle className="text-xl font-bold flex items-center gap-2">
-                <Mail className="h-5 w-5 text-cetpro-blue" /> 
-                Correo Institucional
+                <Monitor className="h-5 w-5 text-cetpro-blue" /> 
+                Acceso a Google Classroom Institucional
               </DialogTitle>
               <DialogDescription className="text-sm text-gray-500">
-                Ingrese su correo y contraseña institucional para acceder a los servicios de Google
+                Ingrese su correo y contraseña institucional para acceder a Google Classroom
               </DialogDescription>
             </DialogHeader>
             
@@ -309,14 +315,14 @@ const AulaVirtual = () => {
                     className="w-full bg-cetpro-blue hover:bg-cetpro-darkblue rounded-md h-11 text-md"
                     disabled={isAuthenticating}
                   >
-                    {isAuthenticating ? "Autenticando..." : "Iniciar Sesión"}
+                    {isAuthenticating ? "Conectando..." : "Ingresar a Google Classroom"}
                   </Button>
                 </DialogFooter>
 
                 <div className="text-center text-sm text-gray-500 mt-4">
                   <p>
-                    Se abrirá la página de autenticación de Google con su cuenta 
-                    preseleccionada para iniciar sesión
+                    Se conectará a Google Classroom utilizando tu cuenta institucional.
+                    Asegúrate de usar tus credenciales correctas.
                   </p>
                 </div>
               </form>
@@ -327,7 +333,7 @@ const AulaVirtual = () => {
         <div className="mt-16 bg-gray-50 p-8 rounded-2xl max-w-3xl mx-auto">
           <h2 className="text-2xl font-semibold text-cetpro-blue mb-4">¿Necesitas ayuda?</h2>
           <p className="text-gray-600 mb-6">
-            Si tienes problemas para acceder a las plataformas virtuales o necesitas recuperar tu contraseña, 
+            Si tienes problemas para acceder a Google Classroom o a las plataformas virtuales, 
             contacta a soporte técnico o a tu profesor responsable.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
