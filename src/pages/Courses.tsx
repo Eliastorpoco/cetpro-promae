@@ -118,7 +118,7 @@ const Courses = () => {
         <div className="relative page-container">
           <div className="max-w-3xl mx-auto text-center animate-fade-in">
             <div className="inline-block bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-white text-sm font-medium mb-3">
-              Formación Técnica
+              Auxiliar Técnico
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Nuestra Oferta Formativa</h1>
             <p className="text-xl text-white/90">
