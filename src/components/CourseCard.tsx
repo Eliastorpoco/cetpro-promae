@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Clock, Users, Calendar, ArrowRight, MapPin, Phone, BookOpen } from 'lucide-react';
 import { Button } from "@/components/ui/button";
@@ -60,6 +59,10 @@ const CourseCard: React.FC<CourseCardProps> = ({
     if (titleLower.includes('ilustración digital')) {
       // Using the uploaded image specifically for Ilustración Digital
       return "/lovable-uploads/da44f126-a67d-4b39-bb0c-805fbd7a349c.png";
+    }
+    // Check for Diseño Gráfico Digital title
+    else if (titleLower.includes('diseño gráfico digital')) {
+      return "/lovable-uploads/fc27b8e0-01cf-4bde-a4d8-9c46ebfb82a6.png";
     }
     // Check for construction related title
     else if (titleLower.includes('acabados') || titleLower.includes('edificaciones') || titleLower.includes('obras civiles')) {
