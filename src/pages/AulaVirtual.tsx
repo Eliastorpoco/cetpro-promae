@@ -12,6 +12,13 @@ import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useToast } from "@/hooks/use-toast";
+import { 
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 const AulaVirtual = () => {
   const [showAuthDialog, setShowAuthDialog] = useState(false);
@@ -89,18 +96,23 @@ const AulaVirtual = () => {
     try {
       // Mostramos mensaje informativo
       toast({
-        title: "Redirigiendo a Google",
+        title: "Preparando autenticación",
         description: "Se abrirá la página de autenticación de Google...",
         duration: 3000,
       });
       
-      // Primero abrimos la página de autenticación de Google
-      window.open(googleAuthUrl, "_blank");
+      // Construir URL con el correo preseleccionado para Google
+      const encodedEmail = encodeURIComponent(values.email);
+      const authUrl = `${googleAuthUrl}?Email=${encodedEmail}`;
       
-      // Luego abrimos directamente las URLs con AccountChooser
+      // Abrimos la página de autenticación de Google con el correo preseleccionado
+      window.open(authUrl, "_blank");
+      
+      // Luego abrimos directamente las URLs con AccountChooser después de un breve retraso
       setTimeout(() => {
-        // Abrir Google Classroom después de un breve retraso
-        window.open(institutionalClassroomUrl, "_blank");
+        // Construir URL con el correo preseleccionado
+        const classroomUrl = `https://accounts.google.com/AccountChooser?Email=${encodedEmail}&continue=https://classroom.google.com`;
+        window.open(classroomUrl, "_blank");
       }, 1500);
       
       setShowAuthDialog(false);
@@ -121,6 +133,13 @@ const AulaVirtual = () => {
     form.reset();
   };
 
+  // Lista de dominios de correo institucionales sugeridos para autocompletar
+  const emailDomains = [
+    "@cetpropromaemagdalena.edu.pe",
+    "@estudiantecetpro.edu.pe",
+    "@docente.cetpro.edu.pe"
+  ];
+
   return (
     <div className="min-h-screen pt-20 pb-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -134,7 +153,7 @@ const AulaVirtual = () => {
         {/* Botón principal para acceder al correo institucional */}
         <div className="text-center mb-10">
           <Button 
-            onClick={() => window.open(googleAuthUrl, "_blank")}
+            onClick={openInstitutionalLogin}
             className="bg-cetpro-blue hover:bg-cetpro-darkblue group"
             size="lg"
           >
@@ -173,7 +192,7 @@ const AulaVirtual = () => {
               <CardFooter>
                 <Button 
                   className="w-full bg-cetpro-blue hover:bg-cetpro-darkblue group"
-                  onClick={() => platform.requiresAuth ? window.open(googleAuthUrl, "_blank") : window.open(platform.url, "_blank")}
+                  onClick={() => handlePlatformAccess(platform)}
                 >
                   Acceder
                   <ExternalLink className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -191,6 +210,9 @@ const AulaVirtual = () => {
                 <Mail className="h-5 w-5 text-cetpro-blue" /> 
                 Correo Institucional
               </DialogTitle>
+              <DialogDescription className="text-sm text-gray-500">
+                Ingrese su correo y contraseña institucional para acceder a los servicios de Google
+              </DialogDescription>
             </DialogHeader>
             
             {isError && (
@@ -211,12 +233,47 @@ const AulaVirtual = () => {
                   name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <div className="bg-blue-50 rounded-full overflow-hidden">
-                        <Input 
-                          placeholder="estudiante@cetpropromaemagdalena.edu.pe" 
-                          className="border-0 bg-blue-50 rounded-full h-14 text-md px-6 focus-visible:ring-0 focus-visible:ring-offset-0" 
-                          {...field} 
-                        />
+                      <FormLabel className="flex items-center gap-2 text-md font-semibold">
+                        <Mail className="h-4 w-4" /> Correo Electrónico
+                      </FormLabel>
+                      <div className="flex gap-2">
+                        <FormControl>
+                          <div className="border border-gray-300 rounded-l-full overflow-hidden flex-1">
+                            <Input 
+                              type="text"
+                              placeholder="estudiante" 
+                              className="border-0 rounded-l-full h-14 px-6 focus-visible:ring-0 focus-visible:ring-offset-0" 
+                              value={field.value.split('@')[0] || ''}
+                              onChange={(e) => {
+                                const username = e.target.value;
+                                const domain = field.value.includes('@') 
+                                  ? '@' + field.value.split('@')[1]
+                                  : '@cetpropromaemagdalena.edu.pe';
+                                field.onChange(username + domain);
+                              }}
+                            />
+                          </div>
+                        </FormControl>
+                        <Select 
+                          value={field.value.includes('@') ? '@' + field.value.split('@')[1] : emailDomains[0]}
+                          onValueChange={(domain) => {
+                            const username = field.value.includes('@') 
+                              ? field.value.split('@')[0]
+                              : field.value;
+                            field.onChange(username + domain);
+                          }}
+                        >
+                          <SelectTrigger className="w-[240px] h-14 rounded-r-full border border-gray-300">
+                            <SelectValue placeholder="@cetpropromaemagdalena.edu.pe" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            {emailDomains.map(domain => (
+                              <SelectItem key={domain} value={domain}>
+                                {domain}
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
                       </div>
                       <FormMessage />
                     </FormItem>
@@ -252,14 +309,14 @@ const AulaVirtual = () => {
                     className="w-full bg-cetpro-blue hover:bg-cetpro-darkblue rounded-md h-11 text-md"
                     disabled={isAuthenticating}
                   >
-                    {isAuthenticating ? "Redirigiendo..." : "Iniciar Sesión"}
+                    {isAuthenticating ? "Autenticando..." : "Iniciar Sesión"}
                   </Button>
                 </DialogFooter>
 
                 <div className="text-center text-sm text-gray-500 mt-4">
                   <p>
-                    Se abrirá la página de autenticación de Google para iniciar sesión 
-                    con su cuenta institucional (@cetpropromaemagdalena.edu.pe)
+                    Se abrirá la página de autenticación de Google con su cuenta 
+                    preseleccionada para iniciar sesión
                   </p>
                 </div>
               </form>
