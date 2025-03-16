@@ -43,27 +43,13 @@ const Hero = () => {
 
       <div className="absolute inset-0 bg-gradient-to-r from-cetpro-darkblue/80 to-cetpro-blue/60" />
 
-      {/* Institutional logos - moved to the top */}
-      <div className="absolute top-4 left-1/2 transform -translate-x-1/2 flex flex-row justify-center items-center gap-6 bg-white/10 backdrop-blur-sm p-3 rounded-lg z-10">
-        <div className="flex flex-col items-center">
-          <div className="h-12 w-auto flex items-center justify-center">
-            <img 
-              src="/lovable-uploads/b992c50e-f8ff-4d5f-a9bb-78178c16c177.png"
-              alt="Logo del Ministerio de Educación del Perú" 
-              className="h-full w-auto object-contain"
-            />
-          </div>
-        </div>
-        <div className="h-8 w-0.5 bg-white/30"></div>
-        <div className="flex flex-col items-center">
-          <div className="h-12 w-auto flex items-center justify-center">
-            <img 
-              src="/lovable-uploads/ea4fccd7-b2be-4978-9e14-390456f04dec.png" 
-              alt="Logo de CETPRO PROMAE MAGDALENA" 
-              className="h-full w-auto object-contain"
-            />
-          </div>
-        </div>
+      {/* Combined institutional logo banner */}
+      <div className="absolute top-4 left-1/2 transform -translate-x-1/2 bg-white/10 backdrop-blur-sm p-2 rounded-lg z-10">
+        <img 
+          src="/lovable-uploads/9e8589ae-1df2-4676-8918-2d70fcd8d7f5.png"
+          alt="Logo Ministerio de Educación y CETPRO PROMAE" 
+          className="h-14 w-auto object-contain"
+        />
       </div>
 
       <div className={cn("absolute inset-0 flex flex-col justify-center items-center text-white p-6 transition-opacity duration-1000", loading ? "opacity-0" : "opacity-100")}>
