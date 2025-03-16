@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Hero from '@/components/Hero';
 import CourseCard from '@/components/CourseCard';
@@ -358,7 +357,7 @@ const Index = () => {
             <div className="flex flex-col items-center">
               <div className="h-24 w-auto flex items-center justify-center mb-3">
                 <img 
-                  src="https://ugel03.gob.pe/wp-content/uploads/2021/02/LOGO-U3-1024x506.png" 
+                  src="/lovable-uploads/b5a8722e-e980-45d6-966f-8b764e81b8ec.png" 
                   alt="Logo de la UGEL 03" 
                   className="h-full w-auto object-contain"
                 />
