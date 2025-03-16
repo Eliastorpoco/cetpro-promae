@@ -69,6 +69,29 @@ const Hero = () => {
               </Button>
             </Link>
           </div>
+
+          {/* Institutional logos */}
+          <div className="absolute bottom-32 left-1/2 transform -translate-x-1/2 flex flex-row justify-center items-center gap-6 mt-8 bg-white/10 backdrop-blur-sm p-3 rounded-lg">
+            <div className="flex flex-col items-center">
+              <div className="h-12 w-auto flex items-center justify-center">
+                <img 
+                  src="https://www.gob.pe/uploads/institution/logo/396/MINEDU-2022.jpg"
+                  alt="Logo del Ministerio de Educación del Perú" 
+                  className="h-full w-auto object-contain"
+                />
+              </div>
+            </div>
+            <div className="h-8 w-0.5 bg-white/30"></div>
+            <div className="flex flex-col items-center">
+              <div className="h-12 w-auto flex items-center justify-center">
+                <img 
+                  src="https://ugel03.gob.pe/wp-content/uploads/2021/02/LOGO-U3-1024x506.png" 
+                  alt="Logo de la UGEL 03" 
+                  className="h-full w-auto object-contain"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
