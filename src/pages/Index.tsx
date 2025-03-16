@@ -31,7 +31,7 @@ const Index = () => {
       duration: 'Programa de Formación Continua',
       schedule: 'Lunes - Miércoles - Viernes (8:30am-1:00pm)',
       instructor: 'Lic. Hilda Alca León',
-      image: '/lovable-uploads/cf1f97b9-15b4-4cff-bbfc-365e6b6607fb.png',
+      image: '/lovable-uploads/4dbadc65-ce01-413d-86ef-b8183e78dd28.png',
       featured: true,
       location: 'Jr. Cuzco 620 Magdalena del Mar',
       contact: 'Tf. 262-7395',
