@@ -25,7 +25,7 @@ const News = () => {
       title: "Feria de Emprendimiento 2025",
       date: "5 de abril, 2025",
       content: "Participa en nuestra Feria de Emprendimiento anual donde nuestros alumnos expondrán sus proyectos y servicios a la comunidad.",
-      image: "/placeholder.svg",
+      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80",
     },
   ];
 
