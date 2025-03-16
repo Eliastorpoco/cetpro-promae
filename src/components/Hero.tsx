@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { ChevronRight, Facebook } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { Link } from 'react-router-dom';
 
 const images = ["https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&q=80",
 // Welding image
@@ -62,9 +63,11 @@ const Hero = () => {
               <span>Facebook</span>
               <ChevronRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </a>
-            <Button size="lg" variant="outline" className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white border-white/30">
-              Conoce Nuestros Cursos
-            </Button>
+            <Link to="/oferta-formativa">
+              <Button size="lg" variant="outline" className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white border-white/30">
+                Conoce Nuestros Cursos
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
