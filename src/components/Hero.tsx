@@ -43,11 +43,16 @@ const Hero = () => {
 
       <div className="absolute inset-0 bg-gradient-to-r from-cetpro-darkblue/80 to-cetpro-blue/60" />
 
-      {/* Ministry of Education and UGEL 03 logo banner */}
-      <div className="absolute top-4 left-1/2 transform -translate-x-1/2 bg-white/10 backdrop-blur-sm p-2 rounded-lg z-10">
+      {/* Ministry of Education, UGEL 03 and CETPRO PROMAE logos banner */}
+      <div className="absolute top-4 left-1/2 transform -translate-x-1/2 bg-white/10 backdrop-blur-sm p-2 rounded-lg z-10 flex items-center gap-4">
         <img 
           src="/lovable-uploads/571af9aa-165e-4176-8c72-dbc808adab16.png"
           alt="Logo Ministerio de Educación y UGEL 03" 
+          className="h-14 w-auto object-contain"
+        />
+        <img 
+          src="/lovable-uploads/4cb9c13e-f59b-4926-87f6-97248df9bec7.png"
+          alt="Logo CETPRO PROMAE MAGDALENA" 
           className="h-14 w-auto object-contain"
         />
       </div>
