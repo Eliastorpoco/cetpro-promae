@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { 
   Table, 
@@ -725,4 +726,628 @@ const TrainingOfferings = () => {
       horas: '528',
       dias: 'L a V',
       fechaInicio: '17/03',
-      fechaFin: '25/
+      fechaFin: '25/07',
+      turno: 'N'
+    },
+    {
+      id: 37,
+      planEstudio: 'CONFECCIÓN DE ARTÍCULOS DE CUERO Y MARROQUINERÍA',
+      docente: 'TURPO COLQUI Fanny',
+      modulo: 'APARADO Y ACABADOS EN ARTÍCULOS DE CUERO Y MARROQUINERÍA',
+      horas: '528',
+      dias: 'L a V',
+      fechaInicio: '11/08',
+      fechaFin: '19/12',
+      turno: 'N'
+    },
+    {
+      id: 38,
+      planEstudio: 'PRODUCCIÓN DE TEJEDURÍA',
+      docente: 'UM MUÑOZ Iván Emilia',
+      modulo: 'TÉCNICAS BÁSICAS DE TEJIDO',
+      horas: '528',
+      dias: 'L a V',
+      fechaInicio: '17/03',
+      fechaFin: '25/07',
+      turno: 'N'
+    },
+    {
+      id: 39,
+      planEstudio: 'PRODUCCIÓN DE TEJEDURÍA',
+      docente: 'UM MUÑOZ Iván Emilia',
+      modulo: 'PRODUCCIÓN DE PRENDAS TEJIDAS',
+      horas: '528',
+      dias: 'L a V',
+      fechaInicio: '11/08',
+      fechaFin: '19/12',
+      turno: 'N'
+    },
+    {
+      id: 40,
+      planEstudio: 'ALBAÑILERÍA',
+      docente: 'ORTEGA CABELLO JAIME LUCIANO',
+      modulo: 'LEVANTAMIENTO Y CONSTRUCCIÓN DE MUROS DE ALBAÑILERÍA',
+      horas: '528',
+      dias: 'L a V',
+      fechaInicio: '17/03',
+      fechaFin: '25/07',
+      turno: 'M'
+    },
+    {
+      id: 41,
+      planEstudio: 'ALBAÑILERÍA',
+      docente: 'ORTEGA CABELLO JAIME LUCIANO',
+      modulo: 'REVESTIMIENTO Y PINTADO EN EDIFICACIONES',
+      horas: '528',
+      dias: 'L a V',
+      fechaInicio: '11/08',
+      fechaFin: '19/12',
+      turno: 'M'
+    },
+    {
+      id: 42,
+      planEstudio: 'ACABADOS EN EDIFICACIONES Y OBRAS CIVILES',
+      docente: 'ABANTO CHAVEZ Helder',
+      modulo: 'REVESTIMIENTO DE SUPERFICIES EN EDIFICACIONES Y OBRAS CIVILES',
+      horas: '528',
+      dias: 'L a V',
+      fechaInicio: '17/03',
+      fechaFin: '25/07',
+      turno: 'N'
+    },
+    {
+      id: 43,
+      planEstudio: 'ACABADOS EN EDIFICACIONES Y OBRAS CIVILES',
+      docente: 'ABANTO CHAVEZ Helder',
+      modulo: 'PINTADO DE SUPERFICIES EN EDIFICACIONES Y OBRAS CIVILES',
+      horas: '528',
+      dias: 'L a V',
+      fechaInicio: '11/08',
+      fechaFin: '19/12',
+      turno: 'N'
+    },
+    {
+      id: 44,
+      planEstudio: 'PELUQUERÍA Y BARBERÍA',
+      docente: 'VILLAFANA FAJARDO Lucía Beatriz',
+      modulo: 'CORTE DE CABELLO, BARBA Y PEINADO',
+      horas: '528',
+      dias: 'L a V',
+      fechaInicio: '17/03',
+      fechaFin: '25/07',
+      turno: 'M'
+    },
+    {
+      id: 45,
+      planEstudio: 'PELUQUERÍA Y BARBERÍA',
+      docente: 'VILLAFANA FAJARDO Lucía Beatriz',
+      modulo: 'TRATAMIENTO CAPILAR, COLORACIÓN, ONDULACIÓN Y LACEADOS',
+      horas: '528',
+      dias: 'L a V',
+      fechaInicio: '11/08',
+      fechaFin: '19/12',
+      turno: 'M'
+    },
+    {
+      id: 46,
+      planEstudio: 'PELUQUERÍA Y BARBERÍA',
+      docente: '',
+      modulo: 'CORTE DE CABELLO, BARBA Y PEINADO',
+      horas: '528',
+      dias: 'L a V',
+      fechaInicio: '17/03',
+      fechaFin: '25/07',
+      turno: 'T'
+    },
+    {
+      id: 47,
+      planEstudio: 'PELUQUERÍA Y BARBERÍA',
+      docente: '',
+      modulo: 'TRATAMIENTO CAPILAR, COLORACIÓN, ONDULACIÓN Y LACEADOS',
+      horas: '528',
+      dias: 'L a V',
+      fechaInicio: '11/08',
+      fechaFin: '19/12',
+      turno: 'T'
+    },
+    {
+      id: 48,
+      planEstudio: 'PELUQUERÍA Y BARBERÍA',
+      docente: '',
+      modulo: 'CORTE DE CABELLO, BARBA Y PEINADO',
+      horas: '528',
+      dias: 'L a V',
+      fechaInicio: '17/03',
+      fechaFin: '25/07',
+      turno: 'N'
+    },
+    {
+      id: 49,
+      planEstudio: 'PELUQUERÍA Y BARBERÍA',
+      docente: '',
+      modulo: 'TRATAMIENTO CAPILAR, COLORACIÓN, ONDULACIÓN Y LACEADOS',
+      horas: '528',
+      dias: 'L a V',
+      fechaInicio: '11/08',
+      fechaFin: '19/12',
+      turno: 'N'
+    },
+    {
+      id: 50,
+      planEstudio: 'CARPINTERÍA EN MADERA',
+      docente: 'CONTRERAS PACHECO Zósimo Platón',
+      modulo: 'CARPINTERÍA EN MADERA',
+      horas: '528',
+      dias: 'L a V',
+      fechaInicio: '17/03',
+      fechaFin: '25/07',
+      turno: 'M'
+    },
+    {
+      id: 51,
+      planEstudio: 'CARPINTERÍA EN MADERA',
+      docente: 'CONTRERAS PACHECO Zósimo Platón',
+      modulo: 'CARPINTERÍA EN TABLEROS Y AGLOMERADOS',
+      horas: '528',
+      dias: 'L a V',
+      fechaInicio: '11/08',
+      fechaFin: '19/12',
+      turno: 'M'
+    }
+  ];
+
+  // Filter courses based on search term and selected category
+  const filteredCourses = courseModules.filter(course => {
+    const matchesCategory = selectedCategory === 'all' || course.planEstudio === selectedCategory;
+    const matchesSearch = 
+      course.modulo.toLowerCase().includes(searchTerm.toLowerCase()) || 
+      course.planEstudio.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      (course.docente && course.docente.toLowerCase().includes(searchTerm.toLowerCase()));
+    
+    return matchesCategory && matchesSearch;
+  });
+
+  // Group courses by plan de estudio for better organization
+  const groupedCourses = filteredCourses.reduce((acc, course) => {
+    if (!acc[course.planEstudio]) {
+      acc[course.planEstudio] = [];
+    }
+    acc[course.planEstudio].push(course);
+    return acc;
+  }, {} as Record<string, CourseModule[]>);
+
+  // Helper to get turn badge color
+  const getTurnoBadge = (turno: 'M' | 'T' | 'N') => {
+    switch(turno) {
+      case 'M': return 'bg-yellow-100 text-yellow-800 border-yellow-200';
+      case 'T': return 'bg-blue-100 text-blue-800 border-blue-200';
+      case 'N': return 'bg-purple-100 text-purple-800 border-purple-200';
+      default: return 'bg-gray-100 text-gray-800 border-gray-200';
+    }
+  };
+
+  // Helper to get turno name
+  const getTurnoName = (turno: 'M' | 'T' | 'N') => {
+    switch(turno) {
+      case 'M': return 'Mañana';
+      case 'T': return 'Tarde';
+      case 'N': return 'Noche';
+      default: return 'Desconocido';
+    }
+  };
+
+  // Helper to get icon for module type
+  const getModuleIcon = (iconType: string) => {
+    switch(iconType) {
+      case 'design': return <Palette className="h-10 w-10 text-indigo-500" />;
+      case 'computer': return <Laptop className="h-10 w-10 text-blue-500" />;
+      case 'welding': return <Zap className="h-10 w-10 text-amber-500" />;
+      case 'electric': return <Zap className="h-10 w-10 text-yellow-500" />;
+      case 'phone': return <Cpu className="h-10 w-10 text-green-500" />;
+      case 'mechanic': return <Wrench className="h-10 w-10 text-red-500" />;
+      default: return <Book className="h-10 w-10 text-gray-500" />;
+    }
+  };
+
+  // Group formación continua courses by family
+  const groupedContinuaCourses = formacionContinuaCourses.reduce((acc, course) => {
+    if (!acc[course.familiaProductiva]) {
+      acc[course.familiaProductiva] = [];
+    }
+    acc[course.familiaProductiva].push(course);
+    return acc;
+  }, {} as Record<string, FormacionContinuaCourse[]>);
+
+  // No results component
+  const NoResults = () => (
+    <div className="text-center py-16 animate-fade-in">
+      <div className="inline-flex items-center justify-center h-24 w-24 rounded-full bg-gray-100 mb-6">
+        <Book className="h-12 w-12 text-gray-400" />
+      </div>
+      <h3 className="text-2xl font-bold text-gray-900 mb-2">No se encontraron módulos</h3>
+      <p className="text-gray-600 mb-6">
+        No hay módulos que coincidan con tu búsqueda. Intenta con otros términos o categorías.
+      </p>
+      <Button 
+        variant="outline" 
+        className="border-cetpro-blue text-cetpro-blue hover:bg-cetpro-blue hover:text-white"
+        onClick={() => {
+          setSearchTerm('');
+          setSelectedCategory('all');
+        }}
+      >
+        Ver todos los módulos
+      </Button>
+    </div>
+  );
+
+  return (
+    <div className="pt-16 min-h-screen">
+      {/* Hero Section */}
+      <section className="relative py-20 bg-gradient-to-r from-cetpro-blue to-cetpro-darkblue text-white overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute inset-0" style={{ 
+            backgroundImage: 'url("https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&q=80")',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center'
+          }} />
+        </div>
+        
+        <div className="relative page-container">
+          <div className="max-w-3xl mx-auto text-center animate-fade-in">
+            <div className="inline-block bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-white text-sm font-medium mb-3">
+              Plan de Estudios
+            </div>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Oferta Formativa</h1>
+            <p className="text-xl text-white/90">
+              Conoce nuestros módulos formativos y programas de estudio
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Program Type Selector */}
+      <section className="py-6 bg-white border-b">
+        <div className="page-container">
+          <div className="flex justify-center gap-4 animate-fade-in">
+            <Button
+              variant={activeTab === 'regular' ? 'default' : 'outline'}
+              className={cn(
+                "text-base px-6",
+                activeTab === 'regular' 
+                  ? "bg-cetpro-blue hover:bg-cetpro-darkblue" 
+                  : "border-gray-300 text-gray-700 hover:bg-gray-50"
+              )}
+              onClick={() => setActiveTab('regular')}
+            >
+              Programas Regulares
+            </Button>
+            <Button
+              variant={activeTab === 'continua' ? 'default' : 'outline'}
+              className={cn(
+                "text-base px-6",
+                activeTab === 'continua' 
+                  ? "bg-cetpro-blue hover:bg-cetpro-darkblue" 
+                  : "border-gray-300 text-gray-700 hover:bg-gray-50"
+              )}
+              onClick={() => setActiveTab('continua')}
+            >
+              Formación Continua
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {activeTab === 'regular' && (
+        <>
+          {/* Search and Filter */}
+          <section className="py-8 bg-white border-b">
+            <div className="page-container">
+              <div className="flex flex-col md:flex-row gap-4 items-center justify-between animate-fade-in">
+                <div className="w-full md:w-auto flex-1 relative">
+                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+                  <input
+                    type="text"
+                    placeholder="Buscar por módulo, programa o docente..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="w-full pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-cetpro-blue focus:border-transparent"
+                  />
+                </div>
+                
+                <div className="w-full md:w-auto flex gap-2 flex-wrap justify-center">
+                  <div className="flex items-center mr-2">
+                    <Filter className="h-5 w-5 mr-1 text-cetpro-blue" />
+                    <span className="text-sm font-medium">Filtrar por programa:</span>
+                  </div>
+                  
+                  <div className="flex flex-wrap gap-2 max-w-xl">
+                    {categories.slice(0, 5).map((category) => (
+                      <Button
+                        key={category.id}
+                        variant={selectedCategory === category.id ? "default" : "outline"}
+                        className={cn(
+                          "text-xs",
+                          selectedCategory === category.id
+                            ? "bg-cetpro-blue hover:bg-cetpro-darkblue"
+                            : "border-gray-300 text-gray-700 hover:bg-gray-50"
+                        )}
+                        onClick={() => setSelectedCategory(category.id)}
+                      >
+                        {category.name}
+                      </Button>
+                    ))}
+                    {selectedCategory === 'all' && (
+                      <Button
+                        variant="outline"
+                        className="text-xs border-cetpro-gold text-cetpro-gold hover:bg-cetpro-gold/10"
+                      >
+                        Más filtros...
+                      </Button>
+                    )}
+                  </div>
+                </div>
+              </div>
+
+              {/* Legend for shifts */}
+              <div className="flex flex-wrap gap-4 mt-6 justify-center">
+                <div className="flex items-center">
+                  <span className={cn("inline-block w-3 h-3 rounded-full mr-2", "bg-yellow-400")}></span>
+                  <span className="text-sm text-gray-600">Mañana</span>
+                </div>
+                <div className="flex items-center">
+                  <span className={cn("inline-block w-3 h-3 rounded-full mr-2", "bg-blue-400")}></span>
+                  <span className="text-sm text-gray-600">Tarde</span>
+                </div>
+                <div className="flex items-center">
+                  <span className={cn("inline-block w-3 h-3 rounded-full mr-2", "bg-purple-400")}></span>
+                  <span className="text-sm text-gray-600">Noche</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Course Modules Tables */}
+          <section className="section-padding bg-gray-50">
+            <div className="page-container">
+              {Object.keys(groupedCourses).length > 0 ? (
+                <div className="space-y-12 animate-fade-in">
+                  {Object.entries(groupedCourses).map(([planEstudio, courses]) => (
+                    <Card key={planEstudio} className="overflow-hidden">
+                      <CardHeader className="bg-gradient-to-r from-cetpro-blue/10 to-transparent">
+                        <CardTitle className="text-xl text-gray-900">{planEstudio}</CardTitle>
+                        <CardDescription>
+                          {courses.length} módulos disponibles
+                        </CardDescription>
+                      </CardHeader>
+                      <CardContent className="p-0">
+                        <div className="overflow-x-auto">
+                          <Table>
+                            <TableHeader>
+                              <TableRow className="bg-gray-50">
+                                <TableHead>Módulo</TableHead>
+                                <TableHead>Docente</TableHead>
+                                <TableHead className="text-center">Horas</TableHead>
+                                <TableHead className="text-center">Días</TableHead>
+                                <TableHead className="text-center">Periodo</TableHead>
+                                <TableHead className="text-center">Turno</TableHead>
+                              </TableRow>
+                            </TableHeader>
+                            <TableBody>
+                              {courses.map((course) => (
+                                <TableRow key={course.id} className="hover:bg-gray-50">
+                                  <TableCell className="font-medium">
+                                    <div className="max-w-md">
+                                      {course.modulo}
+                                    </div>
+                                  </TableCell>
+                                  <TableCell>
+                                    {course.docente || "Por asignar"}
+                                  </TableCell>
+                                  <TableCell className="text-center">
+                                    <div className="flex items-center justify-center">
+                                      <Clock className="h-4 w-4 mr-1 text-gray-500" />
+                                      {course.horas}
+                                    </div>
+                                  </TableCell>
+                                  <TableCell className="text-center">
+                                    <div className="flex items-center justify-center">
+                                      <Calendar className="h-4 w-4 mr-1 text-gray-500" />
+                                      {course.dias}
+                                    </div>
+                                  </TableCell>
+                                  <TableCell className="text-center">
+                                    {course.fechaInicio} - {course.fechaFin}
+                                  </TableCell>
+                                  <TableCell className="text-center">
+                                    <span className={cn(
+                                      "inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border",
+                                      getTurnoBadge(course.turno)
+                                    )}>
+                                      {getTurnoName(course.turno)}
+                                    </span>
+                                  </TableCell>
+                                </TableRow>
+                              ))}
+                            </TableBody>
+                          </Table>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              ) : (
+                <NoResults />
+              )}
+            </div>
+          </section>
+        </>
+      )}
+
+      {activeTab === 'continua' && (
+        <section className="section-padding bg-gray-50">
+          <div className="page-container">
+            <div className="space-y-12 animate-fade-in">
+              {Object.entries(groupedContinuaCourses).map(([familyName, courses]) => (
+                <Card key={familyName} className="overflow-hidden">
+                  <CardHeader className="bg-gradient-to-r from-cetpro-blue/10 to-transparent">
+                    <CardTitle className="text-xl text-gray-900 flex items-center">
+                      {familyName === "COMPUTACIÓN E INFORMÁTICA" && <Laptop className="h-5 w-5 mr-2 text-blue-500" />}
+                      {familyName === "SOLDADURA" && <Zap className="h-5 w-5 mr-2 text-amber-500" />}
+                      {familyName === "ELECTRICIDAD Y ELECTRÓNICA" && <Zap className="h-5 w-5 mr-2 text-yellow-500" />}
+                      {familyName === "MECÁNICA Y MOTORES" && <Wrench className="h-5 w-5 mr-2 text-red-500" />}
+                      {familyName}
+                    </CardTitle>
+                    <CardDescription>
+                      {courses.length} módulos disponibles
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="p-0">
+                    <div className="overflow-x-auto">
+                      <Table>
+                        <TableHeader>
+                          <TableRow className="bg-gray-50">
+                            <TableHead>Módulo</TableHead>
+                            <TableHead>Docente</TableHead>
+                            <TableHead className="text-center">Horas</TableHead>
+                            <TableHead className="text-center">Días</TableHead>
+                            <TableHead className="text-center">Periodo</TableHead>
+                            <TableHead className="text-center">Turno</TableHead>
+                          </TableRow>
+                        </TableHeader>
+                        <TableBody>
+                          {courses.map((course) => (
+                            <TableRow key={course.id} className="hover:bg-gray-50">
+                              <TableCell className="font-medium">
+                                <div className="max-w-md">
+                                  {course.modulo}
+                                  {course.convenio && 
+                                    <span className="ml-2 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 border border-green-200">
+                                      Convenio
+                                    </span>
+                                  }
+                                </div>
+                              </TableCell>
+                              <TableCell>
+                                {course.docente}
+                              </TableCell>
+                              <TableCell className="text-center">
+                                <div className="flex items-center justify-center">
+                                  <Clock className="h-4 w-4 mr-1 text-gray-500" />
+                                  {course.horas}
+                                </div>
+                              </TableCell>
+                              <TableCell className="text-center">
+                                <div className="flex items-center justify-center">
+                                  <Calendar className="h-4 w-4 mr-1 text-gray-500" />
+                                  {course.dias}
+                                </div>
+                              </TableCell>
+                              <TableCell className="text-center">
+                                {course.fechaInicio} - {course.fechaFin}
+                              </TableCell>
+                              <TableCell className="text-center">
+                                <span className={cn(
+                                  "inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border",
+                                  getTurnoBadge(course.turno)
+                                )}>
+                                  {getTurnoName(course.turno)}
+                                </span>
+                              </TableCell>
+                            </TableRow>
+                          ))}
+                        </TableBody>
+                      </Table>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+              {formacionContinuaCourses.slice(0, 6).map((course) => (
+                <CourseCard
+                  key={course.id}
+                  title={course.modulo}
+                  description={`Módulo de formación continua en ${course.familiaProductiva.toLowerCase()}.`}
+                  category={course.familiaProductiva}
+                  duration={`${course.horas} HRS`}
+                  schedule={`${course.dias}, ${getTurnoName(course.turno)}`}
+                  instructor={course.docente}
+                  image={course.iconType === 'design' ? "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80" :
+                        course.iconType === 'computer' ? "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80" :
+                        course.iconType === 'welding' ? "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?auto=format&fit=crop&q=80" :
+                        course.iconType === 'electric' ? "https://images.unsplash.com/photo-1544724569-5f74be9d2525?auto=format&fit=crop&q=80" :
+                        course.iconType === 'phone' ? "https://images.unsplash.com/photo-1565849904461-04a58ad377e0?auto=format&fit=crop&q=80" :
+                        "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&q=80"}
+                  featured={course.id % 5 === 0}
+                  location="Jr. Cuzco 620 Magdalena del Mar"
+                  contact="Tf. 2627395"
+                  startDate={course.fechaInicio}
+                  modality="Presencial"
+                  facebookPostUrl="https://www.facebook.com/cetpro.promaemagdalena/posts/pfbid02qWLqPr8NB3kFk5WQBwF5t1K6wueYXuCmNod768JhWqcvebw1ASDHayU8ijAtGry4l"
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Info Section */}
+      <section className="py-16 bg-white">
+        <div className="page-container">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center text-lg">
+                  <Clock className="h-5 w-5 mr-2 text-cetpro-blue" />
+                  Horarios de Atención
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">
+                  Lunes a Viernes: 8:00 am - 6:00 pm<br />
+                  Sábados: 8:00 am - 12:00 pm
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center text-lg">
+                  <Calendar className="h-5 w-5 mr-2 text-cetpro-blue" />
+                  Periodos de Matrícula
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">
+                  Primer Periodo: Del 15 de Febrero al 10 de Marzo<br />
+                  Segundo Periodo: Del 15 de Julio al 10 de Agosto
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center text-lg">
+                  <Users className="h-5 w-5 mr-2 text-cetpro-blue" />
+                  Requisitos
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">
+                  - DNI o Carnet de Extranjería<br />
+                  - Certificado de estudios<br />
+                  - 2 fotografías tamaño carnet<br />
+                  - Pago de matrícula
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default TrainingOfferings;
