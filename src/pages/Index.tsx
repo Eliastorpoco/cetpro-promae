@@ -37,6 +37,21 @@ const Index = () => {
       schedule: 'Sábados, 9am-1pm',
       instructor: 'Prof. Luis Paredes',
       image: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&q=80'
+    },
+    {
+      id: 7,
+      title: 'Mantenimiento Preventivo y Correctivo de Motores de Combustión Interna',
+      description: 'Curso modular de formación continua en mecánica automotriz. Aprende técnicas profesionales de diagnóstico y reparación de motores.',
+      category: 'Mecánica Automotriz',
+      duration: 'Marzo - 2025',
+      schedule: 'Lunes a Viernes, 5:30-10:00pm',
+      instructor: 'CETPRO PROMAE MAGDALENA',
+      image: 'https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&q=80',
+      featured: true,
+      location: 'Jr. Cuzco 620 Magdalena del Mar',
+      contact: 'Tf. 2627395',
+      startDate: '17 de Marzo 2025',
+      modality: 'Presencial'
     }
   ];
 
@@ -181,6 +196,10 @@ const Index = () => {
                 instructor={course.instructor}
                 image={course.image}
                 featured={course.featured}
+                location={course.location}
+                contact={course.contact}
+                startDate={course.startDate}
+                modality={course.modality}
               />
             ))}
           </div>
