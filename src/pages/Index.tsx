@@ -85,7 +85,7 @@ const Index = () => {
   const stats = [
     { number: '50+', label: 'Años de experiencia', icon: <Award /> },
     { number: '30+', label: 'Cursos especializados', icon: <Book /> },
-    { number: '50+', label: 'Profesores calificados', icon: <GraduationCap /> },
+    { number: '30+', label: 'Profesores calificados', icon: <GraduationCap /> },
     { number: '2000+', label: 'Estudiantes graduados', icon: <Users /> }
   ];
 
