@@ -17,6 +17,7 @@ interface CourseCardProps {
   contact?: string;
   startDate?: string;
   modality?: string;
+  facebookPostUrl?: string;
 }
 
 const CourseCard: React.FC<CourseCardProps> = ({
@@ -31,8 +32,15 @@ const CourseCard: React.FC<CourseCardProps> = ({
   location,
   contact,
   startDate,
-  modality
+  modality,
+  facebookPostUrl
 }) => {
+  const handleButtonClick = () => {
+    if (facebookPostUrl) {
+      window.open(facebookPostUrl, '_blank', 'noopener,noreferrer');
+    }
+  };
+
   return (
     <div className={cn(
       "cetpro-card group overflow-hidden",
@@ -110,7 +118,10 @@ const CourseCard: React.FC<CourseCardProps> = ({
         )}
       </div>
       
-      <Button className="w-full bg-cetpro-blue hover:bg-cetpro-darkblue text-white group">
+      <Button 
+        className="w-full bg-cetpro-blue hover:bg-cetpro-darkblue text-white group"
+        onClick={handleButtonClick}
+      >
         <span>Ver Detalles</span>
         <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
       </Button>
