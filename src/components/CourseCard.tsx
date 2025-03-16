@@ -50,9 +50,14 @@ const CourseCard: React.FC<CourseCardProps> = ({
     setImageError(true);
   };
   
-  // Get the fallback image based on the category
+  // Get the fallback image based on the category or title
   const getFallbackImage = () => {
-    if (category.toLowerCase().includes('diseño') || category.toLowerCase().includes('ilustración')) {
+    // Check specifically for Ilustración Digital title
+    if (title.toLowerCase().includes('ilustración digital')) {
+      return "/lovable-uploads/d0395512-9c30-4863-9fd3-55704378e532.png";
+    }
+    // Check for other design related categories
+    else if (category.toLowerCase().includes('diseño') || category.toLowerCase().includes('ilustración')) {
       return "/lovable-uploads/12c3d1c7-bc35-4082-8da9-3c821d603190.png";
     }
     // Default fallback for other categories
