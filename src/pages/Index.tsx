@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Hero from '@/components/Hero';
 import CourseCard from '@/components/CourseCard';
@@ -25,13 +26,19 @@ const Index = () => {
     },
     {
       id: 2,
-      title: 'Administración de Redes',
-      description: 'Domina la configuración, mantenimiento y seguridad de redes informáticas empresariales.',
-      category: 'Redes',
-      duration: '4 meses',
-      schedule: 'Martes y Jueves, 6-9pm',
-      instructor: 'Prof. Ana García',
-      image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80'
+      title: 'Ilustración Digital',
+      description: 'Programa de Formación Continua: Ilustración Digital con Corel Draw. Estudia Diseño Gráfico en CETPRO PROMAE MAGDALENA',
+      category: 'Diseño',
+      duration: 'Programa de Formación Continua',
+      schedule: 'Lunes - Miércoles - Viernes (8:30am-1:00pm)',
+      instructor: 'Lic. Hilda Alca León',
+      image: '/lovable-uploads/1de56820-b078-4060-bdf9-a1270240276d.png',
+      featured: true,
+      location: 'Jr. Cuzco 620 Magdalena del Mar',
+      contact: 'Tf. 262-7395',
+      startDate: '17 de marzo',
+      modality: 'Presencial - Turno: Mañana',
+      facebookPostUrl: 'https://www.facebook.com/cetpro.promaemagdalena'
     },
     {
       id: 3,
