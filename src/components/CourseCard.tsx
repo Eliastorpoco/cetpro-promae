@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Clock, Users, Calendar, ArrowRight, MapPin, Phone, BookOpen } from 'lucide-react';
 import { Button } from "@/components/ui/button";
