@@ -43,11 +43,11 @@ const Hero = () => {
 
       <div className="absolute inset-0 bg-gradient-to-r from-cetpro-darkblue/80 to-cetpro-blue/60" />
 
-      {/* Combined institutional logo banner */}
+      {/* Ministry of Education and UGEL 03 logo banner */}
       <div className="absolute top-4 left-1/2 transform -translate-x-1/2 bg-white/10 backdrop-blur-sm p-2 rounded-lg z-10">
         <img 
-          src="/lovable-uploads/9e8589ae-1df2-4676-8918-2d70fcd8d7f5.png"
-          alt="Logo Ministerio de Educación y CETPRO PROMAE" 
+          src="/lovable-uploads/571af9aa-165e-4176-8c72-dbc808adab16.png"
+          alt="Logo Ministerio de Educación y UGEL 03" 
           className="h-14 w-auto object-contain"
         />
       </div>
