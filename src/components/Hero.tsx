@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { ChevronRight, Facebook } from 'lucide-react';
@@ -55,7 +56,7 @@ const Hero = () => {
               href="https://www.facebook.com/cetpro.promaemagdalena" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="inline-flex items-center gap-2 bg-cetpro-red hover:bg-cetpro-red/90 text-white px-8 h-11 rounded-md text-sm font-medium transition-colors group"
+              className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white border-white/30 px-8 h-11 rounded-md text-sm font-medium transition-colors group"
             >
               <Facebook className="h-4 w-4" />
               <span>Facebook</span>
