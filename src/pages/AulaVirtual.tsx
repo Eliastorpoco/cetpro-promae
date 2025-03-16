@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { ExternalLink, BookOpen, Monitor, Lock, AlertTriangle, Mail, KeyRound, Info } from 'lucide-react';
+import { ExternalLink, BookOpen, Monitor, Lock, AlertTriangle, Mail, KeyRound, Info, School } from 'lucide-react';
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Alert, AlertDescription } from "@/components/ui/alert";
@@ -27,7 +27,7 @@ const AulaVirtual = () => {
   const [isAuthenticating, setIsAuthenticating] = useState(false);
   const { toast } = useToast();
   
-  // Definir el esquema de validación para el formulario
+  // Definir el esquema de validación para el formulario específicamente para Google Workspace
   const formSchema = z.object({
     email: z.string().email("Debe ser un correo electrónico válido").refine(
       (email) => email.endsWith("@cetpropromaemagdalena.edu.pe"), 
@@ -36,9 +36,11 @@ const AulaVirtual = () => {
     password: z.string().min(6, "La contraseña debe tener al menos 6 caracteres"),
   });
   
-  // URLs institucionales
+  // URLs institucionales para Google Workspace
+  const institutionalWorkspaceUrl = "https://workspace.google.com/dashboard";
   const institutionalClassroomUrl = "https://classroom.google.com";
   const institutionalGmailUrl = "https://mail.google.com";
+  const googleAuthUrl = "https://accounts.google.com/ServiceLogin";
   
   const platforms = [
     {
@@ -90,32 +92,33 @@ const AulaVirtual = () => {
     setIsError(false);
     
     try {
-      // Preparar la autenticación
+      // Preparar la autenticación para Google Workspace for Education
       toast({
-        title: "Conectando a Google Classroom Institucional",
+        title: "Conectando a Google Workspace for Education",
         description: "Redirigiendo al sistema de autenticación institucional...",
         duration: 3000,
       });
       
-      // Construir URL específica para autenticación institucional
+      // Construir URL específica para Google Workspace, asegurando que redireccione al login con el email institucional
       const encodedEmail = encodeURIComponent(values.email);
       
-      // Usando el flujo correcto de Google para asegurar que se use la cuenta institucional
-      const authUrl = `https://accounts.google.com/AccountChooser/identifier?Email=${encodedEmail}&continue=${encodeURIComponent(institutionalClassroomUrl)}`;
+      // Usar login específico para Google Workspace Education
+      // Esta URL dirige al usuario directamente al formulario de inicio de sesión de Workspace con el email prefijado
+      const workspaceAuthUrl = `${googleAuthUrl}?continue=${encodeURIComponent(institutionalClassroomUrl)}&authuser=0&flowName=GlifWebSignIn&flowEntry=ServiceLogin&Email=${encodedEmail}`;
       
-      // Abrir en una nueva ventana para mantener la sesión
-      window.open(authUrl, "_blank");
+      // Abrir la autenticación de Google Workspace en una nueva ventana
+      window.open(workspaceAuthUrl, "_blank");
       
-      // Cerramos el diálogo después de iniciar la autenticación
+      // Cerrar el diálogo después de iniciar la autenticación
       setTimeout(() => {
         setShowAuthDialog(false);
         form.reset();
       }, 1000);
       
     } catch (error) {
-      console.error("Error de autenticación:", error);
+      console.error("Error de autenticación en Google Workspace:", error);
       setIsError(true);
-      setErrorMessage("Error al intentar conectar con Google Classroom institucional. Por favor, intente más tarde.");
+      setErrorMessage("Error al intentar conectar con Google Workspace for Education. Por favor, intente más tarde.");
     } finally {
       setIsAuthenticating(false);
     }
@@ -128,11 +131,9 @@ const AulaVirtual = () => {
     form.reset();
   };
 
-  // Lista de dominios de correo institucionales sugeridos para autocompletar
+  // Lista de dominios de correo institucionales
   const emailDomains = [
     "@cetpropromaemagdalena.edu.pe",
-    "@estudiantecetpro.edu.pe",
-    "@docente.cetpro.edu.pe"
   ];
 
   return (
@@ -145,15 +146,15 @@ const AulaVirtual = () => {
           </p>
         </div>
         
-        {/* Botón principal para acceder al Google Classroom institucional */}
+        {/* Botón principal para acceder al Google Workspace institucional */}
         <div className="text-center mb-10">
           <Button 
             onClick={openInstitutionalLogin}
             className="bg-cetpro-blue hover:bg-cetpro-darkblue group"
             size="lg"
           >
-            <Monitor className="mr-2 h-5 w-5" />
-            Acceder a Google Classroom Institucional
+            <School className="mr-2 h-5 w-5" />
+            Acceder a Google Workspace for Education
             <ExternalLink className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Button>
           <p className="text-sm text-gray-500 mt-2">
@@ -166,8 +167,8 @@ const AulaVirtual = () => {
           <div className="flex items-start gap-2">
             <Info className="h-5 w-5 text-amber-600 mt-0.5" />
             <AlertDescription className="text-sm text-amber-700">
-              <strong>Importante:</strong> Para acceder a Google Classroom institucional, debes utilizar tu cuenta de correo electrónico oficial 
-              de CETPRO Promae Magdalena. Si tienes problemas para acceder, contacta al área de soporte técnico.
+              <strong>Importante:</strong> Para acceder a Google Workspace for Education, debe utilizar su cuenta de correo electrónico oficial 
+              de CETPRO Promae Magdalena (@cetpropromaemagdalena.edu.pe). Si tiene problemas para acceder, contacte al área de soporte técnico.
             </AlertDescription>
           </div>
         </Alert>
@@ -213,11 +214,11 @@ const AulaVirtual = () => {
           <DialogContent className="sm:max-w-md">
             <DialogHeader>
               <DialogTitle className="text-xl font-bold flex items-center gap-2">
-                <Monitor className="h-5 w-5 text-cetpro-blue" /> 
-                Acceso a Google Classroom Institucional
+                <School className="h-5 w-5 text-cetpro-blue" /> 
+                Acceso a Google Workspace for Education
               </DialogTitle>
               <DialogDescription className="text-sm text-gray-500">
-                Ingrese su correo y contraseña institucional para acceder a Google Classroom
+                Ingrese su correo y contraseña institucional para acceder a Google Workspace
               </DialogDescription>
             </DialogHeader>
             
@@ -244,11 +245,11 @@ const AulaVirtual = () => {
                       </FormLabel>
                       <div className="flex gap-2">
                         <FormControl>
-                          <div className="border border-gray-300 rounded-l-full overflow-hidden flex-1">
+                          <div className="border border-gray-300 rounded-l-md overflow-hidden flex-1">
                             <Input 
                               type="text"
                               placeholder="estudiante" 
-                              className="border-0 rounded-l-full h-14 px-6 focus-visible:ring-0 focus-visible:ring-offset-0" 
+                              className="border-0 rounded-l-md h-14 px-6 focus-visible:ring-0 focus-visible:ring-offset-0" 
                               value={field.value.split('@')[0] || ''}
                               onChange={(e) => {
                                 const username = e.target.value;
@@ -260,26 +261,9 @@ const AulaVirtual = () => {
                             />
                           </div>
                         </FormControl>
-                        <Select 
-                          value={field.value.includes('@') ? '@' + field.value.split('@')[1] : emailDomains[0]}
-                          onValueChange={(domain) => {
-                            const username = field.value.includes('@') 
-                              ? field.value.split('@')[0]
-                              : field.value;
-                            field.onChange(username + domain);
-                          }}
-                        >
-                          <SelectTrigger className="w-[240px] h-14 rounded-r-full border border-gray-300">
-                            <SelectValue placeholder="@cetpropromaemagdalena.edu.pe" />
-                          </SelectTrigger>
-                          <SelectContent>
-                            {emailDomains.map(domain => (
-                              <SelectItem key={domain} value={domain}>
-                                {domain}
-                              </SelectItem>
-                            ))}
-                          </SelectContent>
-                        </Select>
+                        <div className="border border-gray-300 rounded-r-md bg-gray-50 px-4 flex items-center text-gray-700 min-w-[240px] justify-center">
+                          @cetpropromaemagdalena.edu.pe
+                        </div>
                       </div>
                       <FormMessage />
                     </FormItem>
@@ -295,11 +279,11 @@ const AulaVirtual = () => {
                         <KeyRound className="h-4 w-4" /> Contraseña
                       </FormLabel>
                       <FormControl>
-                        <div className="border border-gray-300 rounded-full overflow-hidden">
+                        <div className="border border-gray-300 rounded-md overflow-hidden">
                           <Input 
                             type="password" 
                             placeholder="Ingrese su contraseña" 
-                            className="border-0 rounded-full h-14 px-6 focus-visible:ring-0 focus-visible:ring-offset-0" 
+                            className="border-0 rounded-md h-14 px-6 focus-visible:ring-0 focus-visible:ring-offset-0" 
                             {...field} 
                           />
                         </div>
@@ -315,14 +299,14 @@ const AulaVirtual = () => {
                     className="w-full bg-cetpro-blue hover:bg-cetpro-darkblue rounded-md h-11 text-md"
                     disabled={isAuthenticating}
                   >
-                    {isAuthenticating ? "Conectando..." : "Ingresar a Google Classroom"}
+                    {isAuthenticating ? "Conectando..." : "Ingresar a Google Workspace"}
                   </Button>
                 </DialogFooter>
 
                 <div className="text-center text-sm text-gray-500 mt-4">
                   <p>
-                    Se conectará a Google Classroom utilizando tu cuenta institucional.
-                    Asegúrate de usar tus credenciales correctas.
+                    Se conectará a Google Workspace for Education utilizando su cuenta institucional.
+                    Asegúrese de usar sus credenciales correctas.
                   </p>
                 </div>
               </form>
@@ -333,7 +317,7 @@ const AulaVirtual = () => {
         <div className="mt-16 bg-gray-50 p-8 rounded-2xl max-w-3xl mx-auto">
           <h2 className="text-2xl font-semibold text-cetpro-blue mb-4">¿Necesitas ayuda?</h2>
           <p className="text-gray-600 mb-6">
-            Si tienes problemas para acceder a Google Classroom o a las plataformas virtuales, 
+            Si tienes problemas para acceder a Google Workspace for Education o a las plataformas virtuales, 
             contacta a soporte técnico o a tu profesor responsable.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
