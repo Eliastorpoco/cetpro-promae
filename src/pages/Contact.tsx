@@ -65,7 +65,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-medium">Dirección</h3>
-                    <p className="text-gray-600">Jr. Echenique 751, Magdalena del Mar, Lima, Perú</p>
+                    <p className="text-gray-600">Jr. Cuzco 620 - Magdalena del Mar, Lima, Perú</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -102,7 +102,7 @@ const Contact = () => {
               <h2 className="text-2xl font-semibold text-cetpro-blue mb-6">Ubicación</h2>
               <div className="aspect-video bg-gray-100 rounded-lg overflow-hidden">
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.4702033752016!2d-77.0740241!3d-12.0905311!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c96fa8c47ed1%3A0x3bc0a5276bd1af36!2sJr.%20Echenique%20751%2C%20Magdalena%20del%20Mar%2015086%2C%20Peru!5e0!3m2!1sen!2sus!4v1710466379212!5m2!1sen!2sus" 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.4702033752016!2d-77.0740241!3d-12.0905311!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c96fa8c47ed1%3A0x3bc0a5276bd1af36!2sJr.%20Cuzco%20620%2C%20Magdalena%20del%20Mar%2015086%2C%20Peru!5e0!3m2!1sen!2sus!4v1710466379212!5m2!1sen!2sus" 
                   width="100%" 
                   height="100%" 
                   style={{ border: 0 }} 

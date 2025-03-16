@@ -81,7 +81,7 @@ const Footer = () => {
               <li className="flex">
                 <MapPin className="h-5 w-5 mr-2 flex-shrink-0 text-cetpro-red" />
                 <span className="text-sm text-gray-300">
-                  Av. Brasil 3950, Magdalena del Mar, Lima, Perú
+                  Jr. Cuzco 620 - Magdalena del Mar, Lima, Perú
                 </span>
               </li>
               <li className="flex">
