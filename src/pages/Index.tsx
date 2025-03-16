@@ -347,7 +347,7 @@ const Index = () => {
             <div className="flex flex-col items-center">
               <div className="h-24 w-auto flex items-center justify-center mb-3">
                 <img 
-                  src="/lovable-uploads/c2901453-88aa-4c3e-bef8-c9c118d575db.png"
+                  src="/lovable-uploads/b992c50e-f8ff-4d5f-a9bb-78178c16c177.png"
                   alt="Logo del Ministerio de Educación del Perú" 
                   className="h-full w-auto object-contain"
                 />
