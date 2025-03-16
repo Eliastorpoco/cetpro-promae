@@ -18,7 +18,7 @@ const News = () => {
       title: "Nuevos Cursos Disponibles",
       date: "15 de febrero, 2025",
       content: "Ampliamos nuestra oferta formativa con curso de auxiliar en técnico carpintería en madera y servicios básicos gastronómicos; en programación continua ilustración digital, aplicaciones en hoja de cálculo, procesos de soldadura mig mag tig",
-      image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&q=80",
+      image: "https://images.unsplash.com/photo-1567964734338-6566877951af?auto=format&fit=crop&q=80",
     },
     {
       id: 3,
