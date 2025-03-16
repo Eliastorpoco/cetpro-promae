@@ -9,14 +9,19 @@ const Index = () => {
   const courses = [
     {
       id: 1,
-      title: 'Desarrollo Web Frontend',
-      description: 'Aprende a diseñar y construir sitios web con HTML, CSS y JavaScript. Curso completo para principiantes.',
-      category: 'Tecnología',
-      duration: '3 meses',
-      schedule: 'Lunes y Miércoles, 6-9pm',
-      instructor: 'Prof. Carlos Mendoza',
-      image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80',
-      featured: true
+      title: 'Asistencia Técnica de Producción y Realización Audiovisual',
+      description: 'Curso modular de formación continua en producción audiovisual. Aprende técnicas profesionales de grabación, edición y producción de contenidos audiovisuales.',
+      category: 'Audiovisual',
+      duration: 'Marzo - 2025',
+      schedule: 'Lunes a Viernes, 8:30am-1:00pm',
+      instructor: 'Lic. Renée Castro Morán',
+      image: '/lovable-uploads/484bf077-9057-44d0-b84f-e58cc57dbad7.png',
+      featured: true,
+      location: 'Jr. Cuzco 620 Magdalena del Mar',
+      contact: 'Tf. 2627395',
+      startDate: '17 de Marzo',
+      modality: 'Presencial - Turno: MAÑANA',
+      facebookPostUrl: 'https://www.facebook.com/cetpro.promaemagdalena'
     },
     {
       id: 2,
@@ -62,7 +67,7 @@ const Index = () => {
       name: "María Sánchez",
       role: "Egresada",
       course: "Desarrollo Web Frontend",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80",
+      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80",
       variant: 'featured'
     },
     {
