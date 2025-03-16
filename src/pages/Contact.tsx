@@ -1,16 +1,56 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { useToast } from "@/components/ui/use-toast";
 
 const Contact = () => {
+  const { toast } = useToast();
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [id]: value
+    }));
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted');
+    
+    // Validate form
+    if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+      toast({
+        title: "Error",
+        description: "Por favor, complete todos los campos requeridos.",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    // Create mailto link with form data
+    const emailSubject = encodeURIComponent(formData.subject);
+    const emailBody = encodeURIComponent(
+      `Nombre: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`
+    );
+    
+    // Open default mail client
+    window.location.href = `mailto:info@cetpropromaemagdalena.edu.pe?subject=${emailSubject}&body=${emailBody}`;
+    
+    // Show success message
+    toast({
+      title: "¡Correo listo para enviar!",
+      description: "Se ha abierto su cliente de correo electrónico con el mensaje.",
+    });
   };
 
   return (
@@ -32,20 +72,42 @@ const Contact = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <label htmlFor="name" className="text-sm font-medium">Nombre completo</label>
-                    <Input id="name" required />
+                    <Input 
+                      id="name" 
+                      value={formData.name}
+                      onChange={handleChange}
+                      required 
+                    />
                   </div>
                   <div className="space-y-2">
                     <label htmlFor="email" className="text-sm font-medium">Correo electrónico</label>
-                    <Input id="email" type="email" required />
+                    <Input 
+                      id="email" 
+                      type="email" 
+                      value={formData.email}
+                      onChange={handleChange}
+                      required 
+                    />
                   </div>
                 </div>
                 <div className="space-y-2">
                   <label htmlFor="subject" className="text-sm font-medium">Asunto</label>
-                  <Input id="subject" required />
+                  <Input 
+                    id="subject" 
+                    value={formData.subject}
+                    onChange={handleChange}
+                    required 
+                  />
                 </div>
                 <div className="space-y-2">
                   <label htmlFor="message" className="text-sm font-medium">Mensaje</label>
-                  <Textarea id="message" rows={5} required />
+                  <Textarea 
+                    id="message" 
+                    rows={5} 
+                    value={formData.message}
+                    onChange={handleChange}
+                    required 
+                  />
                 </div>
                 <Button type="submit" className="w-full bg-cetpro-blue hover:bg-cetpro-darkblue">
                   Enviar mensaje
