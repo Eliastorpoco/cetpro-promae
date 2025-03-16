@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Hero from '@/components/Hero';
 import CourseCard from '@/components/CourseCard';
@@ -32,7 +31,7 @@ const Index = () => {
       duration: 'Programa de Formación Continua',
       schedule: 'Lunes - Miércoles - Viernes (8:30am-1:00pm)',
       instructor: 'Lic. Hilda Alca León',
-      image: '/lovable-uploads/1de56820-b078-4060-bdf9-a1270240276d.png',
+      image: '/lovable-uploads/cf1f97b9-15b4-4cff-bbfc-365e6b6607fb.png',
       featured: true,
       location: 'Jr. Cuzco 620 Magdalena del Mar',
       contact: 'Tf. 262-7395',
