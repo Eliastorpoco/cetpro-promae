@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Hero from '@/components/Hero';
 import CourseCard from '@/components/CourseCard';
@@ -86,7 +85,7 @@ const Index = () => {
     { number: '50+', label: 'Años de experiencia', icon: <Award /> },
     { number: '30+', label: 'Cursos especializados', icon: <Book /> },
     { number: '30+', label: 'Profesores calificados', icon: <GraduationCap /> },
-    { number: '2000+', label: 'Estudiantes graduados', icon: <Users /> }
+    { number: '20000+', label: 'Estudiantes egresados', icon: <Users /> }
   ];
 
   const news = [
