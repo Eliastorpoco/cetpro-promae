@@ -43,6 +43,29 @@ const Hero = () => {
 
       <div className="absolute inset-0 bg-gradient-to-r from-cetpro-darkblue/80 to-cetpro-blue/60" />
 
+      {/* Institutional logos - moved to the top */}
+      <div className="absolute top-4 left-1/2 transform -translate-x-1/2 flex flex-row justify-center items-center gap-6 bg-white/10 backdrop-blur-sm p-3 rounded-lg z-10">
+        <div className="flex flex-col items-center">
+          <div className="h-12 w-auto flex items-center justify-center">
+            <img 
+              src="/lovable-uploads/d7cfeb90-b197-4604-9517-7153602cf595.png"
+              alt="Logo del Ministerio de Educación del Perú" 
+              className="h-full w-auto object-contain"
+            />
+          </div>
+        </div>
+        <div className="h-8 w-0.5 bg-white/30"></div>
+        <div className="flex flex-col items-center">
+          <div className="h-12 w-auto flex items-center justify-center">
+            <img 
+              src="/lovable-uploads/ea4fccd7-b2be-4978-9e14-390456f04dec.png" 
+              alt="Logo de CETPRO PROMAE MAGDALENA" 
+              className="h-full w-auto object-contain"
+            />
+          </div>
+        </div>
+      </div>
+
       <div className={cn("absolute inset-0 flex flex-col justify-center items-center text-white p-6 transition-opacity duration-1000", loading ? "opacity-0" : "opacity-100")}>
         <div className="max-w-4xl text-center space-y-6 animate-fade-in">
           
@@ -68,29 +91,6 @@ const Hero = () => {
                 Conoce Nuestros Cursos
               </Button>
             </Link>
-          </div>
-
-          {/* Institutional logos */}
-          <div className="absolute bottom-32 left-1/2 transform -translate-x-1/2 flex flex-row justify-center items-center gap-6 mt-8 bg-white/10 backdrop-blur-sm p-3 rounded-lg">
-            <div className="flex flex-col items-center">
-              <div className="h-12 w-auto flex items-center justify-center">
-                <img 
-                  src="/lovable-uploads/d7cfeb90-b197-4604-9517-7153602cf595.png"
-                  alt="Logo del Ministerio de Educación del Perú" 
-                  className="h-full w-auto object-contain"
-                />
-              </div>
-            </div>
-            <div className="h-8 w-0.5 bg-white/30"></div>
-            <div className="flex flex-col items-center">
-              <div className="h-12 w-auto flex items-center justify-center">
-                <img 
-                  src="/lovable-uploads/ea4fccd7-b2be-4978-9e14-390456f04dec.png" 
-                  alt="Logo de CETPRO PROMAE MAGDALENA" 
-                  className="h-full w-auto object-contain"
-                />
-              </div>
-            </div>
           </div>
         </div>
       </div>
