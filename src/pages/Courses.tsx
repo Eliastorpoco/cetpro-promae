@@ -14,7 +14,8 @@ const Courses = () => {
     { id: 'design', name: 'Diseño' },
     { id: 'business', name: 'Administración' },
     { id: 'gastronomy', name: 'Gastronomía' },
-    { id: 'automotive', name: 'Mecánica Automotriz' }
+    { id: 'automotive', name: 'Mecánica Automotriz' },
+    { id: 'construction', name: 'Construcción' }
   ];
 
   const courses = [
@@ -28,6 +29,22 @@ const Courses = () => {
       instructor: 'Prof. Carlos Mendoza',
       image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80',
       featured: true
+    },
+    {
+      id: 3,
+      title: 'AUXILIAR TÉCNICO ACABADOS EN EDIFICACIONES Y OBRAS CIVILES',
+      description: 'Módulo: Revestimiento de superficies en edificaciones y obras civiles.',
+      category: 'construction',
+      duration: 'Marzo - 2025',
+      schedule: 'TURNO NOCHE',
+      instructor: 'Docente: Neider Abanto Chávez',
+      image: 'public/lovable-uploads/992d700a-1208-40ca-8883-b116dcb74ca7.png',
+      featured: true,
+      location: 'Jr. Cuzco 620 Magdalena del Mar',
+      contact: 'Tf. 2627395',
+      startDate: '17 DE MARZO',
+      modality: 'Presencial',
+      facebookPostUrl: 'https://www.facebook.com/cetpro.promaemagdalena/posts/pfbid02W9o1C5DdtG9rZqhxaG1yQgNcS3uoMbGj8Q4L89C1MdViBHrjY7tzpSXnj3LS1Upal'
     },
     {
       id: 8,
@@ -68,16 +85,6 @@ const Courses = () => {
       schedule: 'Martes y Jueves, 6-9pm',
       instructor: 'Prof. Ana García',
       image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80'
-    },
-    {
-      id: 3,
-      title: 'Diseño Gráfico Digital',
-      description: 'Desarrolla habilidades en Adobe Photoshop, Illustrator e InDesign para crear diseños profesionales.',
-      category: 'design',
-      duration: '3 meses',
-      schedule: 'Sábados, 9am-1pm',
-      instructor: 'Prof. Luis Paredes',
-      image: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&q=80'
     },
     {
       id: 4,

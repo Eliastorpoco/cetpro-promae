@@ -41,6 +41,8 @@ const CourseCard: React.FC<CourseCardProps> = ({
   
   const handleButtonClick = () => {
     if (facebookPostUrl) {
+      window.open(facebookPostUrl, '_blank');
+    } else {
       setDialogOpen(true);
     }
   };
@@ -58,6 +60,10 @@ const CourseCard: React.FC<CourseCardProps> = ({
     if (titleLower.includes('ilustración digital')) {
       // Using the uploaded image specifically for Ilustración Digital
       return "/lovable-uploads/da44f126-a67d-4b39-bb0c-805fbd7a349c.png";
+    }
+    // Check for construction related title
+    else if (titleLower.includes('acabados') || titleLower.includes('edificaciones') || titleLower.includes('obras civiles')) {
+      return "/lovable-uploads/992d700a-1208-40ca-8883-b116dcb74ca7.png";
     }
     // Check for other design related categories
     else if (category.toLowerCase().includes('diseño') || category.toLowerCase().includes('ilustración')) {
