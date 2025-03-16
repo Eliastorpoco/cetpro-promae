@@ -12,8 +12,9 @@ import {
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Book, Search, Filter, Users, Clock, Calendar } from 'lucide-react';
+import { Book, Search, Filter, Users, Clock, Calendar, Palette, Laptop } from 'lucide-react';
 import { cn } from "@/lib/utils";
+import CourseCard from '@/components/CourseCard';
 
 // Define the interface for course modules
 interface CourseModule {
@@ -29,9 +30,66 @@ interface CourseModule {
   turno: 'M' | 'T' | 'N'; // Morning, Tarde, Night
 }
 
+// Define the interface for formación continua courses
+interface FormacionContinuaCourse {
+  id: number;
+  title: string;
+  fechaInicio: string;
+  fechaFin: string;
+  turno: string;
+  dias: string;
+  horas: string;
+  bgColor: string;
+}
+
 const TrainingOfferings = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const [activeTab, setActiveTab] = useState('regular'); // 'regular' or 'continua'
+
+  // Formación Continua modules data extracted from the image
+  const formacionContinuaCourses: FormacionContinuaCourse[] = [
+    {
+      id: 1,
+      title: 'ILUSTRACIÓN DIGITAL',
+      fechaInicio: '17-03-25',
+      fechaFin: '25-07-25',
+      turno: 'MAÑANA',
+      dias: 'L-M-V',
+      horas: '288 HRS',
+      bgColor: 'bg-yellow-100'
+    },
+    {
+      id: 2,
+      title: 'ILUSTRACIÓN DIGITAL',
+      fechaInicio: '18-03-25',
+      fechaFin: '25-07-25',
+      turno: 'MAÑANA',
+      dias: 'K-J',
+      horas: '240 HRS',
+      bgColor: 'bg-green-100'
+    },
+    {
+      id: 3,
+      title: 'APLICACIONES EN HC',
+      fechaInicio: '11-08-25',
+      fechaFin: '19-12-25',
+      turno: 'MAÑANA',
+      dias: 'L-M-V',
+      horas: '288 HRS',
+      bgColor: 'bg-blue-100'
+    },
+    {
+      id: 4,
+      title: 'RETOQUE DIGITAL',
+      fechaInicio: '12-08-25',
+      fechaFin: '18-12-25',
+      turno: 'MAÑANA',
+      dias: 'K-J',
+      horas: '240 HRS',
+      bgColor: 'bg-pink-100'
+    },
+  ];
 
   // Course categories derived from plans of study
   const categories = [
@@ -717,147 +775,210 @@ const TrainingOfferings = () => {
         </div>
       </section>
 
-      {/* Search and Filter */}
-      <section className="py-8 bg-white border-b">
+      {/* Program Type Selector */}
+      <section className="py-6 bg-white border-b">
         <div className="page-container">
-          <div className="flex flex-col md:flex-row gap-4 items-center justify-between animate-fade-in">
-            <div className="w-full md:w-auto flex-1 relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
-              <input
-                type="text"
-                placeholder="Buscar por módulo, programa o docente..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-cetpro-blue focus:border-transparent"
-              />
-            </div>
-            
-            <div className="w-full md:w-auto flex gap-2 flex-wrap justify-center">
-              <div className="flex items-center mr-2">
-                <Filter className="h-5 w-5 mr-1 text-cetpro-blue" />
-                <span className="text-sm font-medium">Filtrar por programa:</span>
-              </div>
-              
-              <div className="flex flex-wrap gap-2 max-w-xl">
-                {categories.slice(0, 5).map((category) => (
-                  <Button
-                    key={category.id}
-                    variant={selectedCategory === category.id ? "default" : "outline"}
-                    className={cn(
-                      "text-xs",
-                      selectedCategory === category.id
-                        ? "bg-cetpro-blue hover:bg-cetpro-darkblue"
-                        : "border-gray-300 text-gray-700 hover:bg-gray-50"
-                    )}
-                    onClick={() => setSelectedCategory(category.id)}
-                  >
-                    {category.name}
-                  </Button>
-                ))}
-                {selectedCategory === 'all' && (
-                  <Button
-                    variant="outline"
-                    className="text-xs border-cetpro-gold text-cetpro-gold hover:bg-cetpro-gold/10"
-                  >
-                    Más filtros...
-                  </Button>
-                )}
-              </div>
-            </div>
-          </div>
-
-          {/* Legend for shifts */}
-          <div className="flex flex-wrap gap-4 mt-6 justify-center">
-            <div className="flex items-center">
-              <span className={cn("inline-block w-3 h-3 rounded-full mr-2", "bg-yellow-400")}></span>
-              <span className="text-sm text-gray-600">Mañana</span>
-            </div>
-            <div className="flex items-center">
-              <span className={cn("inline-block w-3 h-3 rounded-full mr-2", "bg-blue-400")}></span>
-              <span className="text-sm text-gray-600">Tarde</span>
-            </div>
-            <div className="flex items-center">
-              <span className={cn("inline-block w-3 h-3 rounded-full mr-2", "bg-purple-400")}></span>
-              <span className="text-sm text-gray-600">Noche</span>
-            </div>
+          <div className="flex justify-center gap-4 animate-fade-in">
+            <Button
+              variant={activeTab === 'regular' ? 'default' : 'outline'}
+              className={cn(
+                "text-base px-6",
+                activeTab === 'regular' 
+                  ? "bg-cetpro-blue hover:bg-cetpro-darkblue" 
+                  : "border-gray-300 text-gray-700 hover:bg-gray-50"
+              )}
+              onClick={() => setActiveTab('regular')}
+            >
+              Programas Regulares
+            </Button>
+            <Button
+              variant={activeTab === 'continua' ? 'default' : 'outline'}
+              className={cn(
+                "text-base px-6",
+                activeTab === 'continua' 
+                  ? "bg-cetpro-blue hover:bg-cetpro-darkblue" 
+                  : "border-gray-300 text-gray-700 hover:bg-gray-50"
+              )}
+              onClick={() => setActiveTab('continua')}
+            >
+              Formación Continua
+            </Button>
           </div>
         </div>
       </section>
 
-      {/* Course Modules Tables */}
-      <section className="section-padding bg-gray-50">
-        <div className="page-container">
-          {Object.keys(groupedCourses).length > 0 ? (
-            <div className="space-y-12 animate-fade-in">
-              {Object.entries(groupedCourses).map(([planEstudio, courses]) => (
-                <Card key={planEstudio} className="overflow-hidden">
-                  <CardHeader className="bg-gradient-to-r from-cetpro-blue/10 to-transparent">
-                    <CardTitle className="text-xl text-gray-900">{planEstudio}</CardTitle>
-                    <CardDescription>
-                      {courses.length} módulos disponibles
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="p-0">
-                    <div className="overflow-x-auto">
-                      <Table>
-                        <TableHeader>
-                          <TableRow className="bg-gray-50">
-                            <TableHead>Módulo</TableHead>
-                            <TableHead>Docente</TableHead>
-                            <TableHead className="text-center">Horas</TableHead>
-                            <TableHead className="text-center">Días</TableHead>
-                            <TableHead className="text-center">Periodo</TableHead>
-                            <TableHead className="text-center">Turno</TableHead>
-                          </TableRow>
-                        </TableHeader>
-                        <TableBody>
-                          {courses.map((course) => (
-                            <TableRow key={course.id} className="hover:bg-gray-50">
-                              <TableCell className="font-medium">
-                                <div className="max-w-md">
-                                  {course.modulo}
-                                </div>
-                              </TableCell>
-                              <TableCell>
-                                {course.docente || "Por asignar"}
-                              </TableCell>
-                              <TableCell className="text-center">
-                                <div className="flex items-center justify-center">
-                                  <Clock className="h-4 w-4 mr-1 text-gray-500" />
-                                  {course.horas}
-                                </div>
-                              </TableCell>
-                              <TableCell className="text-center">
-                                <div className="flex items-center justify-center">
-                                  <Calendar className="h-4 w-4 mr-1 text-gray-500" />
-                                  {course.dias}
-                                </div>
-                              </TableCell>
-                              <TableCell className="text-center">
-                                {course.fechaInicio} - {course.fechaFin}
-                              </TableCell>
-                              <TableCell className="text-center">
-                                <span className={cn(
-                                  "inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border",
-                                  getTurnoBadge(course.turno)
-                                )}>
-                                  {getTurnoName(course.turno)}
-                                </span>
-                              </TableCell>
-                            </TableRow>
-                          ))}
-                        </TableBody>
-                      </Table>
-                    </div>
-                  </CardContent>
-                </Card>
+      {activeTab === 'regular' && (
+        <>
+          {/* Search and Filter */}
+          <section className="py-8 bg-white border-b">
+            <div className="page-container">
+              <div className="flex flex-col md:flex-row gap-4 items-center justify-between animate-fade-in">
+                <div className="w-full md:w-auto flex-1 relative">
+                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+                  <input
+                    type="text"
+                    placeholder="Buscar por módulo, programa o docente..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="w-full pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-cetpro-blue focus:border-transparent"
+                  />
+                </div>
+                
+                <div className="w-full md:w-auto flex gap-2 flex-wrap justify-center">
+                  <div className="flex items-center mr-2">
+                    <Filter className="h-5 w-5 mr-1 text-cetpro-blue" />
+                    <span className="text-sm font-medium">Filtrar por programa:</span>
+                  </div>
+                  
+                  <div className="flex flex-wrap gap-2 max-w-xl">
+                    {categories.slice(0, 5).map((category) => (
+                      <Button
+                        key={category.id}
+                        variant={selectedCategory === category.id ? "default" : "outline"}
+                        className={cn(
+                          "text-xs",
+                          selectedCategory === category.id
+                            ? "bg-cetpro-blue hover:bg-cetpro-darkblue"
+                            : "border-gray-300 text-gray-700 hover:bg-gray-50"
+                        )}
+                        onClick={() => setSelectedCategory(category.id)}
+                      >
+                        {category.name}
+                      </Button>
+                    ))}
+                    {selectedCategory === 'all' && (
+                      <Button
+                        variant="outline"
+                        className="text-xs border-cetpro-gold text-cetpro-gold hover:bg-cetpro-gold/10"
+                      >
+                        Más filtros...
+                      </Button>
+                    )}
+                  </div>
+                </div>
+              </div>
+
+              {/* Legend for shifts */}
+              <div className="flex flex-wrap gap-4 mt-6 justify-center">
+                <div className="flex items-center">
+                  <span className={cn("inline-block w-3 h-3 rounded-full mr-2", "bg-yellow-400")}></span>
+                  <span className="text-sm text-gray-600">Mañana</span>
+                </div>
+                <div className="flex items-center">
+                  <span className={cn("inline-block w-3 h-3 rounded-full mr-2", "bg-blue-400")}></span>
+                  <span className="text-sm text-gray-600">Tarde</span>
+                </div>
+                <div className="flex items-center">
+                  <span className={cn("inline-block w-3 h-3 rounded-full mr-2", "bg-purple-400")}></span>
+                  <span className="text-sm text-gray-600">Noche</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Course Modules Tables */}
+          <section className="section-padding bg-gray-50">
+            <div className="page-container">
+              {Object.keys(groupedCourses).length > 0 ? (
+                <div className="space-y-12 animate-fade-in">
+                  {Object.entries(groupedCourses).map(([planEstudio, courses]) => (
+                    <Card key={planEstudio} className="overflow-hidden">
+                      <CardHeader className="bg-gradient-to-r from-cetpro-blue/10 to-transparent">
+                        <CardTitle className="text-xl text-gray-900">{planEstudio}</CardTitle>
+                        <CardDescription>
+                          {courses.length} módulos disponibles
+                        </CardDescription>
+                      </CardHeader>
+                      <CardContent className="p-0">
+                        <div className="overflow-x-auto">
+                          <Table>
+                            <TableHeader>
+                              <TableRow className="bg-gray-50">
+                                <TableHead>Módulo</TableHead>
+                                <TableHead>Docente</TableHead>
+                                <TableHead className="text-center">Horas</TableHead>
+                                <TableHead className="text-center">Días</TableHead>
+                                <TableHead className="text-center">Periodo</TableHead>
+                                <TableHead className="text-center">Turno</TableHead>
+                              </TableRow>
+                            </TableHeader>
+                            <TableBody>
+                              {courses.map((course) => (
+                                <TableRow key={course.id} className="hover:bg-gray-50">
+                                  <TableCell className="font-medium">
+                                    <div className="max-w-md">
+                                      {course.modulo}
+                                    </div>
+                                  </TableCell>
+                                  <TableCell>
+                                    {course.docente || "Por asignar"}
+                                  </TableCell>
+                                  <TableCell className="text-center">
+                                    <div className="flex items-center justify-center">
+                                      <Clock className="h-4 w-4 mr-1 text-gray-500" />
+                                      {course.horas}
+                                    </div>
+                                  </TableCell>
+                                  <TableCell className="text-center">
+                                    <div className="flex items-center justify-center">
+                                      <Calendar className="h-4 w-4 mr-1 text-gray-500" />
+                                      {course.dias}
+                                    </div>
+                                  </TableCell>
+                                  <TableCell className="text-center">
+                                    {course.fechaInicio} - {course.fechaFin}
+                                  </TableCell>
+                                  <TableCell className="text-center">
+                                    <span className={cn(
+                                      "inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border",
+                                      getTurnoBadge(course.turno)
+                                    )}>
+                                      {getTurnoName(course.turno)}
+                                    </span>
+                                  </TableCell>
+                                </TableRow>
+                              ))}
+                            </TableBody>
+                          </Table>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              ) : (
+                <NoResults />
+              )}
+            </div>
+          </section>
+        </>
+      )}
+
+      {activeTab === 'continua' && (
+        <section className="section-padding bg-gray-50">
+          <div className="page-container">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 animate-fade-in">
+              {formacionContinuaCourses.map((course) => (
+                <CourseCard
+                  key={course.id}
+                  title={course.title}
+                  description={`Programa especializado de formación continua para desarrollo de habilidades profesionales.`}
+                  category="Diseño Digital"
+                  duration={course.horas}
+                  schedule={`${course.dias}, ${course.turno}`}
+                  instructor="CETPRO PROMAE MAGDALENA"
+                  image={`https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80`}
+                  featured={course.id === 1}
+                  location="Jr. Cuzco 620 Magdalena del Mar"
+                  contact="Tf. 2627395"
+                  startDate={course.fechaInicio}
+                  modality="Presencial"
+                  facebookPostUrl="https://www.facebook.com/cetpro.promaemagdalena/posts/pfbid02qWLqPr8NB3kFk5WQBwF5t1K6wueYXuCmNod768JhWqcvebw1ASDHayU8ijAtGry4l"
+                />
               ))}
             </div>
-          ) : (
-            <NoResults />
-          )}
-        </div>
-      </section>
+          </div>
+        </section>
+      )}
 
       {/* Info Section */}
       <section className="py-16 bg-white">

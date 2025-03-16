@@ -1,8 +1,10 @@
+
 import React, { useState } from 'react';
 import { Clock, Users, Calendar, ArrowRight, MapPin, Phone, BookOpen } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { cn } from '@/lib/utils';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+
 interface CourseCardProps {
   title: string;
   description: string;
@@ -18,6 +20,7 @@ interface CourseCardProps {
   modality?: string;
   facebookPostUrl?: string;
 }
+
 const CourseCard: React.FC<CourseCardProps> = ({
   title,
   description,
@@ -34,11 +37,13 @@ const CourseCard: React.FC<CourseCardProps> = ({
   facebookPostUrl
 }) => {
   const [dialogOpen, setDialogOpen] = useState(false);
+  
   const handleButtonClick = () => {
     if (facebookPostUrl) {
       setDialogOpen(true);
     }
   };
+  
   return <div className={cn("cetpro-card group overflow-hidden", featured ? "border-cetpro-gold/50" : "", "animate-fade-in")}>
       <div className="relative h-48 -mx-6 -mt-6 mb-6 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
@@ -72,8 +77,8 @@ const CourseCard: React.FC<CourseCardProps> = ({
         </div>
         
         <div className="flex items-center text-sm text-gray-500">
-          
-          
+          <Users className="h-4 w-4 mr-2 text-cetpro-blue" />
+          <span>{instructor}</span>
         </div>
 
         {startDate && <div className="flex items-center text-sm text-gray-500">
@@ -87,8 +92,8 @@ const CourseCard: React.FC<CourseCardProps> = ({
           </div>}
         
         {location && <div className="flex items-center text-sm text-gray-500">
-            
-            
+            <MapPin className="h-4 w-4 mr-2 text-cetpro-blue" />
+            <span>{location}</span>
           </div>}
         
         {contact && <div className="flex items-center text-sm text-gray-500">
@@ -117,4 +122,5 @@ const CourseCard: React.FC<CourseCardProps> = ({
         </Dialog>}
     </div>;
 };
+
 export default CourseCard;
