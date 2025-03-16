@@ -100,7 +100,7 @@ const Navbar = () => {
               className="inline-flex items-center gap-2 bg-cetpro-blue hover:bg-cetpro-darkblue text-white px-4 py-2 rounded-md text-sm font-medium transition-colors"
             >
               <Facebook className="h-4 w-4" />
-              Inscríbete Ahora
+              Facebook
             </a>
           </div>
 
@@ -152,7 +152,7 @@ const Navbar = () => {
               className="flex items-center gap-2 w-full bg-cetpro-blue hover:bg-cetpro-darkblue text-white px-3 py-2 rounded-md text-base font-medium"
             >
               <Facebook className="h-4 w-4" />
-              Inscríbete Ahora
+              Facebook
             </a>
           </div>
         </div>

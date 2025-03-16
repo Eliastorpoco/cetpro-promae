@@ -333,7 +333,7 @@ const Index = () => {
               className="inline-flex items-center gap-2 bg-white text-cetpro-blue hover:bg-gray-100 px-8 h-11 rounded-md text-sm font-medium transition-colors group"
             >
               <Facebook className="h-5 w-5" />
-              <span>Inscríbete Ahora</span>
+              <span>Facebook</span>
               <ChevronRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
             </a>
           </div>

@@ -1,10 +1,8 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { ChevronRight, Facebook } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
-// Updated images array with additional specialties
 const images = ["https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&q=80",
 // Welding image
 "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&q=80",
@@ -16,33 +14,33 @@ const images = ["https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?au
 "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80" // Woodworking/carpentry image
 ];
 
-// Keep image titles for aria-labels, but we won't display them anymore
 const imageTitles = ["Soldadura", "Mecánica Automotriz", "Planos Arquitectónicos", "Soporte Técnico de Computadoras", "Carpintería de Madera"];
+
 const Hero = () => {
   const [currentImage, setCurrentImage] = useState(0);
   const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage(prev => (prev + 1) % images.length);
     }, 5000);
     return () => clearInterval(interval);
   }, []);
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
     }, 500);
     return () => clearTimeout(timer);
   }, []);
+
   return <div className="relative h-screen w-full overflow-hidden">
-      {/* Background Images */}
       {images.map((image, index) => <div key={index} className={cn("absolute inset-0 bg-cover bg-center transition-opacity duration-1000", currentImage === index ? "opacity-100" : "opacity-0")} style={{
       backgroundImage: `url(${image})`
     }} />)}
 
-      {/* Overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-cetpro-darkblue/80 to-cetpro-blue/60" />
 
-      {/* Content */}
       <div className={cn("absolute inset-0 flex flex-col justify-center items-center text-white p-6 transition-opacity duration-1000", loading ? "opacity-0" : "opacity-100")}>
         <div className="max-w-4xl text-center space-y-6 animate-fade-in">
           
@@ -60,7 +58,7 @@ const Hero = () => {
               className="inline-flex items-center gap-2 bg-cetpro-red hover:bg-cetpro-red/90 text-white px-8 h-11 rounded-md text-sm font-medium transition-colors group"
             >
               <Facebook className="h-4 w-4" />
-              <span>Inscríbete Ahora</span>
+              <span>Facebook</span>
               <ChevronRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </a>
             <Button size="lg" variant="outline" className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white border-white/30">
@@ -70,12 +68,10 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Image indicators */}
       <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 flex space-x-2">
         {images.map((_, index) => <button key={index} className={cn("w-2 h-2 rounded-full transition-all duration-300", currentImage === index ? "bg-white w-6" : "bg-white/50")} onClick={() => setCurrentImage(index)} aria-label={`Ver imagen de ${imageTitles[index]}`} />)}
       </div>
 
-      {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-float">
         <div className="w-8 h-12 rounded-full border-2 border-white/50 flex justify-center p-1">
           <div className="w-1.5 h-3 bg-white/80 rounded-full animate-bounce" />
@@ -83,4 +79,5 @@ const Hero = () => {
       </div>
     </div>;
 };
+
 export default Hero;
