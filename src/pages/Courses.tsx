@@ -87,17 +87,6 @@ const Courses = () => {
       image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80'
     },
     {
-      id: 9,
-      title: 'Diseño Gráfico Digital',
-      description: 'Desarrolla habilidades en Adobe Photoshop, Illustrator e InDesign para crear diseños profesionales.',
-      category: 'design',
-      duration: '3 meses',
-      schedule: 'Sábados, 9am-1pm',
-      instructor: 'Prof. Luis Paredes',
-      image: '/lovable-uploads/fc27b8e0-01cf-4bde-a4d8-9c46ebfb82a6.png',
-      featured: true
-    },
-    {
       id: 4,
       title: 'Desarrollo de Aplicaciones Móviles',
       description: 'Aprende a desarrollar aplicaciones para iOS y Android utilizando React Native.',
