@@ -102,12 +102,12 @@ const Footer = () => {
               <li className="text-sm text-gray-300">
                 <span className="font-medium">Lunes a Viernes:</span>
                 <br />
-                8:00 AM - 8:00 PM
+                8:30 AM - 4:30 PM
               </li>
               <li className="text-sm text-gray-300">
                 <span className="font-medium">Sábados:</span>
                 <br />
-                9:00 AM - 2:00 PM
+                9:00 AM - 1:00 PM
               </li>
               <li className="text-sm text-gray-300">
                 <span className="font-medium">Domingos y Feriados:</span>
