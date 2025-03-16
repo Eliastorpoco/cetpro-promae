@@ -52,9 +52,12 @@ const CourseCard: React.FC<CourseCardProps> = ({
   
   // Get the fallback image based on the category or title
   const getFallbackImage = () => {
+    const titleLower = title.toLowerCase();
+    
     // Check specifically for Ilustración Digital title
-    if (title.toLowerCase().includes('ilustración digital')) {
-      return "/lovable-uploads/d0395512-9c30-4863-9fd3-55704378e532.png";
+    if (titleLower.includes('ilustración digital')) {
+      // Using the uploaded image specifically for Ilustración Digital
+      return "/lovable-uploads/da44f126-a67d-4b39-bb0c-805fbd7a349c.png";
     }
     // Check for other design related categories
     else if (category.toLowerCase().includes('diseño') || category.toLowerCase().includes('ilustración')) {

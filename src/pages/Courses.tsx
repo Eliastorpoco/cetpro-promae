@@ -30,6 +30,21 @@ const Courses = () => {
       featured: true
     },
     {
+      id: 8,
+      title: 'Ilustración Digital',
+      description: 'Aprende técnicas de ilustración digital con profesionales del sector. Curso práctico con las últimas herramientas.',
+      category: 'design',
+      duration: '3 meses',
+      schedule: 'Martes y Jueves, 5-8pm',
+      instructor: 'CETPRO PROMAE MAGDALENA',
+      image: 'https://invalid-image-url.jpg',
+      featured: true,
+      location: 'Jr. Cuzco 620 Magdalena del Mar',
+      contact: 'Tf. 2627395',
+      startDate: '15 de Abril 2025',
+      modality: 'Presencial'
+    },
+    {
       id: 7,
       title: 'Mantenimiento Preventivo y Correctivo de Motores de Combustión Interna',
       description: 'Curso modular de formación continua en mecánica automotriz. Aprende técnicas profesionales de diagnóstico y reparación de motores.',
