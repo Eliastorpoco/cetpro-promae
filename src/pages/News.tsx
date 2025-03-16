@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { CalendarDays, ArrowRight } from 'lucide-react';
@@ -17,7 +16,7 @@ const News = () => {
       id: 2,
       title: "Nuevos Cursos Disponibles",
       date: "15 de febrero, 2025",
-      content: "Ampliamos nuestra oferta formativa con cursos de Desarrollo Web, Diseño Gráfico Avanzado y Marketing Digital para todos nuestros estudiantes.",
+      content: "Ampliamos nuestra oferta formativa con curso de auxiliar en técnico carpintería en madera y servicios básicos gastronómicos; en programación continua ilustración digital, aplicaciones en hoja de cálculo, procesos de soldadura mig mag tig",
       image: "/placeholder.svg",
     },
     {
