@@ -106,7 +106,7 @@ const AboutUs = () => {
               <div className="flex flex-col items-center p-4 bg-white rounded-xl shadow-sm">
                 <Calendar className="h-8 w-8 text-cetpro-blue mb-3" />
                 <h4 className="text-lg font-bold text-gray-800 mb-1">Fundación</h4>
-                <p className="text-gray-600 text-center">Más de 20 años de experiencia educativa</p>
+                <p className="text-gray-600 text-center">Más de 50 años de experiencia educativa</p>
               </div>
               
               <div className="flex flex-col items-center p-4 bg-white rounded-xl shadow-sm">
