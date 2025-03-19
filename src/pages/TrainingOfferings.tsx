@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { 
   Table, 
@@ -1020,7 +1019,7 @@ const TrainingOfferings = () => {
               )}
               onClick={() => setActiveTab('regular')}
             >
-              Programas Regulares
+              Auxiliar Técnico
             </Button>
             <Button
               variant={activeTab === 'continua' ? 'default' : 'outline'}
