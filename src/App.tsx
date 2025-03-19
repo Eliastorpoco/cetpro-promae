@@ -23,7 +23,7 @@ const organizationSchema = {
   "@type": "EducationalOrganization",
   "name": "CETPRO PROMAE Magdalena",
   "url": "https://cetpro-promae.edu.pe",
-  "logo": "https://cetpro-promae.edu.pe/logo.png",
+  "logo": "https://cetpro-promae.edu.pe/favicon.png",
   "description": "Centro de Educación Técnico-Productiva PROMAE Magdalena. Ofrecemos formación técnica de calidad con cursos especializados para el mundo laboral actual.",
   "address": {
     "@type": "PostalAddress",
