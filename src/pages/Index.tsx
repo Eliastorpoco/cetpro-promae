@@ -273,7 +273,7 @@ const Index = () => {
                 role={testimonial.role}
                 course={testimonial.course}
                 image={testimonial.image}
-                variant={testimonial.variant as any}
+                variant={testimonial.variant as 'default' | 'featured' | undefined}
               />
             ))}
           </div>
