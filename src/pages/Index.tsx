@@ -2,6 +2,7 @@ import React from 'react';
 import Hero from '@/components/Hero';
 import CourseCard from '@/components/CourseCard';
 import TestimonialCard from '@/components/TestimonialCard';
+import InscriptionsBanner from '@/components/InscriptionsBanner';
 import { Button } from "@/components/ui/button";
 import { ChevronRight, GraduationCap, Book, Users, Award, ArrowRight, Facebook } from 'lucide-react';
 
@@ -122,6 +123,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen pt-16">
+      <InscriptionsBanner />
       <Hero />
 
       <section className="section-padding bg-gray-50">
