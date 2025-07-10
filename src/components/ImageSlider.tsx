@@ -7,6 +7,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { MapPin } from 'lucide-react';
+import Autoplay from "embla-carousel-autoplay";
 
 interface ImageSliderProps {
   images: {
@@ -18,9 +19,17 @@ interface ImageSliderProps {
 }
 
 const ImageSlider = ({ images, className }: ImageSliderProps) => {
+  const plugin = React.useRef(
+    Autoplay({ delay: 4000, stopOnInteraction: true })
+  );
+
   return (
     <div className={className}>
-      <Carousel className="w-full" opts={{ align: "start", loop: true }}>
+      <Carousel 
+        className="w-full" 
+        opts={{ align: "start", loop: true }}
+        plugins={[plugin.current]}
+      >
         <CarouselContent>
           {images.map((image, index) => (
             <CarouselItem key={index}>
