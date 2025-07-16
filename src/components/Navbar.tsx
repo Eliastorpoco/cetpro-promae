@@ -52,6 +52,11 @@ const Navbar = () => {
       icon: <BookOpen className="h-4 w-4" />
     },
     {
+      name: 'Matr\u00edcula 2025-II',
+      path: '/matricula-2025-II',
+      icon: <BookOpen className="h-4 w-4" />
+    },
+    {
       name: 'Aula Virtual',
       path: '/aula-virtual',
       icon: <Monitor className="h-4 w-4" />
