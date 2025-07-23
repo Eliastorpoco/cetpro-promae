@@ -2,7 +2,6 @@
 import React from 'react';
 import { GraduationCap, Award, MapPin, Calendar } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import ImageSlider from '@/components/ImageSlider';
 
 const AboutUs = () => {
   return (
@@ -66,26 +65,26 @@ const AboutUs = () => {
               </div>
             </div>
             
-            {/* Right Image Slider */}
+            {/* Right Image - Updated with institution building image */}
             <div className="lg:w-1/2 animate-fade-in-right">
               <div className="relative">
                 <div className="absolute -top-6 -left-6 w-24 h-24 bg-cetpro-blue/10 rounded-full"></div>
                 <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-cetpro-gold/10 rounded-full"></div>
                 
-                <ImageSlider 
-                  images={[
-                    {
-                      src: "/lovable-uploads/61c9ca63-db4b-459d-86b3-eb3836febc05.png",
-                      alt: "CETPRO PROMAE Magdalena - Edificio Principal",
-                      location: "Jr. Cuzco 620, Magdalena del Mar"
-                    },
-                    {
-                      src: "/lovable-uploads/489e5270-1958-417e-8124-e949eab73635.png",
-                      alt: "CETPRO PROMAE Magdalena - Fachada Institucional",
-                      location: "Jr. Cuzco 620, Magdalena del Mar"
-                    }
-                  ]}
-                />
+                <div className="relative overflow-hidden rounded-xl shadow-xl">
+                  <img 
+                    src="/lovable-uploads/24e56e1e-05c6-4c36-8e45-df4c854c30b6.png" 
+                    alt="CETPRO PROMAE Magdalena - Sede Institucional" 
+                    className="w-full h-[500px] object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-cetpro-darkblue/40 to-transparent"></div>
+                  
+                  {/* Location badge */}
+                  <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
+                    <MapPin className="h-5 w-5 text-cetpro-blue" />
+                    <span className="text-sm font-medium text-gray-800">Jr. Cuzco 620, Magdalena del Mar</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
