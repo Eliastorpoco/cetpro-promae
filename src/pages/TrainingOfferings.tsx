@@ -415,7 +415,7 @@ const TrainingOfferings = () => {
     {
       id: 9,
       planEstudio: 'MECÁNICA DE MOTOS Y VEHÍCULOS AFINES',
-      docente: '',
+      docente: 'PONCE RODRIGUEZ, Jose Daniel',
       modulo: 'MANTENIMIENTO Y REPARACIÓN DE MOTORES Y SISTEMAS DE CHASIS EN VEHÍCULOS MENORES',
       horas: '528',
       dias: 'L a V',
@@ -426,7 +426,7 @@ const TrainingOfferings = () => {
     {
       id: 10,
       planEstudio: 'MECÁNICA DE MOTOS Y VEHÍCULOS AFINES',
-      docente: '',
+      docente: 'PONCE RODRIGUEZ, Jose Daniel',
       modulo: 'MANTENIMIENTO Y REPARACIÓN DE LOS SISTEMAS ELÉCTRICOS, ELECTRÓNICOS Y GAS GLP-GNV EN VEHÍCULOS MENORES',
       horas: '528',
       dias: 'L a V',
