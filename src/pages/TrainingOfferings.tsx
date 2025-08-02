@@ -392,7 +392,7 @@ const TrainingOfferings = () => {
     {
       id: 7,
       planEstudio: 'APOYO ADMINISTRATIVO',
-      docente: 'NIÑO CALLE, Nestor Alonso',
+      docente: 'BRAVO LUNA, José Antonio',
       modulo: 'ATENCIÓN E INFORMACIÓN AL CLIENTE',
       horas: '528',
       dias: 'L a V',
@@ -403,7 +403,7 @@ const TrainingOfferings = () => {
     {
       id: 8,
       planEstudio: 'APOYO ADMINISTRATIVO',
-      docente: 'NIÑO CALLE, Nestor Alonso',
+      docente: 'BRAVO LUNA, José Antonio',
       modulo: 'OPERACIONES Y REGISTROS DE DOCUMENTOS ADMINISTRATIVOS',
       horas: '528',
       dias: 'L a V',
