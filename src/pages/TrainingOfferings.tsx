@@ -460,7 +460,7 @@ const TrainingOfferings = () => {
     {
       id: 13,
       planEstudio: 'PANADERÍA Y PASTELERÍA',
-      docente: '',
+      docente: 'CUBAS CAMACHO, Silvia',
       modulo: 'ACONDICIONAMIENTO Y ELABORACIÓN DE PRODUCTOS DE PANADERÍA Y PASTELERÍA',
       horas: '528',
       dias: 'L a V',
@@ -471,7 +471,7 @@ const TrainingOfferings = () => {
     {
       id: 14,
       planEstudio: 'PANADERÍA Y PASTELERÍA',
-      docente: '',
+      docente: 'CUBAS CAMACHO, Silvia',
       modulo: 'DECORACIÓN Y PRESENTACIÓN DE LOS PRODUCTOS DE PANADERÍA Y PASTELERÍA',
       horas: '528',
       dias: 'L a V',
@@ -482,7 +482,7 @@ const TrainingOfferings = () => {
     {
       id: 15,
       planEstudio: 'PANADERÍA Y PASTELERÍA',
-      docente: '',
+      docente: 'ALQUIZAR HUERTA, Maritza Alejandrina',
       modulo: 'ACONDICIONAMIENTO Y ELABORACIÓN DE PRODUCTOS DE PANADERÍA Y PASTELERÍA',
       horas: '528',
       dias: 'L a V',
@@ -493,7 +493,7 @@ const TrainingOfferings = () => {
     {
       id: 16,
       planEstudio: 'PANADERÍA Y PASTELERÍA',
-      docente: '',
+      docente: 'ALQUIZAR HUERTA, Maritza Alejandrina',
       modulo: 'DECORACIÓN Y PRESENTACIÓN DE LOS PRODUCTOS DE PANADERÍA Y PASTELERÍA',
       horas: '528',
       dias: 'L a V',
