@@ -193,7 +193,7 @@ const TrainingOfferings = () => {
     {
       id: 11,
       familiaProductiva: "ELECTRICIDAD Y ELECTRÓNICA",
-      docente: "CONTRATO",
+      docente: "HUANCOLLO PULIDO, David Willy",
       modulo: "INSTALACIONES ELÉCTRICAS DOMICILIARIAS (Convenio)",
       horas: "288",
       dias: "L-M-V",
@@ -207,7 +207,7 @@ const TrainingOfferings = () => {
     {
       id: 12,
       familiaProductiva: "ELECTRICIDAD Y ELECTRÓNICA",
-      docente: "CONTRATO",
+      docente: "HUANCOLLO PULIDO, David Willy",
       modulo: "REBOBINADO DE MOTORES ELÉCTRICOS",
       horas: "240",
       dias: "K-J",
@@ -220,7 +220,7 @@ const TrainingOfferings = () => {
     {
       id: 13,
       familiaProductiva: "ELECTRICIDAD Y ELECTRÓNICA",
-      docente: "CONTRATO",
+      docente: "NIÑO CUEVA, Romel",
       modulo: "MANTENIMIENTO DE EQUIPOS CELULARES",
       horas: "288",
       dias: "L-M-V",
@@ -233,7 +233,7 @@ const TrainingOfferings = () => {
     {
       id: 14,
       familiaProductiva: "ELECTRICIDAD Y ELECTRÓNICA",
-      docente: "CONTRATO",
+      docente: "NIÑO CUEVA, Romel",
       modulo: "REPARACIÓN DE EQUIPOS CELULARES",
       horas: "240",
       dias: "K-J",
@@ -246,7 +246,7 @@ const TrainingOfferings = () => {
     {
       id: 15,
       familiaProductiva: "ELECTRICIDAD Y ELECTRÓNICA",
-      docente: "CONTRATO",
+      docente: "CHOQUEPATA MAMANI, Juan Carlos",
       modulo: "INSTALACIONES ELÉCTRICAS DOMICILIARIAS",
       horas: "288",
       dias: "L-M-V",
@@ -259,7 +259,7 @@ const TrainingOfferings = () => {
     {
       id: 16,
       familiaProductiva: "ELECTRICIDAD Y ELECTRÓNICA",
-      docente: "CONTRATO",
+      docente: "CHOQUEPATA MAMANI, Juan Carlos",
       modulo: "REBOBINADO DE MOTORES ELÉCTRICOS",
       horas: "240",
       dias: "K-J",
