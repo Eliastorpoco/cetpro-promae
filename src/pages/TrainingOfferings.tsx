@@ -325,7 +325,7 @@ const TrainingOfferings = () => {
     {
       id: 1,
       planEstudio: 'ASISTENCIA DE CONTABILIDAD',
-      docente: '',
+      docente: 'BARRIOS ESPERILLA, Orsa',
       modulo: 'PROCEDIMIENTOS FINANCIEROS Y CONTABLES',
       horas: '528',
       dias: 'L a V',
@@ -336,7 +336,7 @@ const TrainingOfferings = () => {
     {
       id: 2,
       planEstudio: 'ASISTENCIA DE CONTABILIDAD',
-      docente: '',
+      docente: 'BARRIOS ESPERILLA, Orsa',
       modulo: 'LIQUIDACIÓN DE IMPUESTOS',
       horas: '528',
       dias: 'L a V',
