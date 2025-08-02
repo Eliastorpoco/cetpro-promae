@@ -652,7 +652,7 @@ const TrainingOfferings = () => {
     {
       id: 30,
       planEstudio: 'ASISTENCIA TÉCNICA DE PRODUCCIÓN Y REALIZACIÓN AUDIOVISUAL',
-      docente: '',
+      docente: 'CASTRO MORAN, Renée',
       modulo: 'DOCUMENTACIÓN PRELIMINAR DE LA PRODUCCIÓN Y REALIZACIÓN AUDIO VISUAL',
       horas: '528',
       dias: 'L a V',
@@ -663,7 +663,7 @@ const TrainingOfferings = () => {
     {
       id: 31,
       planEstudio: 'ASISTENCIA TÉCNICA DE PRODUCCIÓN Y REALIZACIÓN AUDIOVISUAL',
-      docente: '',
+      docente: 'CASTRO MORAN, Renée',
       modulo: 'TRABAJO DE POST PRODUCCIÓN',
       horas: '528',
       dias: 'L a V',
@@ -830,7 +830,7 @@ const TrainingOfferings = () => {
     {
       id: 46,
       planEstudio: 'PELUQUERÍA Y BARBERÍA',
-      docente: '',
+      docente: 'CASTAÑEDA AVILA, Marilu Consuelo',
       modulo: 'CORTE DE CABELLO, BARBA Y PEINADO',
       horas: '528',
       dias: 'L a V',
@@ -841,7 +841,7 @@ const TrainingOfferings = () => {
     {
       id: 47,
       planEstudio: 'PELUQUERÍA Y BARBERÍA',
-      docente: '',
+      docente: 'CASTAÑEDA AVILA, Marilu Consuelo',
       modulo: 'TRATAMIENTO CAPILAR, COLORACIÓN, ONDULACIÓN Y LACEADOS',
       horas: '528',
       dias: 'L a V',
@@ -852,7 +852,7 @@ const TrainingOfferings = () => {
     {
       id: 48,
       planEstudio: 'PELUQUERÍA Y BARBERÍA',
-      docente: '',
+      docente: 'TORRES GRIJALBA, Analí',
       modulo: 'CORTE DE CABELLO, BARBA Y PEINADO',
       horas: '528',
       dias: 'L a V',
@@ -863,7 +863,7 @@ const TrainingOfferings = () => {
     {
       id: 49,
       planEstudio: 'PELUQUERÍA Y BARBERÍA',
-      docente: '',
+      docente: 'TORRES GRIJALBA, Analí',
       modulo: 'TRATAMIENTO CAPILAR, COLORACIÓN, ONDULACIÓN Y LACEADOS',
       horas: '528',
       dias: 'L a V',
