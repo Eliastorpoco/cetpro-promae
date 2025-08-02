@@ -117,7 +117,7 @@ const TrainingOfferings = () => {
       dias: "L-M-V",
       fechaInicio: "17/03",
       fechaFin: "25/07",
-      turno: "N",
+      turno: "M",
       bgColor: "bg-amber-100",
       iconType: "welding"
     },
@@ -130,7 +130,7 @@ const TrainingOfferings = () => {
       dias: "K-J",
       fechaInicio: "18/03",
       fechaFin: "24/07",
-      turno: "N",
+      turno: "M",
       bgColor: "bg-amber-100",
       iconType: "welding"
     },
