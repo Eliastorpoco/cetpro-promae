@@ -137,7 +137,7 @@ const TrainingOfferings = () => {
     {
       id: 7,
       familiaProductiva: "SOLDADURA",
-      docente: "CONTRATO",
+      docente: "TOMASTO RODRIGUEZ, Benigno Valentin",
       modulo: "SOLDADURA ELÉCTRICA (Convenio)",
       horas: "288",
       dias: "L-M-V",
@@ -151,7 +151,7 @@ const TrainingOfferings = () => {
     {
       id: 8,
       familiaProductiva: "SOLDADURA",
-      docente: "CONTRATO",
+      docente: "TOMASTO RODRIGUEZ, Benigno Valentin",
       modulo: "PROCESOS DE SOLDADURA MIG MAG TIG (Convenio)",
       horas: "240",
       dias: "K-J",
