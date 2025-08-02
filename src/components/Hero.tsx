@@ -1,10 +1,8 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { ChevronRight, Facebook } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Link } from 'react-router-dom';
-
 const images = ["https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&q=80",
 // Welding image
 "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&q=80",
@@ -15,27 +13,22 @@ const images = ["https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?au
 // Computer technical support image
 "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80" // Woodworking/carpentry image
 ];
-
 const imageTitles = ["Soldadura", "Mecánica Automotriz", "Planos Arquitectónicos", "Soporte Técnico de Computadoras", "Carpintería de Madera"];
-
 const Hero = () => {
   const [currentImage, setCurrentImage] = useState(0);
   const [loading, setLoading] = useState(true);
-
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage(prev => (prev + 1) % images.length);
     }, 5000);
     return () => clearInterval(interval);
   }, []);
-
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
     }, 500);
     return () => clearTimeout(timer);
   }, []);
-
   return <div className="relative h-screen w-full overflow-hidden">
       {images.map((image, index) => <div key={index} className={cn("absolute inset-0 bg-cover bg-center transition-opacity duration-1000", currentImage === index ? "opacity-100" : "opacity-0")} style={{
       backgroundImage: `url(${image})`
@@ -45,34 +38,19 @@ const Hero = () => {
 
       {/* Ministry of Education, UGEL 03 and CETPRO PROMAE logos banner */}
       <div className="absolute top-4 left-1/2 transform -translate-x-1/2 bg-white/10 backdrop-blur-sm p-2 rounded-lg z-10 flex items-center gap-4">
-        <img 
-          src="/lovable-uploads/571af9aa-165e-4176-8c72-dbc808adab16.png"
-          alt="Logo Ministerio de Educación y UGEL 03" 
-          className="h-14 w-auto object-contain"
-        />
-        <img 
-          src="/lovable-uploads/4cb9c13e-f59b-4926-87f6-97248df9bec7.png"
-          alt="Logo CETPRO PROMAE MAGDALENA" 
-          className="h-14 w-auto object-contain"
-        />
+        <img src="/lovable-uploads/571af9aa-165e-4176-8c72-dbc808adab16.png" alt="Logo Ministerio de Educación y UGEL 03" className="h-14 w-auto object-contain" />
+        <img src="/lovable-uploads/4cb9c13e-f59b-4926-87f6-97248df9bec7.png" alt="Logo CETPRO PROMAE MAGDALENA" className="h-14 w-auto object-contain" />
       </div>
 
       <div className={cn("absolute inset-0 flex flex-col justify-center items-center text-white p-6 transition-opacity duration-1000", loading ? "opacity-0" : "opacity-100")}>
         <div className="max-w-4xl text-center space-y-6 animate-fade-in">
           
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-            Formación Tecnológica de Calidad
-          </h1>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">Matrícula semestre 2025 – II Inicio de clases 11 de agosto</h1>
           
           <p className="text-lg md:text-xl opacity-90 max-w-2xl mx-auto font-bold text-[#ffddaa]">En el CETPRO PROMAE MAGDALENA formamos profesionales técnicos con las competencias necesarias para destacar en el mundo laboral actual.</p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-            <a 
-              href="https://www.facebook.com/cetpro.promaemagdalena" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white border-white/30 px-8 h-11 rounded-md text-sm font-medium transition-colors group"
-            >
+            <a href="https://www.facebook.com/cetpro.promaemagdalena" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white border-white/30 px-8 h-11 rounded-md text-sm font-medium transition-colors group">
               <Facebook className="h-4 w-4" />
               <span>Facebook</span>
               <ChevronRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -97,5 +75,4 @@ const Hero = () => {
       </div>
     </div>;
 };
-
 export default Hero;
