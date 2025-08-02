@@ -527,7 +527,7 @@ const TrainingOfferings = () => {
     {
       id: 19,
       planEstudio: 'COSTURA Y ACABADOS',
-      docente: '',
+      docente: 'HUACHILLO CALERO, Giovanny',
       modulo: 'TÉCNICAS DE CONFECCIÓN DE PRENDAS DE VESTIR',
       horas: '528',
       dias: 'L a V',
@@ -538,7 +538,7 @@ const TrainingOfferings = () => {
     {
       id: 20,
       planEstudio: 'COSTURA Y ACABADOS',
-      docente: '',
+      docente: 'HUACHILLO CALERO, Giovanny',
       modulo: 'TÉCNICAS DE PROCESOS DE ACABADOS EN PRENDAS DE VESTIR',
       horas: '528',
       dias: 'L a V',
