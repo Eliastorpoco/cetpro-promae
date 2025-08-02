@@ -370,7 +370,7 @@ const TrainingOfferings = () => {
     {
       id: 5,
       planEstudio: 'APOYO ADMINISTRATIVO',
-      docente: '',
+      docente: 'NIÑO CALLE, Nestor Alonso',
       modulo: 'ATENCIÓN E INFORMACIÓN AL CLIENTE',
       horas: '528',
       dias: 'L a V',
@@ -381,7 +381,7 @@ const TrainingOfferings = () => {
     {
       id: 6,
       planEstudio: 'APOYO ADMINISTRATIVO',
-      docente: '',
+      docente: 'NIÑO CALLE, Nestor Alonso',
       modulo: 'OPERACIONES Y REGISTROS DE DOCUMENTOS ADMINISTRATIVOS',
       horas: '528',
       dias: 'L a V',
@@ -392,7 +392,7 @@ const TrainingOfferings = () => {
     {
       id: 7,
       planEstudio: 'APOYO ADMINISTRATIVO',
-      docente: '',
+      docente: 'NIÑO CALLE, Nestor Alonso',
       modulo: 'ATENCIÓN E INFORMACIÓN AL CLIENTE',
       horas: '528',
       dias: 'L a V',
@@ -403,7 +403,7 @@ const TrainingOfferings = () => {
     {
       id: 8,
       planEstudio: 'APOYO ADMINISTRATIVO',
-      docente: '',
+      docente: 'NIÑO CALLE, Nestor Alonso',
       modulo: 'OPERACIONES Y REGISTROS DE DOCUMENTOS ADMINISTRATIVOS',
       horas: '528',
       dias: 'L a V',
