@@ -102,6 +102,9 @@ const News = () => {
                   onClick={() => {
                     if (item.id === 1) {
                       window.open('https://youtu.be/KgfSRIuRONA', '_blank');
+                    } else if (item.id === 4) {
+                      window.open('https://youtu.be/YN3RodHRyko', '_blank');
+                      window.open('https://youtu.be/KJAMAwsymAU', '_blank');
                     }
                   }}
                 >
