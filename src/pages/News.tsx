@@ -1,11 +1,11 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { CalendarDays, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const News = () => {
-  const newsItems = [
+  const allNewsItems = [
     {
       id: 1,
       title: "Inicio de Matrículas 2025",
@@ -27,7 +27,41 @@ const News = () => {
       content: "Participa en nuestra Feria de Emprendimiento anual donde nuestros alumnos expondrán sus proyectos y servicios a la comunidad.",
       image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&q=80",
     },
+    {
+      id: 4,
+      title: "Ceremonia de Graduación 2024",
+      date: "20 de diciembre, 2024",
+      content: "Celebramos con orgullo la graduación de nuestros estudiantes que completaron exitosamente sus programas de formación técnica.",
+      image: "/lovable-uploads/ce6017cd-b1bb-4b6f-8668-addd017bcd83.png",
+    },
+    {
+      id: 5,
+      title: "Convenio con Empresas Locales",
+      date: "8 de enero, 2025",
+      content: "Firmamos nuevos convenios de prácticas profesionales con empresas reconocidas para garantizar la inserción laboral de nuestros egresados.",
+      image: "/lovable-uploads/1eda8a9d-9b0f-4254-9167-9958b404cd91.png",
+    },
+    {
+      id: 6,
+      title: "Taller de Innovación Tecnológica",
+      date: "30 de enero, 2025",
+      content: "Invitamos a todos los estudiantes a participar en nuestro taller especial sobre las últimas tendencias tecnológicas en el sector productivo.",
+      image: "/lovable-uploads/ce6017cd-b1bb-4b6f-8668-addd017bcd83.png",
+    },
   ];
+
+  const [visibleNews, setVisibleNews] = useState(3);
+  const [loading, setLoading] = useState(false);
+
+  const loadMoreNews = () => {
+    setLoading(true);
+    setTimeout(() => {
+      setVisibleNews(prev => Math.min(prev + 3, allNewsItems.length));
+      setLoading(false);
+    }, 500);
+  };
+
+  const newsItems = allNewsItems.slice(0, visibleNews);
 
   return (
     <div className="min-h-screen pt-20 pb-16">
@@ -78,11 +112,18 @@ const News = () => {
           ))}
         </div>
 
-        <div className="mt-12 text-center">
-          <Button variant="outline" className="border-cetpro-blue text-cetpro-blue hover:bg-cetpro-blue hover:text-white">
-            Cargar más noticias
-          </Button>
-        </div>
+        {visibleNews < allNewsItems.length && (
+          <div className="mt-12 text-center">
+            <Button 
+              variant="outline" 
+              className="border-cetpro-blue text-cetpro-blue hover:bg-cetpro-blue hover:text-white"
+              onClick={loadMoreNews}
+              disabled={loading}
+            >
+              {loading ? "Cargando..." : "Cargar más noticias"}
+            </Button>
+          </div>
+        )}
       </div>
     </div>
   );
