@@ -36,10 +36,10 @@ const News = () => {
     },
     {
       id: 5,
-      title: "Convenio con Empresas Locales",
-      date: "8 de enero, 2025",
-      content: "Firmamos nuevos convenios de prácticas profesionales con empresas reconocidas para garantizar la inserción laboral de nuestros egresados.",
-      image: "/lovable-uploads/1eda8a9d-9b0f-4254-9167-9958b404cd91.png",
+      title: "Capacitación DUA 2025 - Segunda parte",
+      date: "31 de Julio, 2025",
+      content: "Diseño Universal de Aprendizaje (DUA): Es un enfoque educativo que busca garantizar que todos los estudiantes tengan igualdad de oportunidades para aprender, considerando la diversidad de estilos, capacidades y necesidades. Empoderamiento del aprendizaje: Significa dotar al estudiante de herramientas, autonomía y confianza para que tome un rol activo y consciente en su proceso de aprendizaje. Se refiere a hacer del estudiante un sujeto protagonista, no pasivo. Aprendiz intencional y reflexivo: Intencional: que actúe con propósito, con metas claras y decisiones fundamentadas. Reflexivo: que evalúe y analice su proceso de aprendizaje, identificando fortalezas y aspectos por mejorar. Ingenioso y auténtico: Ingenioso: capaz de encontrar soluciones creativas y prácticas. Auténtico: que actúe desde su identidad, intereses y valores personales. Estratégico: Se refiere a que el estudiante utilice métodos, técnicas y recursos eficaces que le ayuden a aprender de forma más eficiente. Orientado a la acción: Significa que el aprendizaje debe tener una aplicación práctica, llevar a resultados concretos, y estar vinculado a la resolución de problemas reales o simulados.",
+      image: "/lovable-uploads/92c54797-2592-40e0-bbdd-e523121b2521.png",
     },
     {
       id: 6,
