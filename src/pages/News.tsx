@@ -117,9 +117,9 @@ const News = () => {
             variant="outline" 
             className="border-cetpro-blue text-cetpro-blue hover:bg-cetpro-blue hover:text-white"
             onClick={loadMoreNews}
-            disabled={loading || visibleNews >= allNewsItems.length}
+            disabled={loading}
           >
-            {loading ? "Cargando..." : visibleNews >= allNewsItems.length ? "No hay más noticias" : "Cargar más noticias"}
+            {loading ? "Cargando..." : "Cargar más noticias"}
           </Button>
         </div>
       </div>
