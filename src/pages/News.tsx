@@ -29,10 +29,10 @@ const News = () => {
     },
     {
       id: 4,
-      title: "Ceremonia de Graduación 2024",
-      date: "20 de diciembre, 2024",
-      content: "Celebramos con orgullo la graduación de nuestros estudiantes que completaron exitosamente sus programas de formación técnica.",
-      image: "/lovable-uploads/ce6017cd-b1bb-4b6f-8668-addd017bcd83.png",
+      title: "Capacitación DUA 2025",
+      date: "31 de Agosto, 2025",
+      content: "Tiene como propósito fortalecer las competencias de los docentes de la educación básica para la atención de la variabilidad de los estudiantes con y sin discapacidad; así como la diversificación de la propuesta pedagógica en favor de todos los estudiantes, promoviendo un servicio educativo equitativo, con igualdad de oportunidades de participación y aprendizaje.",
+      image: "/lovable-uploads/de5497b1-ef95-4161-b483-c27154639e32.png",
     },
     {
       id: 5,
