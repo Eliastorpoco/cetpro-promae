@@ -4,6 +4,7 @@ import CourseCard from '@/components/CourseCard';
 import TestimonialCard from '@/components/TestimonialCard';
 import { Button } from "@/components/ui/button";
 import { ChevronRight, GraduationCap, Book, Users, Award, ArrowRight, Facebook } from 'lucide-react';
+import matriculaImage from '@/assets/matricula-2025-II-updated.png';
 
 const Index = () => {
   const courses = [
@@ -164,7 +165,7 @@ const Index = () => {
             <div className="relative animate-fade-in-right">
               <div className="relative h-auto rounded-xl overflow-hidden shadow-xl">
                 <img 
-                  src="/lovable-uploads/8dfde572-9315-43c2-b314-70e8645ee240.png" 
+                  src={matriculaImage} 
                   alt="Matrícula 2025-II CETPRO PROMAE MAGDALENA"
                   className="w-full h-auto object-contain"
                 />
