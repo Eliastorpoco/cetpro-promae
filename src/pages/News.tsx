@@ -11,7 +11,7 @@ const News = () => {
       title: "Inicio de Matrículas 2025",
       date: "10 de marzo, 2025",
       content: "Nos complace anunciar que las matrículas para el año académico 2025 ya están abiertas. Acércate a nuestra sede principal o regístrate en línea.",
-      image: "/lovable-uploads/f8b2a048-ba57-4b5f-aaa4-dab2205a5e37.png",
+      image: "/lovable-uploads/1eda8a9d-9b0f-4254-9167-9958b404cd91.png",
     },
     {
       id: 2,
