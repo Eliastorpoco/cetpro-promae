@@ -4,7 +4,6 @@ import CourseCard from '@/components/CourseCard';
 import TestimonialCard from '@/components/TestimonialCard';
 import { Button } from "@/components/ui/button";
 import { ChevronRight, GraduationCap, Book, Users, Award, ArrowRight, Facebook } from 'lucide-react';
-import matriculaImage from '@/assets/matricula-2025-II-updated.png';
 
 const Index = () => {
   const courses = [
@@ -20,7 +19,7 @@ const Index = () => {
       featured: true,
       location: 'Jr. Cuzco 620 Magdalena del Mar',
       contact: 'Tf. 2627395',
-      startDate: '11 de agosto',
+      startDate: '17 de Marzo',
       modality: 'Presencial - Turno: MAÑANA',
       facebookPostUrl: 'https://www.facebook.com/cetpro.promaemagdalena'
     },
@@ -36,7 +35,7 @@ const Index = () => {
       featured: true,
       location: 'Jr. Cuzco 620 Magdalena del Mar',
       contact: 'Tf. 262-7395',
-      startDate: '11 de agosto',
+      startDate: '17 de marzo',
       modality: 'Presencial - Turno: Mañana',
       facebookPostUrl: 'https://www.facebook.com/cetpro.promaemagdalena'
     },
@@ -62,7 +61,7 @@ const Index = () => {
       featured: true,
       location: 'Jr. Cuzco 620 Magdalena del Mar',
       contact: 'Tf. 2627395',
-      startDate: '11 de agosto 2025',
+      startDate: '17 de Marzo 2025',
       modality: 'Presencial',
       facebookPostUrl: 'https://www.facebook.com/cetpro.promaemagdalena/posts/pfbid02qWLqPr8NB3kFk5WQBwF5t1K6wueYXuCmNod768JhWqcvebw1ASDHayU8ijAtGry4l'
     }
@@ -165,8 +164,8 @@ const Index = () => {
             <div className="relative animate-fade-in-right">
               <div className="relative h-auto rounded-xl overflow-hidden shadow-xl">
                 <img 
-                  src={matriculaImage} 
-                  alt="Matrícula 2025-II CETPRO PROMAE MAGDALENA"
+                  src="/lovable-uploads/13e4bc39-039b-46e2-96a8-ae596828503b.png" 
+                  alt="Matrícula 2025-I CETPRO PROMAE MAGDALENA" 
                   className="w-full h-auto object-contain"
                 />
               </div>
