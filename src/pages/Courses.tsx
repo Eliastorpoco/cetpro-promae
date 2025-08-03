@@ -42,7 +42,7 @@ const Courses = () => {
       featured: true,
       location: 'Jr. Cuzco 620 Magdalena del Mar',
       contact: 'Tf. 2627395',
-      startDate: '17 DE MARZO',
+      startDate: '11 DE AGOSTO',
       modality: 'Presencial',
       facebookPostUrl: 'https://www.facebook.com/cetpro.promaemagdalena/posts/pfbid02W9o1C5DdtG9rZqhxaG1yQgNcS3uoMbGj8Q4L89C1MdViBHrjY7tzpSXnj3LS1Upal'
     },
@@ -73,7 +73,7 @@ const Courses = () => {
       featured: true,
       location: 'Jr. Cuzco 620 Magdalena del Mar',
       contact: 'Tf. 2627395',
-      startDate: '17 de Marzo 2025',
+      startDate: '11 de agosto 2025',
       modality: 'Presencial'
     },
     {

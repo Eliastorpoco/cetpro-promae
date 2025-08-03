@@ -19,7 +19,7 @@ const Index = () => {
       featured: true,
       location: 'Jr. Cuzco 620 Magdalena del Mar',
       contact: 'Tf. 2627395',
-      startDate: '17 de Marzo',
+      startDate: '11 de agosto',
       modality: 'Presencial - Turno: MAÑANA',
       facebookPostUrl: 'https://www.facebook.com/cetpro.promaemagdalena'
     },
@@ -35,7 +35,7 @@ const Index = () => {
       featured: true,
       location: 'Jr. Cuzco 620 Magdalena del Mar',
       contact: 'Tf. 262-7395',
-      startDate: '17 de marzo',
+      startDate: '11 de agosto',
       modality: 'Presencial - Turno: Mañana',
       facebookPostUrl: 'https://www.facebook.com/cetpro.promaemagdalena'
     },
@@ -61,7 +61,7 @@ const Index = () => {
       featured: true,
       location: 'Jr. Cuzco 620 Magdalena del Mar',
       contact: 'Tf. 2627395',
-      startDate: '17 de Marzo 2025',
+      startDate: '11 de agosto 2025',
       modality: 'Presencial',
       facebookPostUrl: 'https://www.facebook.com/cetpro.promaemagdalena/posts/pfbid02qWLqPr8NB3kFk5WQBwF5t1K6wueYXuCmNod768JhWqcvebw1ASDHayU8ijAtGry4l'
     }
