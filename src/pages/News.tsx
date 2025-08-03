@@ -112,18 +112,16 @@ const News = () => {
           ))}
         </div>
 
-        {visibleNews < allNewsItems.length && (
-          <div className="mt-12 text-center">
-            <Button 
-              variant="outline" 
-              className="border-cetpro-blue text-cetpro-blue hover:bg-cetpro-blue hover:text-white"
-              onClick={loadMoreNews}
-              disabled={loading}
-            >
-              {loading ? "Cargando..." : "Cargar más noticias"}
-            </Button>
-          </div>
-        )}
+        <div className="mt-12 text-center">
+          <Button 
+            variant="outline" 
+            className="border-cetpro-blue text-cetpro-blue hover:bg-cetpro-blue hover:text-white"
+            onClick={loadMoreNews}
+            disabled={loading || visibleNews >= allNewsItems.length}
+          >
+            {loading ? "Cargando..." : visibleNews >= allNewsItems.length ? "No hay más noticias" : "Cargar más noticias"}
+          </Button>
+        </div>
       </div>
     </div>
   );
