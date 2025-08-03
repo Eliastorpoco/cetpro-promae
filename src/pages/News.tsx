@@ -38,7 +38,7 @@ const News = () => {
       id: 5,
       title: "Capacitación DUA 2025 - Segunda parte",
       date: "31 de Julio, 2025",
-      content: "Diseño Universal de Aprendizaje (DUA): Es un enfoque educativo que busca garantizar que todos los estudiantes tengan igualdad de oportunidades para aprender, considerando la diversidad de estilos, capacidades y necesidades. Empoderamiento del aprendizaje significa dotar al estudiante de herramientas, autonomía y confianza para que tome un rol activo y consciente en su proceso educativo. Un aprendiz intencional actúa con propósito y metas claras, mientras que uno reflexivo evalúa y analiza su proceso identificando fortalezas y aspectos por mejorar. Ingenioso y auténtico se refiere a ser capaz de encontrar soluciones creativas actuando desde su identidad e intereses personales. Estratégico implica utilizar métodos, técnicas y recursos eficaces para aprender de forma más eficiente. Orientado a la acción significa que el aprendizaje debe tener aplicación práctica y estar vinculado a la resolución de problemas reales.",
+      content: "El Diseño Universal de Aprendizaje (DUA) es un enfoque educativo que garantiza igualdad de oportunidades para todos los estudiantes, considerando la diversidad de estilos y capacidades. Busca empoderar al estudiante dotándolo de herramientas y autonomía para un aprendizaje activo, intencional y reflexivo, promoviendo estudiantes ingeniosos, auténticos y estratégicos en su proceso educativo.",
       image: "/lovable-uploads/92c54797-2592-40e0-bbdd-e523121b2521.png",
     },
     {
@@ -110,6 +110,8 @@ const News = () => {
                           window.open(url, '_blank');
                         }, index * 300);
                       });
+                    } else if (item.id === 5) {
+                      window.open('https://youtu.be/KJAMAwsymAU', '_blank');
                     }
                   }}
                 >
