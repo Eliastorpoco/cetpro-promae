@@ -164,8 +164,8 @@ const Index = () => {
             <div className="relative animate-fade-in-right">
               <div className="relative h-auto rounded-xl overflow-hidden shadow-xl">
                 <img 
-                  src="/lovable-uploads/cc50cee1-b224-42c2-b3f1-10061bc357a1.png" 
-                  alt="Matrícula 2025-I CETPRO PROMAE MAGDALENA - Inicio 11 de agosto" 
+                  src="/lovable-uploads/07288b7d-2881-4e08-be4f-730332003d44.png" 
+                  alt="Matrícula 2025-II CETPRO PROMAE MAGDALENA - Inicio 11 de agosto" 
                   className="w-full h-auto object-contain"
                 />
               </div>
