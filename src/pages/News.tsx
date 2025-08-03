@@ -29,10 +29,10 @@ const News = () => {
     },
     {
       id: 4,
-      title: "Capacitación DUA 2025",
+      title: "Capacitación DUA 2025 - segunda parte",
       date: "31 de Agosto, 2025",
       content: "Tiene como propósito fortalecer las competencias de los docentes de la educación básica para la atención de la variabilidad de los estudiantes con y sin discapacidad; así como la diversificación de la propuesta pedagógica en favor de todos los estudiantes, promoviendo un servicio educativo equitativo, con igualdad de oportunidades de participación y aprendizaje.",
-      image: "/lovable-uploads/de5497b1-ef95-4161-b483-c27154639e32.png",
+      image: "/lovable-uploads/b764031b-83fb-45ca-b82d-8cda0c29a451.png",
     },
     {
       id: 5,
