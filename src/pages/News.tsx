@@ -62,7 +62,15 @@ const News = () => {
                 </CardDescription>
               </CardContent>
               <CardFooter>
-                <Button variant="outline" className="w-full border-cetpro-blue text-cetpro-blue hover:bg-cetpro-blue hover:text-white group">
+                <Button 
+                  variant="outline" 
+                  className="w-full border-cetpro-blue text-cetpro-blue hover:bg-cetpro-blue hover:text-white group"
+                  onClick={() => {
+                    if (item.id === 1) {
+                      window.open('https://youtu.be/KgfSRIuRONA', '_blank');
+                    }
+                  }}
+                >
                   Leer más <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
               </CardFooter>
