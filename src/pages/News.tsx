@@ -117,7 +117,9 @@ const News = () => {
                     }
                   }}
                 >
-                  {item.id === 3 ? "Video de la feria" : "Leer más"} <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  {item.id === 3 ? "Video de la feria" : 
+                   item.id === 4 ? "Video primera parte" : 
+                   item.id === 5 ? "Video segunda parte" : "Leer más"} <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
               </CardFooter>
             </Card>
