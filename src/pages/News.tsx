@@ -8,17 +8,17 @@ const News = () => {
   const allNewsItems = [
     {
       id: 1,
-      title: "Inicio de Matrículas 2025",
-      date: "10 de marzo, 2025",
-      content: "Nos complace anunciar que las matrículas para el año académico 2025 ya están abiertas. Acércate a nuestra sede principal o regístrate en línea.",
-      image: "/lovable-uploads/1eda8a9d-9b0f-4254-9167-9958b404cd91.png",
-    },
-    {
-      id: 2,
       title: "Nuevos Cursos Disponibles",
       date: "15 de febrero, 2025",
       content: "Ampliamos nuestra oferta formativa con curso de auxiliar en técnico carpintería en madera y servicios básicos gastronómicos; en programación continua ilustración digital, aplicaciones en hoja de cálculo, procesos de soldadura mig mag tig",
       image: "/lovable-uploads/ce6017cd-b1bb-4b6f-8668-addd017bcd83.png",
+    },
+    {
+      id: 2,
+      title: "Inicio de Matrículas 2025",
+      date: "10 de marzo, 2025",
+      content: "Nos complace anunciar que las matrículas para el año académico 2025 ya están abiertas. Acércate a nuestra sede principal o regístrate en línea.",
+      image: "/lovable-uploads/1eda8a9d-9b0f-4254-9167-9958b404cd91.png",
     },
     {
       id: 3,
@@ -43,10 +43,10 @@ const News = () => {
     },
     {
       id: 6,
-      title: "Taller de Innovación Tecnológica",
-      date: "30 de enero, 2025",
+      title: "TALLER MINISTERIO DE TRABAJO NETWORKING PROMAE 2025",
+      date: "08 de agosto, 2025",
       content: "Invitamos a todos los estudiantes a participar en nuestro taller especial sobre las últimas tendencias tecnológicas en el sector productivo.",
-      image: "/lovable-uploads/ce6017cd-b1bb-4b6f-8668-addd017bcd83.png",
+      image: "/lovable-uploads/384d1aef-210b-4199-af2e-9466144261c8.png",
     },
   ];
 
