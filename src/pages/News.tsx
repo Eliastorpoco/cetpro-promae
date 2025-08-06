@@ -44,7 +44,7 @@ const News = () => {
     {
       id: 6,
       title: "TALLER MINISTERIO DE TRABAJO NETWORKING PROMAE 2025",
-      date: "08 de agosto, 2025",
+      date: "05 de agosto, 2025",
       content: "Invitamos a todos los estudiantes a participar en nuestro taller especial sobre las últimas tendencias tecnológicas en el sector productivo.",
       image: "/lovable-uploads/384d1aef-210b-4199-af2e-9466144261c8.png",
     },
@@ -114,12 +114,15 @@ const News = () => {
                       });
                     } else if (item.id === 5) {
                       window.open('https://youtu.be/KJAMAwsymAU', '_blank');
+                    } else if (item.id === 6) {
+                      window.open('https://youtu.be/aeX0ovH-UuM', '_blank');
                     }
                   }}
                 >
                   {item.id === 3 ? "Video de la feria" : 
                    item.id === 4 ? "Video primera parte" : 
-                   item.id === 5 ? "Video segunda parte" : "Leer más"} <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                   item.id === 5 ? "Video segunda parte" : 
+                   item.id === 6 ? "Video del taller" : "Leer más"} <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
               </CardFooter>
             </Card>
