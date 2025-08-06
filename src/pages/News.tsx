@@ -25,7 +25,7 @@ const News = () => {
       title: "Feria de Emprendimiento 2025",
       date: "5 de abril, 2025",
       content: "Participa en nuestra Feria de Emprendimiento anual donde nuestros alumnos expondrán sus proyectos y servicios a la comunidad.",
-      image: "/lovable-uploads/1accb22f-885f-416c-affa-318d866532b9.png",
+      image: "/lovable-uploads/a52c6be5-9e05-4c06-9e60-04f0faa2dcc3.png",
     },
     {
       id: 4,
@@ -117,7 +117,7 @@ const News = () => {
                     }
                   }}
                 >
-                  Leer más <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  {item.id === 3 ? "Video de la feria" : "Leer más"} <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
               </CardFooter>
             </Card>
