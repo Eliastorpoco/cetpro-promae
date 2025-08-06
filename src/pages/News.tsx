@@ -7,6 +7,20 @@ import { Button } from '@/components/ui/button';
 const News = () => {
   const allNewsItems = [
     {
+      id: 4,
+      title: "Capacitación DUA 2025",
+      date: "31 de Agosto, 2025",
+      content: "Tiene como propósito fortalecer las competencias de los docentes de la educación básica para la atención de la variabilidad de los estudiantes con y sin discapacidad; así como la diversificación de la propuesta pedagógica en favor de todos los estudiantes, promoviendo un servicio educativo equitativo, con igualdad de oportunidades de participación y aprendizaje.",
+      image: "/lovable-uploads/de5497b1-ef95-4161-b483-c27154639e32.png",
+    },
+    {
+      id: 5,
+      title: "Capacitación DUA 2025 - Segunda parte",
+      date: "31 de Julio, 2025",
+      content: "El Diseño Universal de Aprendizaje (DUA) es un enfoque educativo que garantiza igualdad de oportunidades para todos los estudiantes, considerando la diversidad de estilos y capacidades. Busca empoderar al estudiante dotándolo de herramientas y autonomía para un aprendizaje activo, intencional y reflexivo, promoviendo estudiantes ingeniosos, auténticos y estratégicos en su proceso educativo.",
+      image: "/lovable-uploads/92c54797-2592-40e0-bbdd-e523121b2521.png",
+    },
+    {
       id: 1,
       title: "Nuevos Cursos Disponibles",
       date: "15 de febrero, 2025",
@@ -26,20 +40,6 @@ const News = () => {
       date: "5 de abril, 2025",
       content: "Participa en nuestra Feria de Emprendimiento anual donde nuestros alumnos expondrán sus proyectos y servicios a la comunidad.",
       image: "/lovable-uploads/a52c6be5-9e05-4c06-9e60-04f0faa2dcc3.png",
-    },
-    {
-      id: 4,
-      title: "Capacitación DUA 2025",
-      date: "31 de Agosto, 2025",
-      content: "Tiene como propósito fortalecer las competencias de los docentes de la educación básica para la atención de la variabilidad de los estudiantes con y sin discapacidad; así como la diversificación de la propuesta pedagógica en favor de todos los estudiantes, promoviendo un servicio educativo equitativo, con igualdad de oportunidades de participación y aprendizaje.",
-      image: "/lovable-uploads/de5497b1-ef95-4161-b483-c27154639e32.png",
-    },
-    {
-      id: 5,
-      title: "Capacitación DUA 2025 - Segunda parte",
-      date: "31 de Julio, 2025",
-      content: "El Diseño Universal de Aprendizaje (DUA) es un enfoque educativo que garantiza igualdad de oportunidades para todos los estudiantes, considerando la diversidad de estilos y capacidades. Busca empoderar al estudiante dotándolo de herramientas y autonomía para un aprendizaje activo, intencional y reflexivo, promoviendo estudiantes ingeniosos, auténticos y estratégicos en su proceso educativo.",
-      image: "/lovable-uploads/92c54797-2592-40e0-bbdd-e523121b2521.png",
     },
     {
       id: 6,
