@@ -48,7 +48,7 @@ const Navbar = () => {
     },
     {
       name: 'Oferta Formativa',
-      path: '/oferta-formativa',
+      path: '/cursos',
       icon: <BookOpen className="h-4 w-4" />
     },
     {
