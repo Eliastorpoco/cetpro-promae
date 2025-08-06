@@ -45,7 +45,7 @@ const News = () => {
       id: 6,
       title: "TALLER MINISTERIO DE TRABAJO NETWORKING PROMAE 2025",
       date: "05 de agosto, 2025",
-      content: "Invitamos a todos los estudiantes a participar en nuestro taller especial sobre las últimas tendencias tecnológicas en el sector productivo.",
+      content: "Uso estratégico de LinkedIn y el networking profesional enfocado en docentes, resaltando la importancia de construir y mantener una red de contactos afines a la especialidad. Se promovió el fortalecimiento de la marca personal en plataformas digitales y se brindaron pautas para optimizar el perfil en LinkedIn, realizar publicaciones adecuadas y generar oportunidades laborales. Además, se destacó el valor del networking virtual como herramienta para el crecimiento profesional, compartiendo experiencias reales e incentivando la participación activa en redes sociales profesionales.",
       image: "/lovable-uploads/384d1aef-210b-4199-af2e-9466144261c8.png",
     },
   ];
