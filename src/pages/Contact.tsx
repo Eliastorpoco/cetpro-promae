@@ -80,7 +80,7 @@ const Contact = () => {
                     />
                   </div>
                   <div className="space-y-2">
-                    <label htmlFor="email" className="text-sm font-medium">Correo electrónico</label>
+                    <label htmlFor="email" className="text-sm font-medium">Escribe tu correo electrónico</label>
                     <Input 
                       id="email" 
                       type="email" 
