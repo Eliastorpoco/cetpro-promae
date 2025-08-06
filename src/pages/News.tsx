@@ -25,7 +25,7 @@ const News = () => {
       title: "Feria de Emprendimiento 2025",
       date: "5 de abril, 2025",
       content: "Participa en nuestra Feria de Emprendimiento anual donde nuestros alumnos expondrán sus proyectos y servicios a la comunidad.",
-      image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&q=80",
+      image: "/lovable-uploads/1accb22f-885f-416c-affa-318d866532b9.png",
     },
     {
       id: 4,
@@ -102,6 +102,8 @@ const News = () => {
                   onClick={() => {
                     if (item.id === 1) {
                       window.open('https://youtu.be/KgfSRIuRONA', '_blank');
+                    } else if (item.id === 3) {
+                      window.open('https://youtu.be/_CLKy-RQ4fc', '_blank');
                     } else if (item.id === 4) {
                       // Abre ambos videos en pestañas separadas
                       const urls = ['https://youtu.be/YN3RodHRyko', 'https://youtu.be/KJAMAwsymAU'];
