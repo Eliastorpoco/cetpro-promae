@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import CourseCard from '@/components/CourseCard';
 import { Button } from "@/components/ui/button";
 import { Search, Filter, ChevronRight, BookOpen, Facebook } from 'lucide-react';
@@ -626,9 +627,11 @@ const Courses = () => {
                 <span>Facebook</span>
                 <ChevronRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </a>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/20">
-                Solicitar Información
-              </Button>
+              <Link to="/contacto">
+                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/20">
+                  Mensaje por correo
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
