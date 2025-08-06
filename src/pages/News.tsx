@@ -21,11 +21,11 @@ const News = () => {
       image: "/lovable-uploads/92c54797-2592-40e0-bbdd-e523121b2521.png",
     },
     {
-      id: 1,
-      title: "Nuevos Cursos Disponibles",
-      date: "15 de febrero, 2025",
-      content: "Ampliamos nuestra oferta formativa con curso de auxiliar en técnico carpintería en madera y servicios básicos gastronómicos; en programación continua ilustración digital, aplicaciones en hoja de cálculo, procesos de soldadura mig mag tig",
-      image: "/lovable-uploads/ce6017cd-b1bb-4b6f-8668-addd017bcd83.png",
+      id: 6,
+      title: "TALLER MINISTERIO DE TRABAJO NETWORKING PROMAE 2025",
+      date: "05 de agosto, 2025",
+      content: "Uso estratégico de LinkedIn y el networking profesional enfocado en docentes, resaltando la importancia de construir y mantener una red de contactos afines a la especialidad. Se promovió el fortalecimiento de la marca personal en plataformas digitales y se brindaron pautas para optimizar el perfil en LinkedIn, realizar publicaciones adecuadas y generar oportunidades laborales. Además, se destacó el valor del networking virtual como herramienta para el crecimiento profesional, compartiendo experiencias reales e incentivando la participación activa en redes sociales profesionales.",
+      image: "/lovable-uploads/384d1aef-210b-4199-af2e-9466144261c8.png",
     },
     {
       id: 2,
@@ -42,11 +42,11 @@ const News = () => {
       image: "/lovable-uploads/a52c6be5-9e05-4c06-9e60-04f0faa2dcc3.png",
     },
     {
-      id: 6,
-      title: "TALLER MINISTERIO DE TRABAJO NETWORKING PROMAE 2025",
-      date: "05 de agosto, 2025",
-      content: "Uso estratégico de LinkedIn y el networking profesional enfocado en docentes, resaltando la importancia de construir y mantener una red de contactos afines a la especialidad. Se promovió el fortalecimiento de la marca personal en plataformas digitales y se brindaron pautas para optimizar el perfil en LinkedIn, realizar publicaciones adecuadas y generar oportunidades laborales. Además, se destacó el valor del networking virtual como herramienta para el crecimiento profesional, compartiendo experiencias reales e incentivando la participación activa en redes sociales profesionales.",
-      image: "/lovable-uploads/384d1aef-210b-4199-af2e-9466144261c8.png",
+      id: 1,
+      title: "Nuevos Cursos Disponibles",
+      date: "15 de febrero, 2025",
+      content: "Ampliamos nuestra oferta formativa con curso de auxiliar en técnico carpintería en madera y servicios básicos gastronómicos; en programación continua ilustración digital, aplicaciones en hoja de cálculo, procesos de soldadura mig mag tig",
+      image: "/lovable-uploads/ce6017cd-b1bb-4b6f-8668-addd017bcd83.png",
     },
   ];
 
