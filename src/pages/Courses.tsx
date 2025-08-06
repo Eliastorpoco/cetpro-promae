@@ -15,61 +15,24 @@ const Courses = () => {
     { id: 'business', name: 'Administración' },
     { id: 'gastronomy', name: 'Gastronomía' },
     { id: 'automotive', name: 'Mecánica Automotriz' },
-    { id: 'construction', name: 'Construcción' }
+    { id: 'construction', name: 'Construcción' },
+    { id: 'welding', name: 'Soldadura' },
+    { id: 'electrical', name: 'Electricidad' },
+    { id: 'textiles', name: 'Confección' },
+    { id: 'audiovisual', name: 'Audiovisual' }
   ];
 
   const courses = [
+    // Programas Técnicos Principales
     {
       id: 1,
-      title: 'Desarrollo Web Frontend',
-      description: 'Aprende a diseñar y construir sitios web con HTML, CSS y JavaScript. Curso completo para principiantes.',
-      category: 'tech',
-      duration: '3 meses',
-      schedule: 'Lunes y Miércoles, 6-9pm',
-      instructor: 'Prof. Carlos Mendoza',
-      image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80',
-      featured: true
-    },
-    {
-      id: 3,
-      title: 'AUXILIAR TÉCNICO ACABADOS EN EDIFICACIONES Y OBRAS CIVILES',
-      description: 'Módulo: Revestimiento de superficies en edificaciones y obras civiles.',
-      category: 'construction',
-      duration: 'Marzo - 2025',
-      schedule: 'TURNO NOCHE',
-      instructor: 'Docente: Neider Abanto Chávez',
-      image: 'public/lovable-uploads/992d700a-1208-40ca-8883-b116dcb74ca7.png',
-      featured: true,
-      location: 'Jr. Cuzco 620 Magdalena del Mar',
-      contact: 'Tf. 2627395',
-      startDate: '17 DE MARZO',
-      modality: 'Presencial',
-      facebookPostUrl: 'https://www.facebook.com/cetpro.promaemagdalena/posts/pfbid02W9o1C5DdtG9rZqhxaG1yQgNcS3uoMbGj8Q4L89C1MdViBHrjY7tzpSXnj3LS1Upal'
-    },
-    {
-      id: 8,
-      title: 'Ilustración Digital',
-      description: 'Aprende técnicas de ilustración digital con profesionales del sector. Curso práctico con las últimas herramientas.',
-      category: 'design',
-      duration: '3 meses',
-      schedule: 'Martes y Jueves, 5-8pm',
-      instructor: 'CETPRO PROMAE MAGDALENA',
-      image: 'https://invalid-image-url.jpg',
-      featured: true,
-      location: 'Jr. Cuzco 620 Magdalena del Mar',
-      contact: 'Tf. 2627395',
-      startDate: '15 de Abril 2025',
-      modality: 'Presencial'
-    },
-    {
-      id: 7,
-      title: 'Mantenimiento Preventivo y Correctivo de Motores de Combustión Interna',
-      description: 'Curso modular de formación continua en mecánica automotriz. Aprende técnicas profesionales de diagnóstico y reparación de motores.',
-      category: 'automotive',
-      duration: 'Marzo - 2025',
-      schedule: 'Lunes a Viernes, 5:30-10:00pm',
-      instructor: 'CETPRO PROMAE MAGDALENA',
-      image: 'https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&q=80',
+      title: 'Asistencia de Contabilidad',
+      description: 'Programa técnico que forma profesionales en procedimientos financieros, contables y liquidación de impuestos.',
+      category: 'business',
+      duration: '8 meses',
+      schedule: 'Lunes a Viernes',
+      instructor: 'BARRIOS ESPERILLA, Orsa / ROJAS CAJA Sandra Patricia',
+      image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80',
       featured: true,
       location: 'Jr. Cuzco 620 Magdalena del Mar',
       contact: 'Tf. 2627395',
@@ -78,43 +41,375 @@ const Courses = () => {
     },
     {
       id: 2,
-      title: 'Administración de Redes',
-      description: 'Domina la configuración, mantenimiento y seguridad de redes informáticas empresariales.',
-      category: 'tech',
-      duration: '4 meses',
-      schedule: 'Martes y Jueves, 6-9pm',
-      instructor: 'Prof. Ana García',
-      image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80'
+      title: 'Apoyo Administrativo',
+      description: 'Formación técnica en atención al cliente y operaciones administrativas para empresas e instituciones.',
+      category: 'business',
+      duration: '8 meses',
+      schedule: 'Lunes a Viernes',
+      instructor: 'NIÑO CALLE, Nestor Alonso / BRAVO LUNA, José Antonio',
+      image: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&q=80',
+      featured: true,
+      location: 'Jr. Cuzco 620 Magdalena del Mar',
+      contact: 'Tf. 2627395',
+      startDate: '17 de Marzo 2025',
+      modality: 'Presencial'
+    },
+    {
+      id: 3,
+      title: 'Mecánica de Motos y Vehículos Afines',
+      description: 'Programa especializado en mantenimiento y reparación de motores y sistemas de vehículos menores.',
+      category: 'automotive',
+      duration: '8 meses',
+      schedule: 'Lunes a Viernes - Turno Tarde',
+      instructor: 'PONCE RODRIGUEZ, Jose Daniel',
+      image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?auto=format&fit=crop&q=80',
+      featured: true,
+      location: 'Jr. Cuzco 620 Magdalena del Mar',
+      contact: 'Tf. 2627395',
+      startDate: '17 de Marzo 2025',
+      modality: 'Presencial'
     },
     {
       id: 4,
-      title: 'Desarrollo de Aplicaciones Móviles',
-      description: 'Aprende a desarrollar aplicaciones para iOS y Android utilizando React Native.',
-      category: 'tech',
-      duration: '4 meses',
-      schedule: 'Martes y Jueves, 7-10pm',
-      instructor: 'Prof. Roberto Gómez',
-      image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&q=80'
+      title: 'Panadería y Pastelería',
+      description: 'Formación técnica en elaboración, acondicionamiento y decoración de productos de panadería y pastelería.',
+      category: 'gastronomy',
+      duration: '8 meses',
+      schedule: 'Lunes a Viernes',
+      instructor: 'SALAZAR LEZMA María Violeta / CUBAS CAMACHO, Silvia / ALQUIZAR HUERTA, Maritza',
+      image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80',
+      featured: true,
+      location: 'Jr. Cuzco 620 Magdalena del Mar',
+      contact: 'Tf. 2627395',
+      startDate: '17 de Marzo 2025',
+      modality: 'Presencial'
     },
     {
       id: 5,
-      title: 'Marketing Digital',
-      description: 'Estrategias de marketing online, SEO, redes sociales y publicidad digital para negocios.',
-      category: 'business',
-      duration: '2 meses',
-      schedule: 'Lunes y Miércoles, 7-9pm',
-      instructor: 'Prof. Carmen Salazar',
-      image: 'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&q=80'
+      title: 'Costura y Acabados',
+      description: 'Programa técnico en confección de prendas de vestir, diseño y acabados textiles.',
+      category: 'textiles',
+      duration: '8 meses',
+      schedule: 'Lunes a Viernes',
+      instructor: 'GALARZA CORILLA, Yhajaira',
+      image: 'https://images.unsplash.com/photo-1529720317453-c8da503f2051?auto=format&fit=crop&q=80',
+      featured: true,
+      location: 'Jr. Cuzco 620 Magdalena del Mar',
+      contact: 'Tf. 2627395',
+      startDate: '17 de Marzo 2025',
+      modality: 'Presencial'
     },
     {
       id: 6,
-      title: 'Cocina Internacional',
-      description: 'Aprende técnicas y recetas de la gastronomía internacional con chefs profesionales.',
-      category: 'gastronomy',
-      duration: '3 meses',
-      schedule: 'Sábados, 9am-1pm',
-      instructor: 'Chef Juan Martínez',
-      image: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&q=80'
+      title: 'Corte y Ensamblaje',
+      description: 'Especialización en técnicas de corte y ensamblaje en la industria textil y confección.',
+      category: 'textiles',
+      duration: '8 meses',
+      schedule: 'Lunes a Viernes',
+      instructor: 'GALARZA CORILLA, Yhajaira',
+      image: 'https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&q=80',
+      featured: true,
+      location: 'Jr. Cuzco 620 Magdalena del Mar',
+      contact: 'Tf. 2627395',
+      startDate: '17 de Marzo 2025',
+      modality: 'Presencial'
+    },
+    {
+      id: 7,
+      title: 'Planchado y Pintura en Vehículos Automotores',
+      description: 'Formación técnica en reparación de carrocería, planchado y pintura automotriz.',
+      category: 'automotive',
+      duration: '8 meses',
+      schedule: 'Lunes a Viernes',
+      instructor: 'JAIME SANCHEZ, Eduardo Teodoro',
+      image: 'https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&q=80',
+      featured: true,
+      location: 'Jr. Cuzco 620 Magdalena del Mar',
+      contact: 'Tf. 2627395',
+      startDate: '17 de Marzo 2025',
+      modality: 'Presencial'
+    },
+    {
+      id: 8,
+      title: 'Soporte Técnico y Operaciones de Centros de Cómputo',
+      description: 'Programa técnico en soporte informático, mantenimiento de equipos y administración de centros de cómputo.',
+      category: 'tech',
+      duration: '8 meses',
+      schedule: 'Lunes a Viernes',
+      instructor: 'MEJIA CABALLERO, Jaime',
+      image: 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?auto=format&fit=crop&q=80',
+      featured: true,
+      location: 'Jr. Cuzco 620 Magdalena del Mar',
+      contact: 'Tf. 2627395',
+      startDate: '17 de Marzo 2025',
+      modality: 'Presencial'
+    },
+    {
+      id: 9,
+      title: 'Asistencia Técnica de Producción y Realización Audiovisual',
+      description: 'Formación técnica en producción audiovisual, edición de video y realización de contenidos multimedia.',
+      category: 'audiovisual',
+      duration: '8 meses',
+      schedule: 'Lunes a Viernes',
+      instructor: 'RENATO CASTRO MORAN',
+      image: '/lovable-uploads/7cb5bfd5-bf57-438a-831a-4bc119c3a6f5.png',
+      featured: true,
+      location: 'Jr. Cuzco 620 Magdalena del Mar',
+      contact: 'Tf. 2627395',
+      startDate: '17 de Marzo 2025',
+      modality: 'Presencial'
+    },
+    {
+      id: 10,
+      title: 'Confección de Artículos de Cuero y Marroquinería',
+      description: 'Especialización en diseño y confección de productos de cuero, carteras, bolsos y artículos de marroquinería.',
+      category: 'textiles',
+      duration: '8 meses',
+      schedule: 'Lunes a Viernes',
+      instructor: 'SALAS MUÑOZ, Victoria',
+      image: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&q=80',
+      featured: true,
+      location: 'Jr. Cuzco 620 Magdalena del Mar',
+      contact: 'Tf. 2627395',
+      startDate: '17 de Marzo 2025',
+      modality: 'Presencial'
+    },
+    {
+      id: 11,
+      title: 'Producción de Tejeduría',
+      description: 'Programa técnico en técnicas de tejido tradicional y moderno, producción textil artesanal e industrial.',
+      category: 'textiles',
+      duration: '8 meses',
+      schedule: 'Lunes a Viernes',
+      instructor: 'GAMONAL AVILÉS, Vilma',
+      image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&q=80',
+      featured: true,
+      location: 'Jr. Cuzco 620 Magdalena del Mar',
+      contact: 'Tf. 2627395',
+      startDate: '17 de Marzo 2025',
+      modality: 'Presencial'
+    },
+    {
+      id: 12,
+      title: 'Albañilería',
+      description: 'Formación técnica en construcción, albañilería general y técnicas de edificación.',
+      category: 'construction',
+      duration: '8 meses',
+      schedule: 'Lunes a Viernes',
+      instructor: 'ABANTO CHAVEZ, Neider',
+      image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80',
+      featured: true,
+      location: 'Jr. Cuzco 620 Magdalena del Mar',
+      contact: 'Tf. 2627395',
+      startDate: '17 de Marzo 2025',
+      modality: 'Presencial'
+    },
+    {
+      id: 13,
+      title: 'Acabados en Edificaciones y Obras Civiles',
+      description: 'Programa técnico especializado en acabados de construcción, revestimientos y obras civiles.',
+      category: 'construction',
+      duration: '8 meses',
+      schedule: 'Lunes a Viernes',
+      instructor: 'ABANTO CHAVEZ, Neider',
+      image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80',
+      featured: true,
+      location: 'Jr. Cuzco 620 Magdalena del Mar',
+      contact: 'Tf. 2627395',
+      startDate: '17 de Marzo 2025',
+      modality: 'Presencial'
+    },
+    {
+      id: 14,
+      title: 'Peluquería y Barbería',
+      description: 'Formación técnica en cortes de cabello, peinados, tratamientos capilares y técnicas de barbería moderna.',
+      category: 'design',
+      duration: '8 meses',
+      schedule: 'Lunes a Viernes',
+      instructor: 'ROSALES VERA, Karina',
+      image: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&q=80',
+      featured: true,
+      location: 'Jr. Cuzco 620 Magdalena del Mar',
+      contact: 'Tf. 2627395',
+      startDate: '17 de Marzo 2025',
+      modality: 'Presencial'
+    },
+    {
+      id: 15,
+      title: 'Carpintería en Madera',
+      description: 'Programa técnico en carpintería, ebanistería y trabajo en madera para muebles y estructuras.',
+      category: 'construction',
+      duration: '8 meses',
+      schedule: 'Lunes a Viernes',
+      instructor: 'SAAVEDRA MORALES, Carlos',
+      image: 'https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&q=80',
+      featured: true,
+      location: 'Jr. Cuzco 620 Magdalena del Mar',
+      contact: 'Tf. 2627395',
+      startDate: '17 de Marzo 2025',
+      modality: 'Presencial'
+    },
+    
+    // Cursos de Formación Continua
+    {
+      id: 16,
+      title: 'Ilustración Digital (Corel Draw)',
+      description: 'Curso especializado en ilustración digital con Corel Draw. Aprende técnicas profesionales de diseño.',
+      category: 'design',
+      duration: '4 meses',
+      schedule: 'Lunes, Martes y Viernes - Turno Mañana',
+      instructor: 'ALCA LEON, Hilda',
+      image: 'https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&q=80',
+      featured: true,
+      location: 'Jr. Cuzco 620 Magdalena del Mar',
+      contact: 'Tf. 2627395',
+      startDate: '17 de Marzo 2025',
+      modality: 'Presencial'
+    },
+    {
+      id: 17,
+      title: 'Aplicaciones en Procesador de Texto (Windows - Word)',
+      description: 'Curso práctico de Microsoft Word y herramientas de oficina para documentos profesionales.',
+      category: 'tech',
+      duration: '4 meses',
+      schedule: 'Martes y Jueves',
+      instructor: 'ALCA LEON, Hilda / SALAZAR ALBURQUEQUE, Franklin',
+      image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80',
+      location: 'Jr. Cuzco 620 Magdalena del Mar',
+      contact: 'Tf. 2627395',
+      startDate: '18 de Marzo 2025',
+      modality: 'Presencial'
+    },
+    {
+      id: 18,
+      title: 'Aplicaciones en Hoja de Cálculo (Excel)',
+      description: 'Domina Microsoft Excel para análisis de datos, fórmulas avanzadas y reportes empresariales.',
+      category: 'tech',
+      duration: '4 meses',
+      schedule: 'Lunes, Martes y Viernes - Turno Noche',
+      instructor: 'SALAZAR ALBURQUEQUE, Franklin Lauro',
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80',
+      location: 'Jr. Cuzco 620 Magdalena del Mar',
+      contact: 'Tf. 2627395',
+      startDate: '17 de Marzo 2025',
+      modality: 'Presencial'
+    },
+    {
+      id: 19,
+      title: 'Soldadura Eléctrica',
+      description: 'Curso intensivo de soldadura eléctrica con técnicas profesionales para la industria.',
+      category: 'welding',
+      duration: '4 meses',
+      schedule: 'Lunes, Martes y Viernes',
+      instructor: 'QUISPE ANDRADE, Edwin / TOMASTO RODRIGUEZ, Benigno / BAUTISTA CALIXTRO, Rubes',
+      image: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&q=80',
+      featured: true,
+      location: 'Jr. Cuzco 620 Magdalena del Mar',
+      contact: 'Tf. 2627395',
+      startDate: '17 de Marzo 2025',
+      modality: 'Presencial'
+    },
+    {
+      id: 20,
+      title: 'Procesos de Soldadura MIG MAG TIG',
+      description: 'Especialización en soldadura avanzada con técnicas MIG, MAG y TIG para aplicaciones industriales.',
+      category: 'welding',
+      duration: '4 meses',
+      schedule: 'Martes y Jueves',
+      instructor: 'QUISPE ANDRADE, Edwin / TOMASTO RODRIGUEZ, Benigno / BAUTISTA CALIXTRO, Rubes',
+      image: 'https://images.unsplash.com/photo-1565911194071-17689cec6463?auto=format&fit=crop&q=80',
+      featured: true,
+      location: 'Jr. Cuzco 620 Magdalena del Mar',
+      contact: 'Tf. 2627395',
+      startDate: '18 de Marzo 2025',
+      modality: 'Presencial'
+    },
+    {
+      id: 21,
+      title: 'Instalaciones Eléctricas Domiciliarias',
+      description: 'Curso técnico de instalaciones eléctricas residenciales, normativas y seguridad eléctrica.',
+      category: 'electrical',
+      duration: '4 meses',
+      schedule: 'Lunes, Martes y Viernes',
+      instructor: 'HUANCOLLO PULIDO, David / CHOQUEPATA MAMANI, Juan Carlos',
+      image: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80',
+      featured: true,
+      location: 'Jr. Cuzco 620 Magdalena del Mar',
+      contact: 'Tf. 2627395',
+      startDate: '17 de Marzo 2025',
+      modality: 'Presencial'
+    },
+    {
+      id: 22,
+      title: 'Rebobinado de Motores Eléctricos',
+      description: 'Especialización en reparación y rebobinado de motores eléctricos industriales y domésticos.',
+      category: 'electrical',
+      duration: '4 meses',
+      schedule: 'Martes y Jueves',
+      instructor: 'HUANCOLLO PULIDO, David / CHOQUEPATA MAMANI, Juan Carlos',
+      image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80',
+      location: 'Jr. Cuzco 620 Magdalena del Mar',
+      contact: 'Tf. 2627395',
+      startDate: '18 de Marzo 2025',
+      modality: 'Presencial'
+    },
+    {
+      id: 23,
+      title: 'Mantenimiento de Equipos Celulares',
+      description: 'Curso técnico en diagnóstico y mantenimiento preventivo de teléfonos móviles y tablets.',
+      category: 'tech',
+      duration: '4 meses',
+      schedule: 'Lunes, Martes y Viernes - Turno Noche',
+      instructor: 'NIÑO CUEVA, Romel',
+      image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80',
+      location: 'Jr. Cuzco 620 Magdalena del Mar',
+      contact: 'Tf. 2627395',
+      startDate: '17 de Marzo 2025',
+      modality: 'Presencial'
+    },
+    {
+      id: 24,
+      title: 'Reparación de Equipos Celulares',
+      description: 'Especialización en reparación avanzada de dispositivos móviles, cambio de componentes y software.',
+      category: 'tech',
+      duration: '4 meses',
+      schedule: 'Martes y Jueves - Turno Noche',
+      instructor: 'NIÑO CUEVA, Romel',
+      image: 'https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?auto=format&fit=crop&q=80',
+      location: 'Jr. Cuzco 620 Magdalena del Mar',
+      contact: 'Tf. 2627395',
+      startDate: '18 de Marzo 2025',
+      modality: 'Presencial'
+    },
+    {
+      id: 25,
+      title: 'Mantenimiento Preventivo de Motores de Combustión Interna',
+      description: 'Curso especializado en mantenimiento preventivo de motores automotrices e industriales.',
+      category: 'automotive',
+      duration: '2 meses',
+      schedule: 'Lunes a Viernes - Turno Noche',
+      instructor: 'QUISPE ORE, Rubén Felipe',
+      image: 'https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&q=80',
+      featured: true,
+      location: 'Jr. Cuzco 620 Magdalena del Mar',
+      contact: 'Tf. 2627395',
+      startDate: '17 de Marzo 2025',
+      modality: 'Presencial'
+    },
+    {
+      id: 26,
+      title: 'Mantenimiento Correctivo de Motores de Combustión Interna',
+      description: 'Especialización en reparación y mantenimiento correctivo de motores de combustión interna.',
+      category: 'automotive',
+      duration: '2 meses',
+      schedule: 'Lunes a Viernes - Turno Noche',
+      instructor: 'QUISPE ORE, Rubén Felipe',
+      image: 'https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?auto=format&fit=crop&q=80',
+      featured: true,
+      location: 'Jr. Cuzco 620 Magdalena del Mar',
+      contact: 'Tf. 2627395',
+      startDate: '28 de Mayo 2025',
+      modality: 'Presencial'
     }
   ];
 
@@ -201,14 +496,28 @@ const Courses = () => {
                   key={course.id}
                   title={course.title}
                   description={course.description}
-                  category={course.category === 'tech' ? 'Tecnología' : 
-                             course.category === 'design' ? 'Diseño' : 
-                             course.category === 'business' ? 'Administración' : 'Gastronomía'}
+                  category={
+                    course.category === 'tech' ? 'Tecnología' : 
+                    course.category === 'design' ? 'Diseño' : 
+                    course.category === 'business' ? 'Administración' : 
+                    course.category === 'gastronomy' ? 'Gastronomía' :
+                    course.category === 'automotive' ? 'Mecánica Automotriz' :
+                    course.category === 'construction' ? 'Construcción' :
+                    course.category === 'welding' ? 'Soldadura' :
+                    course.category === 'electrical' ? 'Electricidad' :
+                    course.category === 'textiles' ? 'Confección' :
+                    course.category === 'audiovisual' ? 'Audiovisual' : course.category
+                  }
                   duration={course.duration}
                   schedule={course.schedule}
                   instructor={course.instructor}
                   image={course.image}
                   featured={course.featured}
+                  location={course.location}
+                  contact={course.contact}
+                  startDate={course.startDate}
+                  modality={course.modality}
+                  facebookPostUrl={(course as any).facebookPostUrl}
                 />
               ))}
             </div>
