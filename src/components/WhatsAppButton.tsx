@@ -3,7 +3,7 @@ import React from 'react';
 const WhatsAppButton = () => {
   const handleWhatsAppClick = () => {
     window.open(
-      'https://api.whatsapp.com/send?phone=51995437671&text=Hola,%20deseo%20más%20información%20sobre%20la%20institución.',
+      'https://api.whatsapp.com/send?phone=51984022030&text=Hola,%20deseo%20más%20información%20sobre%20la%20institución.',
       '_blank'
     );
   };
