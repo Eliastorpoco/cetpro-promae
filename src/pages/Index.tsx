@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Hero from '@/components/Hero';
 import CourseCard from '@/components/CourseCard';
 import TestimonialCard from '@/components/TestimonialCard';
@@ -209,10 +210,12 @@ const Index = () => {
           </div>
           
           <div className="text-center mt-12 animate-fade-in">
-            <Button variant="outline" className="border-cetpro-blue text-cetpro-blue hover:bg-cetpro-blue hover:text-white group">
-              Ver todos los cursos
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Button>
+            <Link to="/cursos">
+              <Button variant="outline" className="border-cetpro-blue text-cetpro-blue hover:bg-cetpro-blue hover:text-white group">
+                Ver todos los cursos
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
