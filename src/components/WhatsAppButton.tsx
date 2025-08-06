@@ -29,11 +29,11 @@ const WhatsAppButton = () => {
           </div>
           
           {/* WhatsApp icon */}
-          <div className="w-12 h-12 flex items-center justify-center rounded-r-full transition-all duration-300 group-hover:w-14 bg-white">
+          <div className="w-16 h-16 flex items-center justify-center rounded-full transition-all duration-300 group-hover:w-18 bg-white ml-2">
             <img 
               src="/lovable-uploads/9b5350b4-6ee4-42ea-9e75-7eefe6cbca86.png" 
               alt="WhatsApp" 
-              className="w-8 h-8 transition-all duration-300 group-hover:scale-110"
+              className="w-10 h-10 transition-all duration-300 group-hover:scale-110"
             />
           </div>
         </button>
