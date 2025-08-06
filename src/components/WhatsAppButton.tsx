@@ -22,7 +22,7 @@ const WhatsAppButton = () => {
         >
           {/* Main button with red background */}
           <div 
-            className="px-6 py-3 text-white font-semibold text-sm rounded-full transition-all duration-300 group-hover:px-8"
+            className="px-6 py-3 text-white font-bold text-sm rounded-full transition-all duration-300 group-hover:px-8"
             style={{ backgroundColor: '#c8104e' }}
           >
             Solicita más info
