@@ -1349,32 +1349,6 @@ const TrainingOfferings = () => {
                 </Card>
               ))}
             </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
-              {formacionContinuaCourses.slice(0, 6).map((course) => (
-                <CourseCard
-                  key={course.id}
-                  title={course.modulo}
-                  description={`Módulo de formación continua en ${course.familiaProductiva.toLowerCase()}.`}
-                  category={course.familiaProductiva}
-                  duration={`${course.horas} HRS`}
-                  schedule={`${course.dias}, ${getTurnoName(course.turno)}`}
-                  instructor={course.docente}
-                  image={course.iconType === 'design' ? "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80" :
-                        course.iconType === 'computer' ? "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80" :
-                        course.iconType === 'welding' ? "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?auto=format&fit=crop&q=80" :
-                        course.iconType === 'electric' ? "https://images.unsplash.com/photo-1544724569-5f74be9d2525?auto=format&fit=crop&q=80" :
-                        course.iconType === 'phone' ? "https://images.unsplash.com/photo-1565849904461-04a58ad377e0?auto=format&fit=crop&q=80" :
-                        "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&q=80"}
-                  featured={course.id % 5 === 0}
-                  location="Jr. Cuzco 620 Magdalena del Mar"
-                  contact="Tf. 2627395"
-                  startDate={course.fechaInicio}
-                  modality="Presencial"
-                  facebookPostUrl="https://www.facebook.com/cetpro.promaemagdalena/posts/pfbid02qWLqPr8NB3kFk5WQBwF5t1K6wueYXuCmNod768JhWqcvebw1ASDHayU8ijAtGry4l"
-                />
-              ))}
-            </div>
           </div>
         </section>
       )}
