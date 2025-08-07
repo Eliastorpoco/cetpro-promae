@@ -231,13 +231,17 @@ const Index = () => {
               </p>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
-                <Button className="bg-white text-cetpro-blue hover:bg-gray-100 group">
-                  <span>Google Classroom</span>
-                  <ChevronRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                <Button asChild className="bg-white text-cetpro-blue hover:bg-gray-100 group">
+                  <Link to="/aula-virtual">
+                    <span>Google Classroom</span>
+                    <ChevronRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
                 </Button>
-                <Button className="bg-white text-cetpro-blue hover:bg-gray-100 group">
-                  <span>Moodle</span>
-                  <ChevronRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                <Button asChild className="bg-white text-cetpro-blue hover:bg-gray-100 group">
+                  <Link to="/aula-virtual">
+                    <span>Moodle</span>
+                    <ChevronRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
                 </Button>
               </div>
             </div>
