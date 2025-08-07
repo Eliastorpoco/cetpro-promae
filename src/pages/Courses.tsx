@@ -193,17 +193,17 @@ const Courses = () => {
     {
       id: 12,
       title: 'Albañilería',
-      description: 'Formación técnica en construcción, albañilería general y técnicas de edificación.',
+      description: 'Formación técnica en construcción, albañilería general y técnicas de edificación. 2 módulos disponibles: Levantamiento y Construcción de Muros de Albañilería, y Revestimiento y Pintado en Edificaciones.',
       category: 'construction',
-      duration: '8 meses',
+      duration: '2 módulos de 528 horas c/u',
       schedule: 'Lunes a Viernes',
-      instructor: 'ABANTO CHAVEZ, Neider',
+      instructor: 'ORTEGA CABELLO JAIME LUCIANO',
       image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80',
       featured: true,
       location: 'Jr. Cuzco 620 Magdalena del Mar',
       contact: 'Tf. 2627395',
       startDate: '17 de Marzo 2025',
-      modality: 'Presencial'
+      modality: 'Presencial - Turno Mañana'
     },
     {
       id: 13,
