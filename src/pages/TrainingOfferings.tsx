@@ -324,6 +324,32 @@ const TrainingOfferings = () => {
       turno: "M",
       bgColor: "bg-brown-100",
       iconType: "wood"
+    },
+    {
+      id: 21,
+      familiaProductiva: "CARPINTERÍA",
+      docente: "RUIZ COLLADO, Miguel",
+      modulo: "CARPINTERÍA EN MADERA",
+      horas: "528",
+      dias: "L a V",
+      fechaInicio: "17/03",
+      fechaFin: "25/07",
+      turno: "N",
+      bgColor: "bg-brown-100",
+      iconType: "wood"
+    },
+    {
+      id: 22,
+      familiaProductiva: "CARPINTERÍA",
+      docente: "RUIZ COLLADO, Miguel",
+      modulo: "CARPINTERÍA EN TABLEROS Y AGLOMERADOS",
+      horas: "528",
+      dias: "L a V",
+      fechaInicio: "11/08",
+      fechaFin: "19/12",
+      turno: "N",
+      bgColor: "bg-brown-100",
+      iconType: "wood"
     }
   ];
 
