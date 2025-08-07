@@ -218,7 +218,11 @@ const Courses = () => {
       location: 'Jr. Cuzco 620 Magdalena del Mar',
       contact: 'Tf. 2627395',
       startDate: '17 de Marzo 2025',
-      modality: 'Presencial - Turno Mañana'
+      modality: 'Presencial - Turno Mañana',
+      modules: [
+        'PREPARACION Y MANEJO DE INSUMOS DE COCINA',
+        'TECNICAS BASICAS EN LA PREPARACION CULINARIA LOCAL, REGIONAL Y NACIONAL'
+      ]
     },
     {
       id: 14,
