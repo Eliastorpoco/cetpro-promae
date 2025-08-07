@@ -63,7 +63,7 @@ const Courses = () => {
       duration: '8 meses (528 horas por módulo)',
       schedule: 'Lunes a Viernes - Turno Tarde',
       instructor: 'PONCE RODRIGUEZ, Jose Daniel',
-      image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?auto=format&fit=crop&q=80',
+      image: '/lovable-uploads/b5eb9b20-9980-4b1b-bf54-e87ba123d66e.png',
       featured: true,
       location: 'Jr. Cuzco 620 Magdalena del Mar',
       contact: 'Tf. 2627395',
