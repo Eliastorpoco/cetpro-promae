@@ -138,7 +138,7 @@ const Courses = () => {
       duration: '8 meses (528 horas por módulo)',
       schedule: 'Lunes a Viernes',
       instructor: 'HURTADO LEGUÍA Juan Carlos / PACHAS GUTIERREZ Alexander Raul',
-      image: 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?auto=format&fit=crop&q=80',
+      image: '/lovable-uploads/69a6b3be-5425-41b8-9ad8-eb743232be16.png',
       featured: true,
       location: 'Jr. Cuzco 620 Magdalena del Mar',
       contact: 'Tf. 2627395',
