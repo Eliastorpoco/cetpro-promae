@@ -302,26 +302,26 @@ const TrainingOfferings = () => {
     {
       id: 19,
       familiaProductiva: "CARPINTERÍA",
-      docente: "RUIZ COLLADO, Miguel",
+      docente: "CONTRERAS PACHECO Zósimo Platón",
       modulo: "CARPINTERÍA EN MADERA",
       horas: "528",
       dias: "L a V",
       fechaInicio: "17/03",
       fechaFin: "25/07",
-      turno: "N",
+      turno: "M",
       bgColor: "bg-brown-100",
       iconType: "wood"
     },
     {
       id: 20,
       familiaProductiva: "CARPINTERÍA",
-      docente: "RUIZ COLLADO, Miguel",
+      docente: "CONTRERAS PACHECO Zósimo Platón",
       modulo: "CARPINTERÍA EN TABLEROS Y AGLOMERADOS",
       horas: "528",
       dias: "L a V",
       fechaInicio: "11/08",
       fechaFin: "19/12",
-      turno: "N",
+      turno: "M",
       bgColor: "bg-brown-100",
       iconType: "wood"
     }
@@ -1223,6 +1223,7 @@ const TrainingOfferings = () => {
                       {familyName === "SOLDADURA" && <Zap className="h-5 w-5 mr-2 text-amber-500" />}
                       {familyName === "ELECTRICIDAD Y ELECTRÓNICA" && <Zap className="h-5 w-5 mr-2 text-yellow-500" />}
                       {familyName === "MECÁNICA Y MOTORES" && <Wrench className="h-5 w-5 mr-2 text-red-500" />}
+                      {familyName === "CARPINTERÍA" && <Wrench className="h-5 w-5 mr-2 text-amber-600" />}
                       {familyName}
                     </CardTitle>
                     <CardDescription>
