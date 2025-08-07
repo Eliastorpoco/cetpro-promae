@@ -1011,6 +1011,10 @@ const TrainingOfferings = () => {
     return acc;
   }, {} as Record<string, FormacionContinuaCourse[]>);
 
+  // Debug log to check if carpentry courses are being grouped
+  console.log('Grouped Continua Courses:', groupedContinuaCourses);
+  console.log('Carpentry courses:', groupedContinuaCourses['CARPINTERÍA']);
+
   // No results component
   const NoResults = () => (
     <div className="text-center py-16 animate-fade-in">
