@@ -123,7 +123,7 @@ const Courses = () => {
       duration: '8 meses (528 horas por módulo)',
       schedule: 'Lunes a Viernes',
       instructor: 'PAREDES CHUCOS Delfín Andrés',
-      image: 'https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&q=80',
+      image: '/lovable-uploads/a3f34c41-66bc-4106-a0ff-de25d8fd476a.png',
       featured: true,
       location: 'Jr. Cuzco 620 Magdalena del Mar',
       contact: 'Tf. 2627395',
