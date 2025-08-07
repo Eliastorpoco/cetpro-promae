@@ -182,7 +182,7 @@ const Courses = () => {
       category: 'textiles',
       duration: '8 meses (528 horas por módulo)',
       schedule: 'Lunes a Viernes - Turno Noche',
-      instructor: 'UM MUÑOZ Iván Emilia',
+      instructor: 'UM MUÑOZ Ivón Emilia',
       image: '/lovable-uploads/0bd23326-7c76-4465-829d-5e72358fea93.png',
       featured: true,
       location: 'Jr. Cuzco 620 Magdalena del Mar',
