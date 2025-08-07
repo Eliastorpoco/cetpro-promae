@@ -1,5 +1,4 @@
-
-import React from 'react';
+import React, { memo } from 'react';
 import { Quote } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -12,7 +11,7 @@ interface TestimonialCardProps {
   variant?: 'default' | 'featured';
 }
 
-const TestimonialCard: React.FC<TestimonialCardProps> = ({
+const TestimonialCard: React.FC<TestimonialCardProps> = memo(({
   quote,
   name,
   role,
@@ -20,37 +19,41 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
   image,
   variant = 'default'
 }) => {
+  const isFeatured = variant === 'featured';
+  
   return (
-    <div className={cn(
+    <article className={cn(
       "relative rounded-xl p-6 transition-all duration-300 animate-fade-in",
-      variant === 'featured' 
+      isFeatured 
         ? 'bg-gradient-to-br from-cetpro-blue to-cetpro-darkblue text-white'
         : 'bg-white border border-gray-100 shadow-md hover:shadow-xl'
     )}>
       <div className="absolute -top-4 left-6">
         <div className={cn(
           "rounded-full p-2",
-          variant === 'featured' ? 'bg-white text-cetpro-blue' : 'bg-cetpro-blue text-white'
+          isFeatured ? 'bg-white text-cetpro-blue' : 'bg-cetpro-blue text-white'
         )}>
           <Quote className="h-5 w-5" />
         </div>
       </div>
       
       <div className="pt-4">
-        <p className={cn(
+        <blockquote className={cn(
           "text-base italic mb-6 line-clamp-4",
-          variant === 'featured' ? 'text-white/90' : 'text-gray-700'
+          isFeatured ? 'text-white/90' : 'text-gray-700'
         )}>
           "{quote}"
-        </p>
+        </blockquote>
         
         <div className="flex items-center">
           {image && (
             <div className="flex-shrink-0 mr-3">
               <img 
                 src={image} 
-                alt={name} 
+                alt={`Foto de ${name}`}
                 className="h-12 w-12 rounded-full object-cover border-2 border-white shadow-md"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           )}
@@ -58,14 +61,14 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
           <div>
             <h4 className={cn(
               "font-semibold",
-              variant === 'featured' ? 'text-white' : 'text-gray-900'
+              isFeatured ? 'text-white' : 'text-gray-900'
             )}>
               {name}
             </h4>
             
             <div className={cn(
               "text-sm",
-              variant === 'featured' ? 'text-white/80' : 'text-gray-600'
+              isFeatured ? 'text-white/80' : 'text-gray-600'
             )}>
               {role}
               {course && (
@@ -78,8 +81,10 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
           </div>
         </div>
       </div>
-    </div>
+    </article>
   );
-};
+});
+
+TestimonialCard.displayName = 'TestimonialCard';
 
 export default TestimonialCard;
