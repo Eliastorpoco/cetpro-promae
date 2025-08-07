@@ -223,17 +223,17 @@ const Courses = () => {
     {
       id: 14,
       title: 'Peluquería y Barbería',
-      description: 'Formación técnica en cortes de cabello, peinados, tratamientos capilares y técnicas de barbería moderna.',
+      description: 'Formación técnica en cortes de cabello, peinados, tratamientos capilares y técnicas de barbería. 6 módulos disponibles con instructores especializados.',
       category: 'design',
-      duration: '8 meses',
+      duration: '6 módulos de 528 horas c/u',
       schedule: 'Lunes a Viernes',
-      instructor: 'ROSALES VERA, Karina',
-      image: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&q=80',
+      instructor: 'VILLAFANA FAJARDO Lucía Beatriz / CASTAÑEDA AVILA Marilú / TORRES GRIJALBA Analí',
+      image: '/lovable-uploads/1ec16efd-d201-40cc-a91d-bd566266019e.png',
       featured: true,
       location: 'Jr. Cuzco 620 Magdalena del Mar',
       contact: 'Tf. 2627395',
       startDate: '17 de Marzo 2025',
-      modality: 'Presencial'
+      modality: 'Presencial - Turnos: Mañana, Tarde y Noche'
     },
     {
       id: 15,
