@@ -207,6 +207,21 @@ const Courses = () => {
     },
     {
       id: 13,
+      title: 'Servicios Básicos Gastronómicos',
+      description: 'Formación en técnicas básicas de cocina, preparación de alimentos, manejo de ingredientes y fundamentos de la gastronomía profesional.',
+      category: 'hospitality',
+      duration: '6 meses',
+      schedule: 'Lunes a Viernes',
+      instructor: 'SOLORZANO PONCE, Elba',
+      image: '/lovable-uploads/c38ce876-012d-4990-85d4-959c98b8f6c7.png',
+      featured: true,
+      location: 'Jr. Cuzco 620 Magdalena del Mar',
+      contact: 'Tf. 2627395',
+      startDate: '17 de Marzo 2025',
+      modality: 'Presencial - Turno Mañana'
+    },
+    {
+      id: 14,
       title: 'Acabados en Edificaciones y Obras Civiles',
       description: 'Programa técnico especializado en acabados de construcción, revestimientos y obras civiles.',
       category: 'construction',
