@@ -108,7 +108,7 @@ const Courses = () => {
       duration: '8 meses (528 horas por módulo)',
       schedule: 'Lunes a Viernes',
       instructor: 'GIRALDO ROQUE María Antonieta',
-      image: 'https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&q=80',
+      image: '/lovable-uploads/d5f5fe01-ac8e-4af8-a9ed-c75221ca1c83.png',
       featured: true,
       location: 'Jr. Cuzco 620 Magdalena del Mar',
       contact: 'Tf. 2627395',
