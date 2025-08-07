@@ -796,7 +796,7 @@ const TrainingOfferings = () => {
     {
       id: 38,
       planEstudio: 'PRODUCCIÓN DE TEJEDURÍA',
-      docente: 'UM MUÑOZ Iván Emilia',
+      docente: 'UM MUÑOZ Ivón Emilia',
       modulo: 'TÉCNICAS BÁSICAS DE TEJIDO',
       horas: '528',
       dias: 'L a V',
@@ -807,7 +807,7 @@ const TrainingOfferings = () => {
     {
       id: 39,
       planEstudio: 'PRODUCCIÓN DE TEJEDURÍA',
-      docente: 'UM MUÑOZ Iván Emilia',
+      docente: 'UM MUÑOZ Ivón Emilia',
       modulo: 'PRODUCCIÓN DE PRENDAS TEJIDAS',
       horas: '528',
       dias: 'L a V',
