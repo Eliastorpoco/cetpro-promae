@@ -350,6 +350,34 @@ const TrainingOfferings = () => {
       turno: "N",
       bgColor: "bg-brown-100",
       iconType: "wood"
+    },
+    
+    // SERVICIOS BÁSICOS GASTRONÓMICOS
+    {
+      id: 23,
+      familiaProductiva: "SERVICIOS BÁSICOS GASTRONÓMICOS",
+      docente: "SOLORZANO PONCE, Elba",
+      modulo: "PREPARACION Y MANEJO DE INSUMOS DE COCINA",
+      horas: "264",
+      dias: "L a V",
+      fechaInicio: "17/03",
+      fechaFin: "23/05",
+      turno: "M",
+      bgColor: "bg-orange-100",
+      iconType: "chef"
+    },
+    {
+      id: 24,
+      familiaProductiva: "SERVICIOS BÁSICOS GASTRONÓMICOS",
+      docente: "SOLORZANO PONCE, Elba",
+      modulo: "TECNICAS BASICAS EN LA PREPARACION CULINARIA LOCAL, REGIONAL Y NACIONAL",
+      horas: "264",
+      dias: "L a V",
+      fechaInicio: "28/05",
+      fechaFin: "25/07",
+      turno: "M",
+      bgColor: "bg-orange-100",
+      iconType: "chef"
     }
   ];
 
