@@ -48,6 +48,338 @@ interface FormacionContinuaCourse {
 const TrainingOfferings = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const [activeTab, setActiveTab] = useState('regular'); // 'regular' or 'continua'
+
+  // Formación Continua modules data extracted from the image
+  const formacionContinuaCourses: FormacionContinuaCourse[] = [
+    // COMPUTACIÓN E INFORMÁTICA
+    {
+      id: 1,
+      familiaProductiva: "COMPUTACIÓN E INFORMÁTICA",
+      docente: "ALCA LEON, Hilda",
+      modulo: "ILUSTRACIÓN DIGITAL (Corel Draw I)",
+      horas: "288",
+      dias: "L-M-V",
+      fechaInicio: "17/03",
+      fechaFin: "25/07",
+      turno: "M",
+      bgColor: "bg-blue-100",
+      iconType: "design"
+    },
+    {
+      id: 2,
+      familiaProductiva: "COMPUTACIÓN E INFORMÁTICA",
+      docente: "ALCA LEON, Hilda",
+      modulo: "APLICACIONES EN PROCESADOR DE TEXTO (WINDOWS - WORD)",
+      horas: "240",
+      dias: "K-J",
+      fechaInicio: "18/03",
+      fechaFin: "24/07",
+      turno: "M",
+      bgColor: "bg-blue-100",
+      iconType: "computer"
+    },
+    {
+      id: 3,
+      familiaProductiva: "COMPUTACIÓN E INFORMÁTICA",
+      docente: "SALAZAR ALBURQUEQUE, Franklin Lauro",
+      modulo: "APLICACIONES EN HOJA DE CÁLCULO (Excel)",
+      horas: "288",
+      dias: "L-M-V",
+      fechaInicio: "17/03",
+      fechaFin: "25/07",
+      turno: "N",
+      bgColor: "bg-blue-100",
+      iconType: "computer"
+    },
+    {
+      id: 4,
+      familiaProductiva: "COMPUTACIÓN E INFORMÁTICA",
+      docente: "SALAZAR ALBURQUEQUE, Franklin Lauro",
+      modulo: "APLICACIONES EN PROCESADOR DE TEXTO (WINDOWS - WORD) (Convenio)",
+      horas: "240",
+      dias: "K-J",
+      fechaInicio: "18/03",
+      fechaFin: "24/07",
+      turno: "N",
+      convenio: true,
+      bgColor: "bg-blue-100",
+      iconType: "computer"
+    },
+    
+    // SOLDADURA
+    {
+      id: 5,
+      familiaProductiva: "SOLDADURA",
+      docente: "QUISPE ANDRADE, Edwin Lennon",
+      modulo: "SOLDADURA ELÉCTRICA",
+      horas: "288",
+      dias: "L-M-V",
+      fechaInicio: "17/03",
+      fechaFin: "25/07",
+      turno: "M",
+      bgColor: "bg-amber-100",
+      iconType: "welding"
+    },
+    {
+      id: 6,
+      familiaProductiva: "SOLDADURA",
+      docente: "QUISPE ANDRADE, Edwin Lennon",
+      modulo: "PROCESOS DE SOLDADURA MIG MAG TIG",
+      horas: "240",
+      dias: "K-J",
+      fechaInicio: "18/03",
+      fechaFin: "24/07",
+      turno: "M",
+      bgColor: "bg-amber-100",
+      iconType: "welding"
+    },
+    {
+      id: 7,
+      familiaProductiva: "SOLDADURA",
+      docente: "TOMASTO RODRIGUEZ, Benigno Valentin",
+      modulo: "SOLDADURA ELÉCTRICA (Convenio)",
+      horas: "288",
+      dias: "L-M-V",
+      fechaInicio: "17/03",
+      fechaFin: "25/07",
+      turno: "M",
+      convenio: true,
+      bgColor: "bg-amber-100",
+      iconType: "welding"
+    },
+    {
+      id: 8,
+      familiaProductiva: "SOLDADURA",
+      docente: "TOMASTO RODRIGUEZ, Benigno Valentin",
+      modulo: "PROCESOS DE SOLDADURA MIG MAG TIG (Convenio)",
+      horas: "240",
+      dias: "K-J",
+      fechaInicio: "18/03",
+      fechaFin: "24/07",
+      turno: "M",
+      convenio: true,
+      bgColor: "bg-amber-100",
+      iconType: "welding"
+    },
+    {
+      id: 9,
+      familiaProductiva: "SOLDADURA",
+      docente: "BAUTISTA CALIXTRO, Rubes",
+      modulo: "SOLDADURA ELÉCTRICA",
+      horas: "288",
+      dias: "L-M-V",
+      fechaInicio: "17/03",
+      fechaFin: "25/07",
+      turno: "N",
+      bgColor: "bg-amber-100",
+      iconType: "welding"
+    },
+    {
+      id: 10,
+      familiaProductiva: "SOLDADURA",
+      docente: "BAUTISTA CALIXTRO, Rubes",
+      modulo: "PROCESOS DE SOLDADURA MIG MAG TIG",
+      horas: "240",
+      dias: "K-J",
+      fechaInicio: "18/03",
+      fechaFin: "24/07",
+      turno: "N",
+      bgColor: "bg-amber-100",
+      iconType: "welding"
+    },
+    
+    // ELECTRICIDAD Y ELECTRÓNICA
+    {
+      id: 11,
+      familiaProductiva: "ELECTRICIDAD Y ELECTRÓNICA",
+      docente: "HUANCOLLO PULIDO, David Willy",
+      modulo: "INSTALACIONES ELÉCTRICAS DOMICILIARIAS (Convenio)",
+      horas: "288",
+      dias: "L-M-V",
+      fechaInicio: "17/03",
+      fechaFin: "25/07",
+      turno: "M",
+      convenio: true,
+      bgColor: "bg-yellow-100",
+      iconType: "electric"
+    },
+    {
+      id: 12,
+      familiaProductiva: "ELECTRICIDAD Y ELECTRÓNICA",
+      docente: "HUANCOLLO PULIDO, David Willy",
+      modulo: "REBOBINADO DE MOTORES ELÉCTRICOS",
+      horas: "240",
+      dias: "K-J",
+      fechaInicio: "18/03",
+      fechaFin: "24/07",
+      turno: "M",
+      bgColor: "bg-yellow-100",
+      iconType: "electric"
+    },
+    {
+      id: 13,
+      familiaProductiva: "ELECTRICIDAD Y ELECTRÓNICA",
+      docente: "NIÑO CUEVA, Romel",
+      modulo: "MANTENIMIENTO DE EQUIPOS CELULARES",
+      horas: "288",
+      dias: "L-M-V",
+      fechaInicio: "17/03",
+      fechaFin: "25/07",
+      turno: "N",
+      bgColor: "bg-yellow-100",
+      iconType: "phone"
+    },
+    {
+      id: 14,
+      familiaProductiva: "ELECTRICIDAD Y ELECTRÓNICA",
+      docente: "NIÑO CUEVA, Romel",
+      modulo: "REPARACIÓN DE EQUIPOS CELULARES",
+      horas: "240",
+      dias: "K-J",
+      fechaInicio: "18/03",
+      fechaFin: "24/07",
+      turno: "N",
+      bgColor: "bg-yellow-100",
+      iconType: "phone"
+    },
+    {
+      id: 15,
+      familiaProductiva: "ELECTRICIDAD Y ELECTRÓNICA",
+      docente: "CHOQUEPATA MAMANI, Juan Carlos",
+      modulo: "INSTALACIONES ELÉCTRICAS DOMICILIARIAS",
+      horas: "288",
+      dias: "L-M-V",
+      fechaInicio: "17/03",
+      fechaFin: "25/07",
+      turno: "N",
+      bgColor: "bg-yellow-100",
+      iconType: "electric"
+    },
+    {
+      id: 16,
+      familiaProductiva: "ELECTRICIDAD Y ELECTRÓNICA",
+      docente: "CHOQUEPATA MAMANI, Juan Carlos",
+      modulo: "REBOBINADO DE MOTORES ELÉCTRICOS",
+      horas: "240",
+      dias: "K-J",
+      fechaInicio: "18/03",
+      fechaFin: "24/07",
+      turno: "N",
+      bgColor: "bg-yellow-100",
+      iconType: "electric"
+    },
+    
+    // MECÁNICA Y MOTORES
+    {
+      id: 17,
+      familiaProductiva: "MECÁNICA Y MOTORES",
+      docente: "QUISPE ORE, Rubén Felipe",
+      modulo: "MANTENIMIENTO PREVENTIVO DE MOTORES DE COMBUSTIÓN INTERNA",
+      horas: "288",
+      dias: "L a V",
+      fechaInicio: "17/03",
+      fechaFin: "23/05",
+      turno: "N",
+      bgColor: "bg-green-100",
+      iconType: "mechanic"
+    },
+    {
+      id: 18,
+      familiaProductiva: "MECÁNICA Y MOTORES",
+      docente: "QUISPE ORE, Rubén Felipe",
+      modulo: "MANTENIMIENTO CORRECTIVO DE MOTORES DE COMBUSTIÓN INTERNA",
+      horas: "240",
+      dias: "L a V",
+      fechaInicio: "28/05",
+      fechaFin: "25/07",
+      turno: "N",
+      bgColor: "bg-green-100",
+      iconType: "mechanic"
+    },
+    
+    // CARPINTERÍA
+    {
+      id: 19,
+      familiaProductiva: "CARPINTERÍA",
+      docente: "CONTRERAS PACHECO Zósimo Platón",
+      modulo: "CARPINTERÍA EN MADERA",
+      horas: "528",
+      dias: "L a V",
+      fechaInicio: "17/03",
+      fechaFin: "25/07",
+      turno: "M",
+      bgColor: "bg-brown-100",
+      iconType: "wood"
+    },
+    {
+      id: 20,
+      familiaProductiva: "CARPINTERÍA",
+      docente: "CONTRERAS PACHECO Zósimo Platón",
+      modulo: "CARPINTERÍA EN TABLEROS Y AGLOMERADOS",
+      horas: "528",
+      dias: "L a V",
+      fechaInicio: "11/08",
+      fechaFin: "19/12",
+      turno: "M",
+      bgColor: "bg-brown-100",
+      iconType: "wood"
+    },
+    {
+      id: 21,
+      familiaProductiva: "CARPINTERÍA",
+      docente: "RUIZ COLLADO, Miguel",
+      modulo: "CARPINTERÍA EN MADERA",
+      horas: "528",
+      dias: "L a V",
+      fechaInicio: "17/03",
+      fechaFin: "25/07",
+      turno: "N",
+      bgColor: "bg-brown-100",
+      iconType: "wood"
+    },
+    {
+      id: 22,
+      familiaProductiva: "CARPINTERÍA",
+      docente: "RUIZ COLLADO, Miguel",
+      modulo: "CARPINTERÍA EN TABLEROS Y AGLOMERADOS",
+      horas: "528",
+      dias: "L a V",
+      fechaInicio: "11/08",
+      fechaFin: "19/12",
+      turno: "N",
+      bgColor: "bg-brown-100",
+      iconType: "wood"
+    },
+    
+    // SERVICIOS BÁSICOS GASTRONÓMICOS
+    {
+      id: 23,
+      familiaProductiva: "SERVICIOS BÁSICOS GASTRONÓMICOS",
+      docente: "SOLORZANO PONCE, Elba",
+      modulo: "PREPARACION Y MANEJO DE INSUMOS DE COCINA",
+      horas: "264",
+      dias: "L a V",
+      fechaInicio: "17/03",
+      fechaFin: "23/05",
+      turno: "M",
+      bgColor: "bg-orange-100",
+      iconType: "chef"
+    },
+    {
+      id: 24,
+      familiaProductiva: "SERVICIOS BÁSICOS GASTRONÓMICOS",
+      docente: "SOLORZANO PONCE, Elba",
+      modulo: "TECNICAS BASICAS EN LA PREPARACION CULINARIA LOCAL, REGIONAL Y NACIONAL",
+      horas: "264",
+      dias: "L a V",
+      fechaInicio: "28/05",
+      fechaFin: "25/07",
+      turno: "M",
+      bgColor: "bg-orange-100",
+      iconType: "chef"
+    }
+  ];
 
   // Course categories derived from plans of study
   const categories = [
@@ -698,6 +1030,19 @@ const TrainingOfferings = () => {
     }
   };
 
+  // Group formación continua courses by family
+  const groupedContinuaCourses = formacionContinuaCourses.reduce((acc, course) => {
+    if (!acc[course.familiaProductiva]) {
+      acc[course.familiaProductiva] = [];
+    }
+    acc[course.familiaProductiva].push(course);
+    return acc;
+  }, {} as Record<string, FormacionContinuaCourse[]>);
+
+  // Debug log to check if carpentry courses are being grouped
+  console.log('Grouped Continua Courses:', groupedContinuaCourses);
+  console.log('Carpentry courses:', groupedContinuaCourses['CARPINTERÍA']);
+
   // No results component
   const NoResults = () => (
     <div className="text-center py-16 animate-fade-in">
@@ -746,82 +1091,199 @@ const TrainingOfferings = () => {
         </div>
       </section>
 
-      {/* Search and Filter */}
-      <section className="py-8 bg-white border-b">
+      {/* Program Type Selector */}
+      <section className="py-6 bg-white border-b">
         <div className="page-container">
-          <div className="flex flex-col md:flex-row gap-4 items-center justify-between animate-fade-in">
-            <div className="w-full md:w-auto flex-1 relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
-              <input
-                type="text"
-                placeholder="Buscar por módulo, programa o docente..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-cetpro-blue focus:border-transparent"
-              />
-            </div>
-            
-            <div className="w-full md:w-auto flex gap-2 flex-wrap justify-center">
-              <div className="flex items-center mr-2">
-                <Filter className="h-5 w-5 mr-1 text-cetpro-blue" />
-                <span className="text-sm font-medium">Filtrar por programa:</span>
-              </div>
-              
-              <div className="flex flex-wrap gap-2 max-w-xl">
-                {categories.slice(0, 5).map((category) => (
-                  <Button
-                    key={category.id}
-                    variant={selectedCategory === category.id ? "default" : "outline"}
-                    className={cn(
-                      "text-xs",
-                      selectedCategory === category.id
-                        ? "bg-cetpro-blue hover:bg-cetpro-darkblue"
-                        : "border-gray-300 text-gray-700 hover:bg-gray-50"
-                    )}
-                    onClick={() => setSelectedCategory(category.id)}
-                  >
-                    {category.name}
-                  </Button>
-                ))}
-                {selectedCategory === 'all' && (
-                  <Button
-                    variant="outline"
-                    className="text-xs border-cetpro-gold text-cetpro-gold hover:bg-cetpro-gold/10"
-                  >
-                    Más filtros...
-                  </Button>
-                )}
-              </div>
-            </div>
-          </div>
-
-          {/* Legend for shifts */}
-          <div className="flex flex-wrap gap-4 mt-6 justify-center">
-            <div className="flex items-center">
-              <span className={cn("inline-block w-3 h-3 rounded-full mr-2", "bg-yellow-400")}></span>
-              <span className="text-sm text-gray-600">Mañana</span>
-            </div>
-            <div className="flex items-center">
-              <span className={cn("inline-block w-3 h-3 rounded-full mr-2", "bg-blue-400")}></span>
-              <span className="text-sm text-gray-600">Tarde</span>
-            </div>
-            <div className="flex items-center">
-              <span className={cn("inline-block w-3 h-3 rounded-full mr-2", "bg-purple-400")}></span>
-              <span className="text-sm text-gray-600">Noche</span>
-            </div>
+          <div className="flex justify-center gap-4 animate-fade-in">
+            <Button
+              variant={activeTab === 'regular' ? 'default' : 'outline'}
+              className={cn(
+                "text-base px-6",
+                activeTab === 'regular' 
+                  ? "bg-cetpro-blue hover:bg-cetpro-darkblue" 
+                  : "border-gray-300 text-gray-700 hover:bg-gray-50"
+              )}
+              onClick={() => setActiveTab('regular')}
+            >
+              Auxiliar Técnico
+            </Button>
+            <Button
+              variant={activeTab === 'continua' ? 'default' : 'outline'}
+              className={cn(
+                "text-base px-6",
+                activeTab === 'continua' 
+                  ? "bg-cetpro-blue hover:bg-cetpro-darkblue" 
+                  : "border-gray-300 text-gray-700 hover:bg-gray-50"
+              )}
+              onClick={() => setActiveTab('continua')}
+            >
+              Formación Continua
+            </Button>
           </div>
         </div>
       </section>
 
-      {/* Course Modules Tables */}
-      <section className="section-padding bg-gray-50">
-        <div className="page-container">
-          {Object.keys(groupedCourses).length > 0 ? (
+      {activeTab === 'regular' && (
+        <>
+          {/* Search and Filter */}
+          <section className="py-8 bg-white border-b">
+            <div className="page-container">
+              <div className="flex flex-col md:flex-row gap-4 items-center justify-between animate-fade-in">
+                <div className="w-full md:w-auto flex-1 relative">
+                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+                  <input
+                    type="text"
+                    placeholder="Buscar por módulo, programa o docente..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="w-full pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-cetpro-blue focus:border-transparent"
+                  />
+                </div>
+                
+                <div className="w-full md:w-auto flex gap-2 flex-wrap justify-center">
+                  <div className="flex items-center mr-2">
+                    <Filter className="h-5 w-5 mr-1 text-cetpro-blue" />
+                    <span className="text-sm font-medium">Filtrar por programa:</span>
+                  </div>
+                  
+                  <div className="flex flex-wrap gap-2 max-w-xl">
+                    {categories.slice(0, 5).map((category) => (
+                      <Button
+                        key={category.id}
+                        variant={selectedCategory === category.id ? "default" : "outline"}
+                        className={cn(
+                          "text-xs",
+                          selectedCategory === category.id
+                            ? "bg-cetpro-blue hover:bg-cetpro-darkblue"
+                            : "border-gray-300 text-gray-700 hover:bg-gray-50"
+                        )}
+                        onClick={() => setSelectedCategory(category.id)}
+                      >
+                        {category.name}
+                      </Button>
+                    ))}
+                    {selectedCategory === 'all' && (
+                      <Button
+                        variant="outline"
+                        className="text-xs border-cetpro-gold text-cetpro-gold hover:bg-cetpro-gold/10"
+                      >
+                        Más filtros...
+                      </Button>
+                    )}
+                  </div>
+                </div>
+              </div>
+
+              {/* Legend for shifts */}
+              <div className="flex flex-wrap gap-4 mt-6 justify-center">
+                <div className="flex items-center">
+                  <span className={cn("inline-block w-3 h-3 rounded-full mr-2", "bg-yellow-400")}></span>
+                  <span className="text-sm text-gray-600">Mañana</span>
+                </div>
+                <div className="flex items-center">
+                  <span className={cn("inline-block w-3 h-3 rounded-full mr-2", "bg-blue-400")}></span>
+                  <span className="text-sm text-gray-600">Tarde</span>
+                </div>
+                <div className="flex items-center">
+                  <span className={cn("inline-block w-3 h-3 rounded-full mr-2", "bg-purple-400")}></span>
+                  <span className="text-sm text-gray-600">Noche</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Course Modules Tables */}
+          <section className="section-padding bg-gray-50">
+            <div className="page-container">
+              {Object.keys(groupedCourses).length > 0 ? (
+                <div className="space-y-12 animate-fade-in">
+                  {Object.entries(groupedCourses).map(([planEstudio, courses]) => (
+                    <Card key={planEstudio} className="overflow-hidden">
+                      <CardHeader className="bg-gradient-to-r from-cetpro-blue/10 to-transparent">
+                        <CardTitle className="text-xl text-gray-900">{planEstudio}</CardTitle>
+                        <CardDescription>
+                          {courses.length} módulos disponibles
+                        </CardDescription>
+                      </CardHeader>
+                      <CardContent className="p-0">
+                        <div className="overflow-x-auto">
+                          <Table>
+                            <TableHeader>
+                              <TableRow className="bg-gray-50">
+                                <TableHead>Módulo</TableHead>
+                                <TableHead>Docente</TableHead>
+                                <TableHead className="text-center">Horas</TableHead>
+                                <TableHead className="text-center">Días</TableHead>
+                                <TableHead className="text-center">Periodo</TableHead>
+                                <TableHead className="text-center">Turno</TableHead>
+                              </TableRow>
+                            </TableHeader>
+                            <TableBody>
+                              {courses.map((course) => (
+                                <TableRow key={course.id} className="hover:bg-gray-50">
+                                  <TableCell className="font-medium">
+                                    <div className="max-w-md">
+                                      {course.modulo}
+                                    </div>
+                                  </TableCell>
+                                  <TableCell>
+                                    {course.docente || "Por asignar"}
+                                  </TableCell>
+                                  <TableCell className="text-center">
+                                    <div className="flex items-center justify-center">
+                                      <Clock className="h-4 w-4 mr-1 text-gray-500" />
+                                      {course.horas}
+                                    </div>
+                                  </TableCell>
+                                  <TableCell className="text-center">
+                                    <div className="flex items-center justify-center">
+                                      <Calendar className="h-4 w-4 mr-1 text-gray-500" />
+                                      {course.dias}
+                                    </div>
+                                  </TableCell>
+                                  <TableCell className="text-center">
+                                    {course.fechaInicio} - {course.fechaFin}
+                                  </TableCell>
+                                  <TableCell className="text-center">
+                                    <span className={cn(
+                                      "inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border",
+                                      getTurnoBadge(course.turno)
+                                    )}>
+                                      {getTurnoName(course.turno)}
+                                    </span>
+                                  </TableCell>
+                                </TableRow>
+                              ))}
+                            </TableBody>
+                          </Table>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              ) : (
+                <NoResults />
+              )}
+            </div>
+          </section>
+        </>
+      )}
+
+      {activeTab === 'continua' && (
+        <section className="section-padding bg-gray-50">
+          <div className="page-container">
             <div className="space-y-12 animate-fade-in">
-              {Object.entries(groupedCourses).map(([planEstudio, courses]) => (
-                <Card key={planEstudio} className="overflow-hidden">
+              {Object.entries(groupedContinuaCourses).map(([familyName, courses]) => (
+                <Card key={familyName} className="overflow-hidden">
                   <CardHeader className="bg-gradient-to-r from-cetpro-blue/10 to-transparent">
-                    <CardTitle className="text-xl text-gray-900">{planEstudio}</CardTitle>
+                    <CardTitle className="text-xl text-gray-900 flex items-center">
+                      {familyName === "COMPUTACIÓN E INFORMÁTICA" && <Laptop className="h-5 w-5 mr-2 text-blue-500" />}
+                      {familyName === "SOLDADURA" && <Zap className="h-5 w-5 mr-2 text-amber-500" />}
+                      {familyName === "ELECTRICIDAD Y ELECTRÓNICA" && <Zap className="h-5 w-5 mr-2 text-yellow-500" />}
+                      {familyName === "MECÁNICA Y MOTORES" && <Wrench className="h-5 w-5 mr-2 text-red-500" />}
+                      {familyName === "CARPINTERÍA" && <Wrench className="h-5 w-5 mr-2 text-amber-600" />}
+                      {familyName}
+                    </CardTitle>
                     <CardDescription>
                       {courses.length} módulos disponibles
                     </CardDescription>
@@ -845,10 +1307,15 @@ const TrainingOfferings = () => {
                               <TableCell className="font-medium">
                                 <div className="max-w-md">
                                   {course.modulo}
+                                  {course.convenio && 
+                                    <span className="ml-2 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 border border-green-200">
+                                      Convenio
+                                    </span>
+                                  }
                                 </div>
                               </TableCell>
                               <TableCell>
-                                {course.docente || "Por asignar"}
+                                {course.docente}
                               </TableCell>
                               <TableCell className="text-center">
                                 <div className="flex items-center justify-center">
@@ -882,11 +1349,35 @@ const TrainingOfferings = () => {
                 </Card>
               ))}
             </div>
-          ) : (
-            <NoResults />
-          )}
-        </div>
-      </section>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+              {formacionContinuaCourses.slice(0, 6).map((course) => (
+                <CourseCard
+                  key={course.id}
+                  title={course.modulo}
+                  description={`Módulo de formación continua en ${course.familiaProductiva.toLowerCase()}.`}
+                  category={course.familiaProductiva}
+                  duration={`${course.horas} HRS`}
+                  schedule={`${course.dias}, ${getTurnoName(course.turno)}`}
+                  instructor={course.docente}
+                  image={course.iconType === 'design' ? "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80" :
+                        course.iconType === 'computer' ? "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80" :
+                        course.iconType === 'welding' ? "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?auto=format&fit=crop&q=80" :
+                        course.iconType === 'electric' ? "https://images.unsplash.com/photo-1544724569-5f74be9d2525?auto=format&fit=crop&q=80" :
+                        course.iconType === 'phone' ? "https://images.unsplash.com/photo-1565849904461-04a58ad377e0?auto=format&fit=crop&q=80" :
+                        "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&q=80"}
+                  featured={course.id % 5 === 0}
+                  location="Jr. Cuzco 620 Magdalena del Mar"
+                  contact="Tf. 2627395"
+                  startDate={course.fechaInicio}
+                  modality="Presencial"
+                  facebookPostUrl="https://www.facebook.com/cetpro.promaemagdalena/posts/pfbid02qWLqPr8NB3kFk5WQBwF5t1K6wueYXuCmNod768JhWqcvebw1ASDHayU8ijAtGry4l"
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Info Section */}
       <section className="py-16 bg-white">
