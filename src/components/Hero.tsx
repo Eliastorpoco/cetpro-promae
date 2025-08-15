@@ -113,7 +113,7 @@ const Hero = () => {
       )}>
         <div className="max-w-4xl text-center space-y-6 animate-fade-in">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-            Matrícula semestre 2025 – II Inicio de clases 11 de agosto
+            Matrícula semestre 2025 – II Inicio de clases agosto
           </h1>
           
           <p className="text-lg md:text-xl opacity-90 max-w-2xl mx-auto font-bold text-[#ffddaa]">
