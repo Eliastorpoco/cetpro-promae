@@ -70,10 +70,7 @@ const Hero = () => {
 
       <div className={cn("absolute inset-0 flex flex-col justify-center items-center text-white p-6 transition-opacity duration-1000", imagesLoaded ? "opacity-100" : "opacity-0")}>
         <div className="max-w-4xl text-center space-y-6 animate-fade-in">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-            Matrícula semestre 2026 – I 
-Inicio de clases agosto
-          </h1>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">Matrícula semestre 2026 – I  Inicio de clases 17 de marzo</h1>
           
           <p className="text-lg md:text-xl opacity-90 max-w-2xl mx-auto font-bold text-[#ffddaa]">
             En el CETPRO PROMAE MAGDALENA formamos profesionales técnicos con las competencias necesarias para destacar en el mundo laboral actual.
